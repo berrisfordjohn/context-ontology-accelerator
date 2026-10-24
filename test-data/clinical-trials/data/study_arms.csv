@@ -1,0 +1,13 @@
+arm_id,study_id,arm_name,arm_type,drug_id,dose_mg
+ST-001-A1,ST-001,Placebo,Placebo Comparator,,
+ST-001-A2,ST-001,Zorvantil 5 mg,Experimental,CPD-101,5
+ST-001-A3,ST-001,Zorvantil 10 mg,Experimental,CPD-101,10
+ST-002-A1,ST-002,Oncotra 1200 mg,Experimental,CPD-102,1200
+ST-002-A2,ST-002,Docetaxel 75 mg/m2,Active Comparator,CPD-900,75
+ST-003-A1,ST-003,Placebo,Placebo Comparator,,
+ST-003-A2,ST-003,Cardiprex 10 mg,Experimental,CPD-103,10
+ST-004-A1,ST-004,Placebo,Placebo Comparator,,
+ST-004-A2,ST-004,Neurolynt 10 mg/kg,Experimental,CPD-104,10
+ST-005-A1,ST-005,Cardiprex 5 mg,Experimental,CPD-103,5
+ST-005-A2,ST-005,Cardiprex 10 mg,Experimental,CPD-103,10
+ST-005-A3,ST-005,Cardiprex 20 mg,Experimental,CPD-103,20

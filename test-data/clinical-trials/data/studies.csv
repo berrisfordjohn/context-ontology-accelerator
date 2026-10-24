@@ -1,0 +1,6 @@
+study_id,nct_id,title,phase,therapeutic_area,indication,sponsor,status,start_date,planned_enrollment,primary_endpoint,endpoint_unit,drug_id
+ST-001,NCT09000001,A Phase 3 Study of Zorvantil in Moderate-to-Severe Rheumatoid Arthritis,Phase 3,Immunology,Rheumatoid arthritis,Helvetia Biopharma,Completed,2023-02-01,160,Change from baseline in DAS28-CRP,score,CPD-101
+ST-002,NCT09000002,A Phase 2 Study of Oncotra versus Docetaxel in PD-L1 Positive NSCLC,Phase 2,Oncology,Non-small cell lung cancer,Helvetia Biopharma,"Active, not recruiting",2024-03-15,90,Change from baseline in sum of target lesion diameters,mm,CPD-102
+ST-003,NCT09000003,A Phase 3 Cardiovascular Outcomes Study of Cardiprex in Heart Failure,Phase 3,Cardiology,Heart failure,Nordlicht Therapeutics,"Active, not recruiting",2024-01-10,220,Change from baseline in NT-proBNP,pg/mL,CPD-103
+ST-004,NCT09000004,A Phase 2 Study of Neurolynt in Early Alzheimer's Disease,Phase 2,Neurology,Alzheimer's disease,Nordlicht Therapeutics,Recruiting,2025-04-01,140,Change from baseline in CDR-SB,score,CPD-104
+ST-005,NCT09000005,A Phase 1 Single Ascending Dose Study of Cardiprex in Healthy Volunteers,Phase 1,Cardiology,Healthy volunteers,Nordlicht Therapeutics,Completed,2023-09-04,24,Change from baseline in 24h urinary glucose excretion,g/24h,CPD-103

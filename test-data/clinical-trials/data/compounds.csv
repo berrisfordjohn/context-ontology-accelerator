@@ -1,0 +1,6 @@
+drug_id,drug_name,inn,drug_class,mechanism_of_action,target,atc_code
+CPD-101,Zorvantil,zorvantinib,JAK inhibitor,Selective JAK1 inhibition,JAK1,L04AA99
+CPD-102,Oncotra,oncotrazumab,PD-L1 antibody,PD-L1 checkpoint blockade,PD-L1,L01FF99
+CPD-103,Cardiprex,cardiprexin,SGLT2 inhibitor,Sodium-glucose cotransporter 2 inhibition,SGLT2,A10BK99
+CPD-104,Neurolynt,neurolyntamab,Anti-amyloid antibody,Amyloid-beta plaque clearance,Amyloid-beta,N06DX99
+CPD-900,Docetaxel,docetaxel,Taxane,Microtubule stabilisation,Tubulin,L01CD02

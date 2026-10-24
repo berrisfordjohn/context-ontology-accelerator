@@ -1,0 +1,53 @@
+@prefix :      <https://example.org/ontology/clinical-trials#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
+
+<https://example.org/ontology/clinical-trials> a owl:Ontology ;
+    rdfs:label "Clinical Trials (synthetic test ontology)" ;
+    rdfs:comment "Hand-written reference ontology for the synthetic clinical trial test dataset. Use it for the manual-upload path, or as a gold standard to compare against the induced ontology." .
+
+# ---------------------------------------------------------------- classes
+:Study a owl:Class ; rdfs:label "Study" ; rdfs:comment "A clinical trial with a protocol, phase and sponsor." ; skos:altLabel "Clinical trial", "Protocol" .
+:Compound a owl:Class ; rdfs:label "Compound" ; rdfs:comment "An investigational or comparator drug." ; skos:altLabel "Drug", "Investigational product" .
+:StudyArm a owl:Class ; rdfs:label "Study arm" ; rdfs:comment "A randomised treatment group within a study." ; skos:altLabel "Treatment arm" .
+:Site a owl:Class ; rdfs:label "Site" ; rdfs:comment "An investigator site that enrols subjects." ; skos:altLabel "Investigator site" .
+:Subject a owl:Class ; rdfs:label "Subject" ; rdfs:comment "A trial participant." ; skos:altLabel "Patient", "Participant" .
+:AdverseEvent a owl:Class ; rdfs:label "Adverse event" ; rdfs:comment "An untoward medical occurrence in a subject during a study." ; skos:altLabel "AE", "Side effect" .
+:SeriousAdverseEvent a owl:Class ; rdfs:subClassOf :AdverseEvent ; rdfs:label "Serious adverse event" ; skos:altLabel "SAE" ;
+    rdfs:comment "An adverse event that is fatal, life-threatening, requires hospitalisation or is otherwise medically important (is_serious = Y)." .
+:LabResult a owl:Class ; rdfs:label "Lab result" ; rdfs:comment "A laboratory measurement for a subject at a visit." ; skos:altLabel "Laboratory test result" .
+:EfficacyResult a owl:Class ; rdfs:label "Efficacy result" ; rdfs:comment "A measurement of the primary efficacy endpoint at a visit." ; skos:altLabel "Endpoint assessment" .
+:ProtocolDeviation a owl:Class ; rdfs:label "Protocol deviation" ; rdfs:comment "A departure from the study protocol, categorised Major or Minor." .
+:MedDRATerm a owl:Class ; rdfs:label "MedDRA term" ; rdfs:comment "A MedDRA preferred term and its system organ class." .
+
+# ---------------------------------------------------------------- object properties
+:studiesCompound a owl:ObjectProperty ; rdfs:domain :Study ; rdfs:range :Compound ; rdfs:label "studies compound" .
+:hasArm a owl:ObjectProperty ; rdfs:domain :Study ; rdfs:range :StudyArm ; rdfs:label "has arm" .
+:armUsesCompound a owl:ObjectProperty ; rdfs:domain :StudyArm ; rdfs:range :Compound ; rdfs:label "arm uses compound" .
+:hasSite a owl:ObjectProperty ; rdfs:domain :Study ; rdfs:range :Site ; rdfs:label "has site" .
+:enrolledAtSite a owl:ObjectProperty ; rdfs:domain :Subject ; rdfs:range :Site ; rdfs:label "enrolled at site" .
+:participatesIn a owl:ObjectProperty ; rdfs:domain :Subject ; rdfs:range :Study ; rdfs:label "participates in" .
+:randomisedToArm a owl:ObjectProperty ; rdfs:domain :Subject ; rdfs:range :StudyArm ; rdfs:label "randomised to arm" .
+:experiencedBy a owl:ObjectProperty ; rdfs:domain :AdverseEvent ; rdfs:range :Subject ; rdfs:label "experienced by" .
+:codedAs a owl:ObjectProperty ; rdfs:domain :AdverseEvent ; rdfs:range :MedDRATerm ; rdfs:label "coded as" .
+:labOf a owl:ObjectProperty ; rdfs:domain :LabResult ; rdfs:range :Subject ; rdfs:label "lab of" .
+:efficacyOf a owl:ObjectProperty ; rdfs:domain :EfficacyResult ; rdfs:range :Subject ; rdfs:label "efficacy of" .
+:deviationOf a owl:ObjectProperty ; rdfs:domain :ProtocolDeviation ; rdfs:range :Subject ; rdfs:label "deviation of" .
+
+# ---------------------------------------------------------------- datatype properties (selection)
+:studyId a owl:DatatypeProperty ; rdfs:domain :Study ; rdfs:range xsd:string ; rdfs:label "study id" .
+:phase a owl:DatatypeProperty ; rdfs:domain :Study ; rdfs:range xsd:string ; rdfs:label "phase" .
+:therapeuticArea a owl:DatatypeProperty ; rdfs:domain :Study ; rdfs:range xsd:string ; rdfs:label "therapeutic area" .
+:indication a owl:DatatypeProperty ; rdfs:domain :Study ; rdfs:range xsd:string ; rdfs:label "indication" .
+:plannedEnrollment a owl:DatatypeProperty ; rdfs:domain :Study ; rdfs:range xsd:integer ; rdfs:label "planned enrollment" .
+:drugName a owl:DatatypeProperty ; rdfs:domain :Compound ; rdfs:range xsd:string ; rdfs:label "drug name" .
+:mechanismOfAction a owl:DatatypeProperty ; rdfs:domain :Compound ; rdfs:range xsd:string ; rdfs:label "mechanism of action" .
+:age a owl:DatatypeProperty ; rdfs:domain :Subject ; rdfs:range xsd:integer ; rdfs:label "age" .
+:sex a owl:DatatypeProperty ; rdfs:domain :Subject ; rdfs:range xsd:string ; rdfs:label "sex" .
+:preferredTerm a owl:DatatypeProperty ; rdfs:domain :AdverseEvent ; rdfs:range xsd:string ; rdfs:label "preferred term" .
+:severity a owl:DatatypeProperty ; rdfs:domain :AdverseEvent ; rdfs:range xsd:string ; rdfs:label "severity" .
+:isSerious a owl:DatatypeProperty ; rdfs:domain :AdverseEvent ; rdfs:range xsd:string ; rdfs:label "is serious" .
+:resultValue a owl:DatatypeProperty ; rdfs:domain :LabResult ; rdfs:range xsd:double ; rdfs:label "result value" .
+:efficacyValue a owl:DatatypeProperty ; rdfs:domain :EfficacyResult ; rdfs:range xsd:double ; rdfs:label "efficacy value" .

@@ -1,0 +1,42 @@
+site_id,study_id,site_name,country,city,principal_investigator,site_status,activation_date
+ST-001-S01,ST-001,Berlin Clinical Research Centre 1,Germany,Berlin,Dr. Jansen,Closed,2022-12-04
+ST-001-S02,ST-001,Warsaw Clinical Research Centre 2,Poland,Warsaw,Dr. Brandt,Closed,2022-12-16
+ST-001-S03,ST-001,Manchester Clinical Research Centre 3,United Kingdom,Manchester,Dr. Alder,Closed,2023-03-04
+ST-001-S04,ST-001,Madrid Clinical Research Centre 4,Spain,Madrid,Dr. Dumont,Closed,2023-02-06
+ST-001-S05,ST-001,Boston Clinical Research Centre 5,United States,Boston,Dr. Ito,Closed,2023-01-05
+ST-001-S06,ST-001,Hamburg Clinical Research Centre 6,Germany,Hamburg,Dr. Ito,Closed,2022-12-20
+ST-001-S07,ST-001,Krakow Clinical Research Centre 7,Poland,Krakow,Dr. Kowalski,Closed,2023-03-18
+ST-001-S08,ST-001,London Clinical Research Centre 8,United Kingdom,London,Dr. Lindqvist,Closed,2023-01-06
+ST-001-S09,ST-001,Barcelona Clinical Research Centre 9,Spain,Barcelona,Dr. Alder,Closed,2023-03-08
+ST-001-S10,ST-001,Houston Clinical Research Centre 10,United States,Houston,Dr. Grayson,Closed,2022-12-10
+ST-002-S01,ST-002,Munich Clinical Research Centre 1,Germany,Munich,Dr. Ito,Active,2024-01-15
+ST-002-S02,ST-002,Lyon Clinical Research Centre 2,France,Lyon,Dr. Kowalski,Active,2024-03-13
+ST-002-S03,ST-002,Osaka Clinical Research Centre 3,Japan,Osaka,Dr. Fontaine,Active,2024-04-10
+ST-002-S04,ST-002,San Diego Clinical Research Centre 4,United States,San Diego,Dr. Rossi,Active,2024-02-15
+ST-002-S05,ST-002,Hamburg Clinical Research Centre 5,Germany,Hamburg,Dr. Nakamura,Active,2024-04-10
+ST-002-S06,ST-002,Paris Clinical Research Centre 6,France,Paris,Dr. Eklund,Active,2024-04-24
+ST-002-S07,ST-002,Tokyo Clinical Research Centre 7,Japan,Tokyo,Dr. Tanaka,On hold,2024-03-28
+ST-003-S01,ST-003,Chicago Clinical Research Centre 1,United States,Chicago,Dr. Kowalski,Active,2023-11-22
+ST-003-S02,ST-003,Munich Clinical Research Centre 2,Germany,Munich,Dr. Jansen,Active,2024-01-14
+ST-003-S03,ST-003,Stockholm Clinical Research Centre 3,Sweden,Stockholm,Dr. Brandt,Active,2023-12-30
+ST-003-S04,ST-003,Sao Paulo Clinical Research Centre 4,Brazil,Sao Paulo,Dr. Kowalski,Active,2023-12-04
+ST-003-S05,ST-003,London Clinical Research Centre 5,United Kingdom,London,Dr. Nakamura,Active,2024-01-04
+ST-003-S06,ST-003,Montreal Clinical Research Centre 6,Canada,Montreal,Dr. Okafor,Active,2023-12-13
+ST-003-S07,ST-003,Chicago Clinical Research Centre 7,United States,Chicago,Dr. Tanaka,On hold,2023-11-28
+ST-003-S08,ST-003,Hamburg Clinical Research Centre 8,Germany,Hamburg,Dr. Lindqvist,Active,2024-01-31
+ST-003-S09,ST-003,Stockholm Clinical Research Centre 9,Sweden,Stockholm,Dr. Silva,Active,2024-01-18
+ST-003-S10,ST-003,Sao Paulo Clinical Research Centre 10,Brazil,Sao Paulo,Dr. Moreau,Active,2024-01-04
+ST-003-S11,ST-003,London Clinical Research Centre 11,United Kingdom,London,Dr. Rossi,Active,2024-01-21
+ST-003-S12,ST-003,Montreal Clinical Research Centre 12,Canada,Montreal,Dr. Petrov,Active,2024-01-25
+ST-003-S13,ST-003,San Diego Clinical Research Centre 13,United States,San Diego,Dr. Ito,Active,2023-11-19
+ST-003-S14,ST-003,Munich Clinical Research Centre 14,Germany,Munich,Dr. Petrov,On hold,2023-12-29
+ST-004-S01,ST-004,Chicago Clinical Research Centre 1,United States,Chicago,Dr. Castellan,Active,2025-05-04
+ST-004-S02,ST-004,London Clinical Research Centre 2,United Kingdom,London,Dr. Moreau,Active,2025-02-01
+ST-004-S03,ST-004,Utrecht Clinical Research Centre 3,Netherlands,Utrecht,Dr. Ulrich,Active,2025-02-28
+ST-004-S04,ST-004,Toronto Clinical Research Centre 4,Canada,Toronto,Dr. Eklund,Active,2025-02-08
+ST-004-S05,ST-004,Boston Clinical Research Centre 5,United States,Boston,Dr. Castellan,Active,2025-04-21
+ST-004-S06,ST-004,Edinburgh Clinical Research Centre 6,United Kingdom,Edinburgh,Dr. Tanaka,Active,2025-03-15
+ST-004-S07,ST-004,Utrecht Clinical Research Centre 7,Netherlands,Utrecht,Dr. Moreau,On hold,2025-05-02
+ST-004-S08,ST-004,Montreal Clinical Research Centre 8,Canada,Montreal,Dr. Varga,Active,2025-03-12
+ST-004-S09,ST-004,Boston Clinical Research Centre 9,United States,Boston,Dr. Lindqvist,Active,2025-03-22
+ST-005-S01,ST-005,Manchester Clinical Research Centre 1,United Kingdom,Manchester,Dr. Ulrich,Closed,2023-09-18

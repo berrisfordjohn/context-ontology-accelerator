@@ -1,0 +1,563 @@
+ae_id,subject_id,study_id,preferred_term,meddra_pt_code,system_organ_class,severity,is_serious,is_related_to_treatment,start_date,end_date,outcome
+AE-000001,ST-001-0001,ST-001,Atrial fibrillation,10003658,Cardiac disorders,Mild,N,N,2023-11-11,2023-11-26,Recovered/Resolved
+AE-000002,ST-001-0001,ST-001,Nausea,10028813,Gastrointestinal disorders,Moderate,N,N,2024-01-09,2024-01-18,Recovered/Resolved
+AE-000003,ST-001-0001,ST-001,Fatigue,10016256,General disorders and administration site conditions,Moderate,N,Y,2023-12-03,2023-12-05,Recovered/Resolved
+AE-000004,ST-001-0003,ST-001,Upper respiratory tract infection,10046306,Infections and infestations,Mild,N,N,2024-01-10,2024-01-15,Recovered/Resolved
+AE-000005,ST-001-0003,ST-001,Headache,10019211,Nervous system disorders,Mild,N,N,2023-12-15,2024-01-08,Recovered/Resolved
+AE-000006,ST-001-0006,ST-001,Diarrhoea,10012735,Gastrointestinal disorders,Moderate,N,N,2023-07-01,2023-07-18,Recovered/Resolved
+AE-000007,ST-001-0007,ST-001,Fatigue,10016256,General disorders and administration site conditions,Moderate,N,N,2023-09-28,2023-10-13,Recovered/Resolved
+AE-000008,ST-001-0007,ST-001,Alanine aminotransferase increased,10001551,Investigations,Mild,N,Y,2023-11-06,2023-11-17,Recovered/Resolved
+AE-000009,ST-001-0007,ST-001,Alanine aminotransferase increased,10001551,Investigations,Mild,N,Y,2023-11-05,2023-11-23,Recovered/Resolved
+AE-000010,ST-001-0007,ST-001,Nausea,10028813,Gastrointestinal disorders,Mild,N,N,2023-10-31,2023-11-03,Recovered/Resolved
+AE-000011,ST-001-0011,ST-001,Vomiting,10047700,Gastrointestinal disorders,Severe,Y,N,2023-09-24,2023-10-22,Recovered/Resolved
+AE-000012,ST-001-0011,ST-001,Pneumonia,10035664,Infections and infestations,Mild,N,N,2023-12-18,2024-01-10,Recovered/Resolved
+AE-000013,ST-001-0012,ST-001,Upper respiratory tract infection,10046306,Infections and infestations,Moderate,N,Y,2023-05-03,2023-05-27,Recovered/Resolved
+AE-000014,ST-001-0014,ST-001,Dizziness,10013573,Nervous system disorders,Mild,N,Y,2024-02-02,2024-02-08,Recovered/Resolved
+AE-000015,ST-001-0014,ST-001,Upper respiratory tract infection,10046306,Infections and infestations,Mild,Y,Y,2023-12-29,,Fatal
+AE-000016,ST-001-0018,ST-001,Alanine aminotransferase increased,10001551,Investigations,Mild,N,Y,2023-07-16,2023-07-26,Recovered/Resolved
+AE-000017,ST-001-0018,ST-001,Nausea,10028813,Gastrointestinal disorders,Mild,N,Y,2023-07-26,,Recovering/Resolving
+AE-000018,ST-001-0019,ST-001,Hypotension,10021097,Vascular disorders,Mild,N,Y,2023-10-15,2023-11-13,Recovered/Resolved
+AE-000019,ST-001-0019,ST-001,Nasopharyngitis,10028810,Infections and infestations,Severe,N,N,2023-09-11,2023-09-19,Recovered/Resolved
+AE-000020,ST-001-0021,ST-001,Upper respiratory tract infection,10046306,Infections and infestations,Mild,N,Y,2023-06-07,2023-06-11,Recovered/Resolved
+AE-000021,ST-001-0022,ST-001,Headache,10019211,Nervous system disorders,Mild,N,N,2023-10-05,2023-10-29,Recovered/Resolved
+AE-000022,ST-001-0023,ST-001,Fatigue,10016256,General disorders and administration site conditions,Severe,N,N,2023-04-14,2023-04-22,Recovered/Resolved
+AE-000023,ST-001-0023,ST-001,Dizziness,10013573,Nervous system disorders,Moderate,N,N,2023-07-30,2023-08-03,Recovered/Resolved
+AE-000024,ST-001-0023,ST-001,Nasopharyngitis,10028810,Infections and infestations,Moderate,N,Y,2023-03-13,2023-03-16,Recovered/Resolved
+AE-000025,ST-001-0023,ST-001,Dizziness,10013573,Nervous system disorders,Severe,N,Y,2023-05-15,2023-06-06,Recovered/Resolved
+AE-000026,ST-001-0024,ST-001,Headache,10019211,Nervous system disorders,Moderate,N,N,2024-01-16,,Not recovered/Not resolved
+AE-000027,ST-001-0024,ST-001,Rash,10037844,Skin and subcutaneous tissue disorders,Moderate,Y,Y,2023-12-03,2023-12-21,Recovered/Resolved
+AE-000028,ST-001-0024,ST-001,Dizziness,10013573,Nervous system disorders,Mild,N,N,2023-11-21,2023-11-23,Recovered/Resolved
+AE-000029,ST-001-0025,ST-001,Hypertension,10020772,Vascular disorders,Moderate,N,N,2023-07-07,,Recovering/Resolving
+AE-000030,ST-001-0032,ST-001,Upper respiratory tract infection,10046306,Infections and infestations,Mild,N,Y,2023-06-10,2023-06-24,Recovered/Resolved
+AE-000031,ST-001-0033,ST-001,Herpes zoster,10019974,Infections and infestations,Mild,N,Y,2023-07-18,2023-07-26,Recovered/Resolved
+AE-000032,ST-001-0033,ST-001,Alanine aminotransferase increased,10001551,Investigations,Severe,N,Y,2023-05-28,2023-06-23,Recovered/Resolved
+AE-000033,ST-001-0033,ST-001,Headache,10019211,Nervous system disorders,Moderate,N,N,2023-04-30,,Recovering/Resolving
+AE-000034,ST-001-0036,ST-001,Nausea,10028813,Gastrointestinal disorders,Mild,N,N,2023-09-18,2023-10-15,Recovered/Resolved
+AE-000035,ST-001-0038,ST-001,Diarrhoea,10012735,Gastrointestinal disorders,Mild,N,N,2023-07-08,,Not recovered/Not resolved
+AE-000036,ST-001-0038,ST-001,Nausea,10028813,Gastrointestinal disorders,Moderate,N,N,2023-08-02,2023-08-09,Recovered/Resolved
+AE-000037,ST-001-0039,ST-001,Hypotension,10021097,Vascular disorders,Moderate,N,Y,2023-06-29,2023-07-04,Recovered/Resolved
+AE-000038,ST-001-0039,ST-001,Hypotension,10021097,Vascular disorders,Moderate,N,N,2023-08-07,2023-08-16,Recovered/Resolved
+AE-000039,ST-001-0039,ST-001,Alanine aminotransferase increased,10001551,Investigations,Moderate,N,Y,2023-06-12,2023-07-05,Recovered/Resolved
+AE-000040,ST-001-0041,ST-001,Upper respiratory tract infection,10046306,Infections and infestations,Mild,N,Y,2023-06-20,,Recovering/Resolving
+AE-000041,ST-001-0044,ST-001,Upper respiratory tract infection,10046306,Infections and infestations,Mild,N,Y,2024-01-07,2024-01-26,Recovered/Resolved
+AE-000042,ST-001-0047,ST-001,Nasopharyngitis,10028810,Infections and infestations,Mild,N,N,2023-08-07,,Not recovered/Not resolved
+AE-000043,ST-001-0051,ST-001,Nausea,10028813,Gastrointestinal disorders,Mild,N,Y,2023-06-07,2023-06-11,Recovered/Resolved
+AE-000044,ST-001-0052,ST-001,Headache,10019211,Nervous system disorders,Moderate,N,Y,2023-08-28,2023-08-28,Recovered/Resolved
+AE-000045,ST-001-0052,ST-001,Hypertension,10020772,Vascular disorders,Moderate,N,N,2023-06-13,2023-07-08,Recovered/Resolved
+AE-000046,ST-001-0052,ST-001,Upper respiratory tract infection,10046306,Infections and infestations,Mild,N,Y,2023-05-26,2023-05-28,Recovered/Resolved
+AE-000047,ST-001-0052,ST-001,Upper respiratory tract infection,10046306,Infections and infestations,Moderate,N,Y,2023-08-15,,Recovering/Resolving
+AE-000048,ST-001-0053,ST-001,Hypotension,10021097,Vascular disorders,Mild,N,N,2023-09-07,,Recovering/Resolving
+AE-000049,ST-001-0054,ST-001,Fatigue,10016256,General disorders and administration site conditions,Moderate,N,N,2023-12-04,2023-12-19,Recovered/Resolved
+AE-000050,ST-001-0054,ST-001,Nausea,10028813,Gastrointestinal disorders,Severe,Y,Y,2023-11-21,,Not recovered/Not resolved
+AE-000051,ST-001-0055,ST-001,Vomiting,10047700,Gastrointestinal disorders,Mild,N,N,2023-06-10,2023-06-26,Recovered/Resolved
+AE-000052,ST-001-0056,ST-001,Nausea,10028813,Gastrointestinal disorders,Moderate,N,N,2023-08-13,2023-08-26,Recovered/Resolved
+AE-000053,ST-001-0056,ST-001,Vomiting,10047700,Gastrointestinal disorders,Moderate,N,N,2023-12-28,2024-01-02,Recovered/Resolved
+AE-000054,ST-001-0057,ST-001,Herpes zoster,10019974,Infections and infestations,Moderate,N,Y,2024-01-02,2024-01-29,Recovered/Resolved
+AE-000055,ST-001-0057,ST-001,Atrial fibrillation,10003658,Cardiac disorders,Moderate,N,N,2024-04-10,2024-05-06,Recovered/Resolved
+AE-000056,ST-001-0058,ST-001,Hypertension,10020772,Vascular disorders,Moderate,N,Y,2023-07-05,2023-07-10,Recovered/Resolved
+AE-000057,ST-001-0060,ST-001,Dizziness,10013573,Nervous system disorders,Mild,Y,N,2023-08-11,2023-08-26,Recovered/Resolved
+AE-000058,ST-001-0060,ST-001,Alanine aminotransferase increased,10001551,Investigations,Mild,N,Y,2023-07-13,2023-07-29,Recovered/Resolved
+AE-000059,ST-001-0060,ST-001,Fatigue,10016256,General disorders and administration site conditions,Moderate,N,Y,2023-08-01,2023-08-06,Recovered/Resolved
+AE-000060,ST-001-0063,ST-001,Vomiting,10047700,Gastrointestinal disorders,Mild,N,Y,2023-09-16,2023-10-05,Recovered/Resolved
+AE-000061,ST-001-0064,ST-001,Alanine aminotransferase increased,10001551,Investigations,Mild,N,Y,2023-09-01,2023-09-03,Recovered/Resolved
+AE-000062,ST-001-0065,ST-001,Herpes zoster,10019974,Infections and infestations,Moderate,N,Y,2023-09-09,2023-09-28,Recovered/Resolved
+AE-000063,ST-001-0065,ST-001,Headache,10019211,Nervous system disorders,Mild,N,Y,2024-01-22,2024-01-27,Recovered/Resolved
+AE-000064,ST-001-0065,ST-001,Upper respiratory tract infection,10046306,Infections and infestations,Moderate,N,Y,2023-10-28,,Not recovered/Not resolved
+AE-000065,ST-001-0065,ST-001,Herpes zoster,10019974,Infections and infestations,Mild,N,Y,2024-02-02,2024-02-16,Recovered/Resolved
+AE-000066,ST-001-0065,ST-001,Anaemia,10002272,Blood and lymphatic system disorders,Mild,N,N,2023-12-20,,Recovering/Resolving
+AE-000067,ST-001-0065,ST-001,Alanine aminotransferase increased,10001551,Investigations,Mild,N,N,2023-12-07,,Recovering/Resolving
+AE-000068,ST-001-0068,ST-001,Herpes zoster,10019974,Infections and infestations,Mild,N,N,2023-10-19,2023-11-02,Recovered/Resolved
+AE-000069,ST-001-0068,ST-001,Nasopharyngitis,10028810,Infections and infestations,Mild,N,N,2023-12-22,2023-12-29,Recovered/Resolved
+AE-000070,ST-001-0069,ST-001,Diarrhoea,10012735,Gastrointestinal disorders,Moderate,N,N,2024-04-25,,Not recovered/Not resolved
+AE-000071,ST-001-0069,ST-001,Dizziness,10013573,Nervous system disorders,Moderate,N,N,2024-03-24,2024-04-04,Recovered/Resolved
+AE-000072,ST-001-0069,ST-001,Dizziness,10013573,Nervous system disorders,Mild,N,N,2024-02-04,2024-02-07,Recovered/Resolved
+AE-000073,ST-001-0072,ST-001,Atrial fibrillation,10003658,Cardiac disorders,Moderate,N,N,2024-01-17,,Recovering/Resolving
+AE-000074,ST-001-0072,ST-001,Fatigue,10016256,General disorders and administration site conditions,Moderate,N,N,2024-02-26,2024-03-03,Recovered/Resolved
+AE-000075,ST-001-0072,ST-001,Diarrhoea,10012735,Gastrointestinal disorders,Moderate,N,N,2024-01-06,,Recovering/Resolving
+AE-000076,ST-001-0073,ST-001,Headache,10019211,Nervous system disorders,Mild,N,Y,2023-10-29,2023-11-06,Recovered/Resolved
+AE-000077,ST-001-0074,ST-001,Nausea,10028813,Gastrointestinal disorders,Mild,N,Y,2023-12-05,2023-12-27,Recovered/Resolved
+AE-000078,ST-001-0074,ST-001,Pneumonia,10035664,Infections and infestations,Mild,N,N,2024-01-03,2024-02-02,Recovered/Resolved
+AE-000079,ST-001-0074,ST-001,Dizziness,10013573,Nervous system disorders,Moderate,Y,N,2024-02-18,2024-03-13,Recovered/Resolved
+AE-000080,ST-001-0074,ST-001,Nausea,10028813,Gastrointestinal disorders,Severe,Y,Y,2023-11-25,2023-12-06,Recovered/Resolved
+AE-000081,ST-001-0075,ST-001,Headache,10019211,Nervous system disorders,Mild,N,N,2024-01-05,2024-01-17,Recovered/Resolved
+AE-000082,ST-001-0075,ST-001,Hypertension,10020772,Vascular disorders,Mild,N,Y,2024-01-19,,Recovering/Resolving
+AE-000083,ST-001-0079,ST-001,Herpes zoster,10019974,Infections and infestations,Moderate,N,Y,2023-08-22,2023-09-08,Recovered/Resolved
+AE-000084,ST-001-0080,ST-001,Neutropenia,10029354,Blood and lymphatic system disorders,Mild,N,N,2024-04-19,2024-04-26,Recovered/Resolved
+AE-000085,ST-001-0080,ST-001,Nausea,10028813,Gastrointestinal disorders,Mild,N,N,2023-11-12,2023-12-07,Recovered/Resolved
+AE-000086,ST-001-0082,ST-001,Nausea,10028813,Gastrointestinal disorders,Moderate,N,Y,2023-08-06,2023-08-24,Recovered/Resolved
+AE-000087,ST-001-0082,ST-001,Herpes zoster,10019974,Infections and infestations,Severe,N,Y,2023-09-06,,Recovering/Resolving
+AE-000088,ST-001-0083,ST-001,Vomiting,10047700,Gastrointestinal disorders,Mild,N,N,2023-06-21,2023-07-01,Recovered/Resolved
+AE-000089,ST-001-0083,ST-001,Diarrhoea,10012735,Gastrointestinal disorders,Mild,N,N,2023-06-16,2023-06-20,Recovered/Resolved
+AE-000090,ST-001-0085,ST-001,Neutropenia,10029354,Blood and lymphatic system disorders,Mild,N,N,2023-03-21,,Not recovered/Not resolved
+AE-000091,ST-001-0085,ST-001,Nasopharyngitis,10028810,Infections and infestations,Mild,N,N,2023-05-04,2023-05-07,Recovered/Resolved
+AE-000092,ST-001-0085,ST-001,Headache,10019211,Nervous system disorders,Moderate,N,N,2023-03-24,2023-03-31,Recovered/Resolved
+AE-000093,ST-001-0087,ST-001,Dizziness,10013573,Nervous system disorders,Mild,N,N,2023-11-29,2023-12-07,Recovered/Resolved
+AE-000094,ST-001-0088,ST-001,Alanine aminotransferase increased,10001551,Investigations,Moderate,N,Y,2023-12-16,2024-01-12,Recovered/Resolved
+AE-000095,ST-001-0088,ST-001,Diarrhoea,10012735,Gastrointestinal disorders,Moderate,N,Y,2023-10-30,,Recovering/Resolving
+AE-000096,ST-001-0088,ST-001,Alanine aminotransferase increased,10001551,Investigations,Mild,N,Y,2023-12-19,2024-01-10,Recovered/Resolved
+AE-000097,ST-001-0090,ST-001,Genital mycotic infection,10018087,Infections and infestations,Moderate,N,N,2023-11-27,2023-11-29,Recovered/Resolved
+AE-000098,ST-001-0090,ST-001,Herpes zoster,10019974,Infections and infestations,Mild,N,Y,2024-01-31,2024-02-06,Recovered/Resolved
+AE-000099,ST-001-0090,ST-001,Fatigue,10016256,General disorders and administration site conditions,Moderate,N,N,2024-02-18,2024-02-22,Recovered/Resolved
+AE-000100,ST-001-0091,ST-001,Fatigue,10016256,General disorders and administration site conditions,Moderate,N,Y,2024-02-11,2024-03-12,Recovered/Resolved
+AE-000101,ST-001-0091,ST-001,Fatigue,10016256,General disorders and administration site conditions,Moderate,N,N,2024-01-31,2024-02-02,Recovered/Resolved
+AE-000102,ST-001-0092,ST-001,Headache,10019211,Nervous system disorders,Moderate,N,N,2024-03-05,2024-03-25,Recovered/Resolved
+AE-000103,ST-001-0093,ST-001,Alanine aminotransferase increased,10001551,Investigations,Moderate,N,N,2023-08-09,2023-09-02,Recovered/Resolved
+AE-000104,ST-001-0094,ST-001,Upper respiratory tract infection,10046306,Infections and infestations,Moderate,N,Y,2023-12-23,2024-01-14,Recovered/Resolved
+AE-000105,ST-001-0094,ST-001,Rash,10037844,Skin and subcutaneous tissue disorders,Mild,Y,Y,2024-03-29,2024-03-30,Recovered/Resolved
+AE-000106,ST-001-0095,ST-001,Upper respiratory tract infection,10046306,Infections and infestations,Moderate,N,Y,2024-03-12,2024-03-16,Recovered/Resolved
+AE-000107,ST-001-0097,ST-001,Upper respiratory tract infection,10046306,Infections and infestations,Moderate,N,Y,2023-09-23,2023-10-02,Recovered/Resolved
+AE-000108,ST-001-0098,ST-001,Nasopharyngitis,10028810,Infections and infestations,Moderate,N,N,2023-11-14,2023-11-19,Recovered/Resolved
+AE-000109,ST-001-0098,ST-001,Diarrhoea,10012735,Gastrointestinal disorders,Mild,N,Y,2023-09-14,2023-09-20,Recovered/Resolved
+AE-000110,ST-001-0098,ST-001,Nasopharyngitis,10028810,Infections and infestations,Moderate,N,Y,2023-10-29,,Not recovered/Not resolved
+AE-000111,ST-001-0099,ST-001,Neutropenia,10029354,Blood and lymphatic system disorders,Mild,Y,Y,2023-10-07,2023-10-14,Recovered/Resolved
+AE-000112,ST-001-0102,ST-001,Confusional state,10010305,Psychiatric disorders,Severe,N,N,2023-06-14,2023-06-27,Recovered/Resolved
+AE-000113,ST-001-0104,ST-001,Headache,10019211,Nervous system disorders,Mild,N,N,2023-11-24,2023-12-23,Recovered/Resolved
+AE-000114,ST-001-0104,ST-001,Alanine aminotransferase increased,10001551,Investigations,Mild,N,N,2023-12-15,2023-12-17,Recovered/Resolved
+AE-000115,ST-001-0104,ST-001,Headache,10019211,Nervous system disorders,Mild,N,N,2024-01-25,2024-02-17,Recovered/Resolved
+AE-000116,ST-001-0108,ST-001,Nausea,10028813,Gastrointestinal disorders,Severe,N,N,2023-11-06,2023-11-20,Recovered/Resolved
+AE-000117,ST-001-0108,ST-001,Headache,10019211,Nervous system disorders,Moderate,N,Y,2023-10-27,2023-11-21,Recovered/Resolved
+AE-000118,ST-001-0109,ST-001,Vomiting,10047700,Gastrointestinal disorders,Moderate,N,Y,2023-12-11,2023-12-12,Recovered/Resolved
+AE-000119,ST-001-0109,ST-001,Rash,10037844,Skin and subcutaneous tissue disorders,Moderate,N,N,2023-11-14,2023-11-24,Recovered/Resolved
+AE-000120,ST-001-0109,ST-001,Confusional state,10010305,Psychiatric disorders,Mild,N,Y,2023-09-16,2023-09-23,Recovered/Resolved
+AE-000121,ST-001-0113,ST-001,Herpes zoster,10019974,Infections and infestations,Mild,N,N,2023-10-22,2023-10-24,Recovered/Resolved
+AE-000122,ST-001-0115,ST-001,Nasopharyngitis,10028810,Infections and infestations,Mild,N,N,2024-02-20,,Recovering/Resolving
+AE-000123,ST-001-0115,ST-001,Fatigue,10016256,General disorders and administration site conditions,Moderate,N,N,2024-02-16,2024-03-12,Recovered/Resolved
+AE-000124,ST-001-0116,ST-001,Headache,10019211,Nervous system disorders,Mild,N,N,2023-08-31,2023-09-27,Recovered/Resolved
+AE-000125,ST-001-0116,ST-001,Neutropenia,10029354,Blood and lymphatic system disorders,Mild,N,N,2023-07-26,,Not recovered/Not resolved
+AE-000126,ST-001-0118,ST-001,Genital mycotic infection,10018087,Infections and infestations,Severe,Y,Y,2023-08-17,2023-09-14,Recovered/Resolved
+AE-000127,ST-001-0118,ST-001,Upper respiratory tract infection,10046306,Infections and infestations,Mild,N,Y,2023-08-22,2023-09-08,Recovered/Resolved
+AE-000128,ST-001-0120,ST-001,Alanine aminotransferase increased,10001551,Investigations,Moderate,N,Y,2023-10-11,2023-10-21,Recovered/Resolved
+AE-000129,ST-001-0120,ST-001,Vomiting,10047700,Gastrointestinal disorders,Mild,N,Y,2023-09-27,2023-10-02,Recovered/Resolved
+AE-000130,ST-001-0121,ST-001,Fatigue,10016256,General disorders and administration site conditions,Mild,N,N,2023-05-22,2023-06-17,Recovered/Resolved
+AE-000131,ST-001-0124,ST-001,Rash,10037844,Skin and subcutaneous tissue disorders,Severe,N,Y,2023-09-05,2023-09-19,Recovered/Resolved
+AE-000132,ST-001-0124,ST-001,Alanine aminotransferase increased,10001551,Investigations,Mild,N,Y,2023-06-12,2023-06-26,Recovered/Resolved
+AE-000133,ST-001-0124,ST-001,Nausea,10028813,Gastrointestinal disorders,Mild,N,Y,2023-06-27,2023-07-22,Recovered/Resolved
+AE-000134,ST-001-0126,ST-001,Nausea,10028813,Gastrointestinal disorders,Mild,N,N,2023-10-20,2023-11-17,Recovered/Resolved
+AE-000135,ST-001-0126,ST-001,Pneumonia,10035664,Infections and infestations,Moderate,N,N,2023-11-17,2023-12-03,Recovered/Resolved
+AE-000136,ST-001-0126,ST-001,Alanine aminotransferase increased,10001551,Investigations,Moderate,N,N,2023-09-07,2023-09-15,Recovered/Resolved
+AE-000137,ST-001-0130,ST-001,Upper respiratory tract infection,10046306,Infections and infestations,Mild,N,N,2024-01-08,2024-01-11,Recovered/Resolved
+AE-000138,ST-001-0134,ST-001,Headache,10019211,Nervous system disorders,Mild,N,Y,2024-02-07,2024-02-18,Recovered/Resolved
+AE-000139,ST-001-0134,ST-001,Headache,10019211,Nervous system disorders,Moderate,N,Y,2024-05-26,2024-06-03,Recovered/Resolved
+AE-000140,ST-001-0134,ST-001,Headache,10019211,Nervous system disorders,Mild,N,Y,2024-04-11,2024-04-28,Recovered/Resolved
+AE-000141,ST-001-0134,ST-001,Diarrhoea,10012735,Gastrointestinal disorders,Moderate,N,N,2024-02-19,2024-03-12,Recovered/Resolved
+AE-000142,ST-001-0134,ST-001,Herpes zoster,10019974,Infections and infestations,Mild,N,N,2024-03-18,2024-04-11,Recovered/Resolved
+AE-000143,ST-001-0134,ST-001,Headache,10019211,Nervous system disorders,Moderate,N,Y,2024-05-25,2024-06-03,Recovered/Resolved
+AE-000144,ST-001-0135,ST-001,Headache,10019211,Nervous system disorders,Mild,N,Y,2023-11-19,2023-12-08,Recovered/Resolved
+AE-000145,ST-001-0140,ST-001,Hypertension,10020772,Vascular disorders,Mild,N,N,2023-11-01,2023-11-09,Recovered/Resolved
+AE-000146,ST-001-0140,ST-001,Diarrhoea,10012735,Gastrointestinal disorders,Moderate,N,N,2023-08-27,2023-09-08,Recovered/Resolved
+AE-000147,ST-001-0140,ST-001,Atrial fibrillation,10003658,Cardiac disorders,Moderate,N,Y,2023-10-07,2023-10-23,Recovered/Resolved
+AE-000148,ST-001-0140,ST-001,Upper respiratory tract infection,10046306,Infections and infestations,Moderate,N,Y,2023-10-23,,Not recovered/Not resolved
+AE-000149,ST-001-0140,ST-001,Nasopharyngitis,10028810,Infections and infestations,Moderate,N,N,2023-08-24,2023-09-23,Recovered/Resolved
+AE-000150,ST-001-0141,ST-001,Herpes zoster,10019974,Infections and infestations,Mild,N,Y,2024-03-06,2024-03-29,Recovered/Resolved
+AE-000151,ST-001-0141,ST-001,Herpes zoster,10019974,Infections and infestations,Mild,N,Y,2023-12-21,2023-12-29,Recovered/Resolved
+AE-000152,ST-001-0142,ST-001,Neutropenia,10029354,Blood and lymphatic system disorders,Moderate,N,N,2023-02-23,2023-03-12,Recovered/Resolved
+AE-000153,ST-001-0143,ST-001,Confusional state,10010305,Psychiatric disorders,Mild,N,Y,2024-02-18,,Not recovered/Not resolved
+AE-000154,ST-001-0147,ST-001,Pneumonia,10035664,Infections and infestations,Mild,Y,N,2023-04-20,,Not recovered/Not resolved
+AE-000155,ST-001-0149,ST-001,Rash,10037844,Skin and subcutaneous tissue disorders,Moderate,N,N,2023-12-31,2024-01-20,Recovered/Resolved
+AE-000156,ST-001-0149,ST-001,Nasopharyngitis,10028810,Infections and infestations,Moderate,N,N,2024-01-26,2024-02-08,Recovered/Resolved
+AE-000157,ST-001-0149,ST-001,Alanine aminotransferase increased,10001551,Investigations,Mild,N,Y,2023-11-13,2023-11-30,Recovered/Resolved
+AE-000158,ST-001-0149,ST-001,Nausea,10028813,Gastrointestinal disorders,Mild,N,Y,2023-10-24,,Recovering/Resolving
+AE-000159,ST-002-0001,ST-002,Atrial fibrillation,10003658,Cardiac disorders,Mild,Y,Y,2024-12-06,2024-12-22,Recovered/Resolved
+AE-000160,ST-002-0002,ST-002,Rash,10037844,Skin and subcutaneous tissue disorders,Mild,Y,Y,2024-09-09,,Recovering/Resolving
+AE-000161,ST-002-0002,ST-002,Diarrhoea,10012735,Gastrointestinal disorders,Mild,N,Y,2024-12-02,,Recovering/Resolving
+AE-000162,ST-002-0002,ST-002,Nausea,10028813,Gastrointestinal disorders,Mild,N,Y,2024-10-29,2024-11-28,Recovered/Resolved
+AE-000163,ST-002-0002,ST-002,Nausea,10028813,Gastrointestinal disorders,Severe,N,Y,2024-09-11,,Not recovered/Not resolved
+AE-000164,ST-002-0002,ST-002,Rash,10037844,Skin and subcutaneous tissue disorders,Mild,N,Y,2024-12-24,2024-12-31,Recovered/Resolved
+AE-000165,ST-002-0004,ST-002,Headache,10019211,Nervous system disorders,Moderate,N,N,2025-08-05,2025-08-06,Recovered/Resolved
+AE-000166,ST-002-0004,ST-002,Diarrhoea,10012735,Gastrointestinal disorders,Moderate,N,N,2025-05-31,2025-06-04,Recovered/Resolved
+AE-000167,ST-002-0006,ST-002,Headache,10019211,Nervous system disorders,Mild,N,N,2025-02-04,2025-02-10,Recovered/Resolved
+AE-000168,ST-002-0006,ST-002,Fatigue,10016256,General disorders and administration site conditions,Mild,N,N,2025-06-15,2025-07-10,Recovered/Resolved
+AE-000169,ST-002-0007,ST-002,Neutropenia,10029354,Blood and lymphatic system disorders,Mild,N,Y,2025-01-12,2025-01-26,Recovered/Resolved
+AE-000170,ST-002-0007,ST-002,Upper respiratory tract infection,10046306,Infections and infestations,Mild,N,Y,2025-03-12,2025-03-17,Recovered/Resolved
+AE-000171,ST-002-0007,ST-002,Neutropenia,10029354,Blood and lymphatic system disorders,Mild,N,N,2025-01-20,2025-02-05,Recovered/Resolved
+AE-000172,ST-002-0007,ST-002,Nausea,10028813,Gastrointestinal disorders,Moderate,N,Y,2025-02-17,2025-03-14,Recovered/Resolved
+AE-000173,ST-002-0007,ST-002,Nasopharyngitis,10028810,Infections and infestations,Moderate,N,N,2025-01-24,2025-02-10,Recovered/Resolved
+AE-000174,ST-002-0008,ST-002,Alanine aminotransferase increased,10001551,Investigations,Mild,N,Y,2024-11-16,2024-12-12,Recovered/Resolved
+AE-000175,ST-002-0009,ST-002,Dizziness,10013573,Nervous system disorders,Moderate,N,Y,2025-11-20,2025-12-08,Recovered/Resolved
+AE-000176,ST-002-0010,ST-002,Headache,10019211,Nervous system disorders,Severe,N,N,2025-02-06,2025-02-20,Recovered/Resolved
+AE-000177,ST-002-0010,ST-002,Upper respiratory tract infection,10046306,Infections and infestations,Mild,N,Y,2025-04-23,2025-04-29,Recovered/Resolved
+AE-000178,ST-002-0012,ST-002,Rash,10037844,Skin and subcutaneous tissue disorders,Mild,N,Y,2025-10-12,,Recovering/Resolving
+AE-000179,ST-002-0015,ST-002,Fatigue,10016256,General disorders and administration site conditions,Moderate,N,Y,2025-12-31,2026-01-29,Recovered/Resolved
+AE-000180,ST-002-0015,ST-002,Neutropenia,10029354,Blood and lymphatic system disorders,Moderate,N,N,2024-08-25,2024-09-15,Recovered/Resolved
+AE-000181,ST-002-0015,ST-002,Neutropenia,10029354,Blood and lymphatic system disorders,Mild,N,Y,2025-11-22,2025-12-19,Recovered/Resolved
+AE-000182,ST-002-0015,ST-002,Anaemia,10002272,Blood and lymphatic system disorders,Mild,N,Y,2025-06-22,2025-07-01,Recovered/Resolved
+AE-000183,ST-002-0016,ST-002,Neutropenia,10029354,Blood and lymphatic system disorders,Mild,N,Y,2025-05-26,2025-06-12,Recovered/Resolved
+AE-000184,ST-002-0016,ST-002,Fatigue,10016256,General disorders and administration site conditions,Moderate,N,N,2025-06-21,2025-06-23,Recovered/Resolved
+AE-000185,ST-002-0016,ST-002,Upper respiratory tract infection,10046306,Infections and infestations,Moderate,N,N,2024-12-22,2024-12-28,Recovered/Resolved
+AE-000186,ST-002-0016,ST-002,Anaemia,10002272,Blood and lymphatic system disorders,Mild,N,N,2025-10-11,2025-11-10,Recovered/Resolved
+AE-000187,ST-002-0019,ST-002,Upper respiratory tract infection,10046306,Infections and infestations,Mild,N,Y,2026-01-10,2026-01-25,Recovered/Resolved
+AE-000188,ST-002-0020,ST-002,Diarrhoea,10012735,Gastrointestinal disorders,Mild,N,N,2024-12-25,,Recovering/Resolving
+AE-000189,ST-002-0020,ST-002,Neutropenia,10029354,Blood and lymphatic system disorders,Mild,N,Y,2025-12-03,,Not recovered/Not resolved
+AE-000190,ST-002-0020,ST-002,Neutropenia,10029354,Blood and lymphatic system disorders,Mild,N,Y,2024-10-06,2024-10-15,Recovered/Resolved
+AE-000191,ST-002-0020,ST-002,Rash,10037844,Skin and subcutaneous tissue disorders,Moderate,N,N,2024-11-05,2024-11-20,Recovered/Resolved
+AE-000192,ST-002-0020,ST-002,Atrial fibrillation,10003658,Cardiac disorders,Mild,N,Y,2025-03-08,2025-03-18,Recovered/Resolved
+AE-000193,ST-002-0020,ST-002,Headache,10019211,Nervous system disorders,Moderate,N,N,2025-12-11,2025-12-21,Recovered/Resolved
+AE-000194,ST-002-0022,ST-002,Fatigue,10016256,General disorders and administration site conditions,Moderate,N,N,2025-07-14,2025-08-12,Recovered/Resolved
+AE-000195,ST-002-0023,ST-002,Nausea,10028813,Gastrointestinal disorders,Moderate,N,Y,2025-05-16,2025-05-29,Recovered/Resolved
+AE-000196,ST-002-0023,ST-002,Hypotension,10021097,Vascular disorders,Moderate,N,N,2025-07-19,,Not recovered/Not resolved
+AE-000197,ST-002-0023,ST-002,Alanine aminotransferase increased,10001551,Investigations,Moderate,N,Y,2026-01-27,2026-01-31,Recovered/Resolved
+AE-000198,ST-002-0023,ST-002,Fatigue,10016256,General disorders and administration site conditions,Mild,N,N,2024-09-30,,Not recovered/Not resolved
+AE-000199,ST-002-0024,ST-002,Atrial fibrillation,10003658,Cardiac disorders,Mild,N,N,2025-02-14,2025-02-23,Recovered/Resolved
+AE-000200,ST-002-0024,ST-002,Nausea,10028813,Gastrointestinal disorders,Severe,N,Y,2025-11-05,,Not recovered/Not resolved
+AE-000201,ST-002-0025,ST-002,Neutropenia,10029354,Blood and lymphatic system disorders,Mild,N,N,2025-07-21,2025-07-29,Recovered/Resolved
+AE-000202,ST-002-0025,ST-002,Neutropenia,10029354,Blood and lymphatic system disorders,Mild,N,Y,2025-02-22,,Recovering/Resolving
+AE-000203,ST-002-0025,ST-002,Atrial fibrillation,10003658,Cardiac disorders,Mild,Y,N,2025-08-11,,Not recovered/Not resolved
+AE-000204,ST-002-0026,ST-002,Alanine aminotransferase increased,10001551,Investigations,Moderate,N,Y,2025-11-07,,Recovering/Resolving
+AE-000205,ST-002-0026,ST-002,Nausea,10028813,Gastrointestinal disorders,Mild,N,N,2025-11-19,2025-12-06,Recovered/Resolved
+AE-000206,ST-002-0026,ST-002,Fatigue,10016256,General disorders and administration site conditions,Mild,N,Y,2025-02-07,,Not recovered/Not resolved
+AE-000207,ST-002-0028,ST-002,Rash,10037844,Skin and subcutaneous tissue disorders,Mild,N,Y,2024-09-10,2024-09-29,Recovered/Resolved
+AE-000208,ST-002-0028,ST-002,Rash,10037844,Skin and subcutaneous tissue disorders,Mild,N,Y,2024-09-22,2024-09-26,Recovered/Resolved
+AE-000209,ST-002-0028,ST-002,Fatigue,10016256,General disorders and administration site conditions,Severe,N,Y,2024-12-07,2025-01-06,Recovered/Resolved
+AE-000210,ST-002-0028,ST-002,Hypertension,10020772,Vascular disorders,Moderate,N,N,2025-02-07,2025-02-15,Recovered/Resolved
+AE-000211,ST-002-0029,ST-002,Neutropenia,10029354,Blood and lymphatic system disorders,Mild,N,Y,2025-04-25,2025-05-17,Recovered/Resolved
+AE-000212,ST-002-0029,ST-002,Alanine aminotransferase increased,10001551,Investigations,Mild,N,N,2025-12-22,2025-12-29,Recovered/Resolved
+AE-000213,ST-002-0029,ST-002,Dizziness,10013573,Nervous system disorders,Mild,Y,Y,2025-10-20,2025-10-29,Recovered/Resolved
+AE-000214,ST-002-0032,ST-002,Neutropenia,10029354,Blood and lymphatic system disorders,Severe,Y,Y,2024-12-04,2024-12-22,Recovered/Resolved
+AE-000215,ST-002-0032,ST-002,Anaemia,10002272,Blood and lymphatic system disorders,Mild,N,Y,2024-12-03,2024-12-15,Recovered/Resolved
+AE-000216,ST-002-0032,ST-002,Alanine aminotransferase increased,10001551,Investigations,Severe,N,Y,2024-11-26,2024-11-27,Recovered/Resolved
+AE-000217,ST-002-0032,ST-002,Anaemia,10002272,Blood and lymphatic system disorders,Moderate,N,N,2024-12-01,2024-12-19,Recovered/Resolved
+AE-000218,ST-002-0032,ST-002,Vomiting,10047700,Gastrointestinal disorders,Mild,N,Y,2024-12-11,2024-12-18,Recovered/Resolved
+AE-000219,ST-002-0032,ST-002,Nausea,10028813,Gastrointestinal disorders,Moderate,N,Y,2024-12-17,2024-12-24,Recovered/Resolved
+AE-000220,ST-002-0034,ST-002,Neutropenia,10029354,Blood and lymphatic system disorders,Mild,N,Y,2025-09-16,2025-09-26,Recovered/Resolved
+AE-000221,ST-002-0034,ST-002,Neutropenia,10029354,Blood and lymphatic system disorders,Moderate,Y,Y,2025-09-20,2025-10-17,Recovered/Resolved
+AE-000222,ST-002-0034,ST-002,Diarrhoea,10012735,Gastrointestinal disorders,Mild,N,N,2024-11-28,,Not recovered/Not resolved
+AE-000223,ST-002-0034,ST-002,Neutropenia,10029354,Blood and lymphatic system disorders,Mild,N,Y,2025-01-29,2025-02-15,Recovered/Resolved
+AE-000224,ST-002-0034,ST-002,Fatigue,10016256,General disorders and administration site conditions,Mild,N,N,2025-07-08,2025-07-23,Recovered/Resolved
+AE-000225,ST-002-0034,ST-002,Neutropenia,10029354,Blood and lymphatic system disorders,Mild,N,N,2025-07-26,2025-08-04,Recovered/Resolved
+AE-000226,ST-002-0035,ST-002,Vomiting,10047700,Gastrointestinal disorders,Mild,N,N,2025-03-05,2025-03-16,Recovered/Resolved
+AE-000227,ST-002-0035,ST-002,Fatigue,10016256,General disorders and administration site conditions,Mild,N,Y,2025-03-01,2025-03-03,Recovered/Resolved
+AE-000228,ST-002-0037,ST-002,Fatigue,10016256,General disorders and administration site conditions,Moderate,N,Y,2025-10-07,,Recovering/Resolving
+AE-000229,ST-002-0037,ST-002,Headache,10019211,Nervous system disorders,Mild,N,N,2025-03-21,2025-04-17,Recovered/Resolved
+AE-000230,ST-002-0037,ST-002,Nasopharyngitis,10028810,Infections and infestations,Moderate,N,N,2025-08-31,,Recovering/Resolving
+AE-000231,ST-002-0037,ST-002,Fatigue,10016256,General disorders and administration site conditions,Mild,N,Y,2024-08-16,2024-09-04,Recovered/Resolved
+AE-000232,ST-002-0038,ST-002,Fatigue,10016256,General disorders and administration site conditions,Moderate,N,N,2024-09-28,2024-10-15,Recovered/Resolved
+AE-000233,ST-002-0038,ST-002,Anaemia,10002272,Blood and lymphatic system disorders,Mild,N,Y,2025-06-10,2025-06-24,Recovered/Resolved
+AE-000234,ST-002-0038,ST-002,Nausea,10028813,Gastrointestinal disorders,Severe,Y,Y,2025-05-11,2025-06-05,Recovered/Resolved
+AE-000235,ST-002-0038,ST-002,Neutropenia,10029354,Blood and lymphatic system disorders,Mild,Y,Y,2024-08-17,2024-09-09,Recovered/Resolved
+AE-000236,ST-002-0038,ST-002,Fatigue,10016256,General disorders and administration site conditions,Severe,N,N,2025-08-06,2025-08-10,Recovered/Resolved
+AE-000237,ST-002-0039,ST-002,Vomiting,10047700,Gastrointestinal disorders,Mild,N,Y,2025-01-16,2025-01-29,Recovered/Resolved
+AE-000238,ST-002-0039,ST-002,Nasopharyngitis,10028810,Infections and infestations,Moderate,N,Y,2025-01-25,,Recovering/Resolving
+AE-000239,ST-002-0039,ST-002,Rash,10037844,Skin and subcutaneous tissue disorders,Mild,N,Y,2024-12-21,2025-01-03,Recovered/Resolved
+AE-000240,ST-002-0039,ST-002,Alanine aminotransferase increased,10001551,Investigations,Moderate,N,N,2024-12-12,2025-01-04,Recovered/Resolved
+AE-000241,ST-002-0040,ST-002,Headache,10019211,Nervous system disorders,Severe,N,N,2025-01-10,2025-02-06,Recovered/Resolved
+AE-000242,ST-002-0040,ST-002,Rash,10037844,Skin and subcutaneous tissue disorders,Mild,N,Y,2024-11-01,2024-11-23,Recovered/Resolved
+AE-000243,ST-002-0041,ST-002,Upper respiratory tract infection,10046306,Infections and infestations,Moderate,N,Y,2024-10-29,2024-10-30,Recovered/Resolved
+AE-000244,ST-002-0041,ST-002,Neutropenia,10029354,Blood and lymphatic system disorders,Moderate,N,Y,2025-02-04,2025-02-17,Recovered/Resolved
+AE-000245,ST-002-0041,ST-002,Neutropenia,10029354,Blood and lymphatic system disorders,Mild,N,Y,2025-10-07,2025-11-01,Recovered/Resolved
+AE-000246,ST-002-0042,ST-002,Neutropenia,10029354,Blood and lymphatic system disorders,Moderate,N,N,2024-10-16,,Not recovered/Not resolved
+AE-000247,ST-002-0042,ST-002,Neutropenia,10029354,Blood and lymphatic system disorders,Mild,N,Y,2024-07-06,2024-07-26,Recovered/Resolved
+AE-000248,ST-002-0042,ST-002,Upper respiratory tract infection,10046306,Infections and infestations,Moderate,N,Y,2024-09-17,2024-10-13,Recovered/Resolved
+AE-000249,ST-002-0042,ST-002,Upper respiratory tract infection,10046306,Infections and infestations,Severe,N,Y,2024-09-05,2024-09-13,Recovered/Resolved
+AE-000250,ST-002-0043,ST-002,Dizziness,10013573,Nervous system disorders,Moderate,N,N,2024-10-19,2024-10-23,Recovered/Resolved
+AE-000251,ST-002-0043,ST-002,Pneumonia,10035664,Infections and infestations,Mild,Y,Y,2024-11-20,,Not recovered/Not resolved
+AE-000252,ST-002-0043,ST-002,Diarrhoea,10012735,Gastrointestinal disorders,Mild,N,N,2024-10-31,2024-11-11,Recovered/Resolved
+AE-000253,ST-002-0044,ST-002,Vomiting,10047700,Gastrointestinal disorders,Moderate,N,Y,2026-01-16,2026-01-30,Recovered/Resolved
+AE-000254,ST-002-0046,ST-002,Neutropenia,10029354,Blood and lymphatic system disorders,Mild,N,N,2025-07-10,2025-07-15,Recovered/Resolved
+AE-000255,ST-002-0046,ST-002,Rash,10037844,Skin and subcutaneous tissue disorders,Moderate,N,N,2025-09-23,,Recovering/Resolving
+AE-000256,ST-002-0046,ST-002,Nausea,10028813,Gastrointestinal disorders,Moderate,N,Y,2025-04-23,2025-05-10,Recovered/Resolved
+AE-000257,ST-002-0047,ST-002,Diarrhoea,10012735,Gastrointestinal disorders,Moderate,N,N,2025-04-30,2025-05-19,Recovered/Resolved
+AE-000258,ST-002-0047,ST-002,Atrial fibrillation,10003658,Cardiac disorders,Mild,N,Y,2025-02-06,,Not recovered/Not resolved
+AE-000259,ST-002-0048,ST-002,Pneumonia,10035664,Infections and infestations,Moderate,N,N,2024-10-07,2024-10-18,Recovered/Resolved
+AE-000260,ST-002-0049,ST-002,Nausea,10028813,Gastrointestinal disorders,Mild,N,Y,2025-02-19,2025-03-07,Recovered/Resolved
+AE-000261,ST-002-0049,ST-002,Neutropenia,10029354,Blood and lymphatic system disorders,Moderate,N,Y,2025-02-25,2025-03-14,Recovered/Resolved
+AE-000262,ST-002-0049,ST-002,Headache,10019211,Nervous system disorders,Mild,N,Y,2025-01-23,2025-02-01,Recovered/Resolved
+AE-000263,ST-002-0049,ST-002,Neutropenia,10029354,Blood and lymphatic system disorders,Mild,N,N,2025-03-16,2025-03-21,Recovered/Resolved
+AE-000264,ST-002-0050,ST-002,Anaemia,10002272,Blood and lymphatic system disorders,Moderate,N,Y,2025-03-20,,Not recovered/Not resolved
+AE-000265,ST-002-0051,ST-002,Diarrhoea,10012735,Gastrointestinal disorders,Severe,N,N,2025-09-03,2025-09-14,Recovered/Resolved
+AE-000266,ST-002-0051,ST-002,Hypotension,10021097,Vascular disorders,Moderate,Y,N,2025-10-29,2025-11-15,Recovered/Resolved
+AE-000267,ST-002-0051,ST-002,Alanine aminotransferase increased,10001551,Investigations,Severe,N,Y,2025-04-23,,Not recovered/Not resolved
+AE-000268,ST-002-0051,ST-002,Vomiting,10047700,Gastrointestinal disorders,Moderate,N,N,2024-10-14,2024-10-20,Recovered/Resolved
+AE-000269,ST-002-0051,ST-002,Vomiting,10047700,Gastrointestinal disorders,Moderate,N,Y,2024-10-07,2024-11-02,Recovered/Resolved
+AE-000270,ST-002-0051,ST-002,Diarrhoea,10012735,Gastrointestinal disorders,Mild,N,Y,2025-09-23,2025-09-26,Recovered/Resolved
+AE-000271,ST-002-0053,ST-002,Headache,10019211,Nervous system disorders,Severe,N,N,2024-11-09,2024-11-20,Recovered/Resolved
+AE-000272,ST-002-0059,ST-002,Rash,10037844,Skin and subcutaneous tissue disorders,Moderate,Y,Y,2024-08-20,2024-08-30,Recovered/Resolved
+AE-000273,ST-002-0064,ST-002,Neutropenia,10029354,Blood and lymphatic system disorders,Moderate,N,Y,2025-01-30,,Recovering/Resolving
+AE-000274,ST-002-0064,ST-002,Headache,10019211,Nervous system disorders,Moderate,N,N,2024-10-25,2024-11-02,Recovered/Resolved
+AE-000275,ST-002-0066,ST-002,Neutropenia,10029354,Blood and lymphatic system disorders,Mild,N,N,2025-10-21,2025-11-01,Recovered/Resolved
+AE-000276,ST-002-0069,ST-002,Neutropenia,10029354,Blood and lymphatic system disorders,Moderate,N,Y,2025-10-23,,Not recovered/Not resolved
+AE-000277,ST-002-0075,ST-002,Alanine aminotransferase increased,10001551,Investigations,Mild,N,N,2025-01-09,2025-01-12,Recovered/Resolved
+AE-000278,ST-002-0075,ST-002,Alanine aminotransferase increased,10001551,Investigations,Severe,N,N,2025-01-02,2025-01-08,Recovered/Resolved
+AE-000279,ST-002-0076,ST-002,Confusional state,10010305,Psychiatric disorders,Mild,N,N,2024-11-13,2024-11-22,Recovered/Resolved
+AE-000280,ST-002-0076,ST-002,Confusional state,10010305,Psychiatric disorders,Mild,N,Y,2025-01-25,,Recovering/Resolving
+AE-000281,ST-002-0076,ST-002,Rash,10037844,Skin and subcutaneous tissue disorders,Mild,N,Y,2025-03-22,2025-03-27,Recovered/Resolved
+AE-000282,ST-002-0077,ST-002,Upper respiratory tract infection,10046306,Infections and infestations,Severe,N,Y,2025-03-22,,Recovering/Resolving
+AE-000283,ST-002-0078,ST-002,Upper respiratory tract infection,10046306,Infections and infestations,Moderate,N,N,2025-04-17,2025-05-16,Recovered/Resolved
+AE-000284,ST-002-0078,ST-002,Pneumonia,10035664,Infections and infestations,Moderate,Y,Y,2025-03-23,2025-04-09,Recovered/Resolved
+AE-000285,ST-002-0078,ST-002,Hypertension,10020772,Vascular disorders,Mild,N,Y,2025-01-12,2025-02-06,Recovered/Resolved
+AE-000286,ST-002-0078,ST-002,Nausea,10028813,Gastrointestinal disorders,Moderate,N,Y,2025-02-24,2025-03-17,Recovered/Resolved
+AE-000287,ST-002-0078,ST-002,Nasopharyngitis,10028810,Infections and infestations,Mild,N,Y,2025-06-19,2025-07-05,Recovered/Resolved
+AE-000288,ST-002-0078,ST-002,Nausea,10028813,Gastrointestinal disorders,Mild,N,Y,2025-06-13,2025-07-01,Recovered/Resolved
+AE-000289,ST-002-0079,ST-002,Rash,10037844,Skin and subcutaneous tissue disorders,Mild,N,N,2025-02-27,2025-03-27,Recovered/Resolved
+AE-000290,ST-002-0080,ST-002,Fatigue,10016256,General disorders and administration site conditions,Moderate,N,N,2025-04-19,2025-04-20,Recovered/Resolved
+AE-000291,ST-003-0002,ST-003,Anaemia,10002272,Blood and lymphatic system disorders,Severe,Y,N,2024-03-29,2024-03-30,Recovered/Resolved
+AE-000292,ST-003-0003,ST-003,Rash,10037844,Skin and subcutaneous tissue disorders,Moderate,N,N,2026-01-24,,Not recovered/Not resolved
+AE-000293,ST-003-0003,ST-003,Hypotension,10021097,Vascular disorders,Mild,N,Y,2025-07-19,2025-07-27,Recovered/Resolved
+AE-000294,ST-003-0003,ST-003,Vomiting,10047700,Gastrointestinal disorders,Mild,N,N,2024-12-11,2024-12-31,Recovered/Resolved
+AE-000295,ST-003-0003,ST-003,Nausea,10028813,Gastrointestinal disorders,Mild,N,N,2025-06-07,,Not recovered/Not resolved
+AE-000296,ST-003-0003,ST-003,Nasopharyngitis,10028810,Infections and infestations,Severe,N,Y,2026-01-15,2026-01-31,Recovered/Resolved
+AE-000297,ST-003-0003,ST-003,Hypotension,10021097,Vascular disorders,Mild,Y,Y,2025-12-29,2026-01-16,Recovered/Resolved
+AE-000298,ST-003-0008,ST-003,Rash,10037844,Skin and subcutaneous tissue disorders,Mild,N,Y,2025-06-07,2025-07-01,Recovered/Resolved
+AE-000299,ST-003-0008,ST-003,Fatigue,10016256,General disorders and administration site conditions,Moderate,N,Y,2025-07-28,,Recovering/Resolving
+AE-000300,ST-003-0011,ST-003,Headache,10019211,Nervous system disorders,Mild,N,N,2024-12-26,,Not recovered/Not resolved
+AE-000301,ST-003-0012,ST-003,Fatigue,10016256,General disorders and administration site conditions,Mild,N,N,2024-05-07,2024-06-04,Recovered/Resolved
+AE-000302,ST-003-0012,ST-003,Dizziness,10013573,Nervous system disorders,Mild,N,N,2024-05-12,2024-06-04,Recovered/Resolved
+AE-000303,ST-003-0012,ST-003,Confusional state,10010305,Psychiatric disorders,Mild,N,N,2024-03-06,2024-03-10,Recovered/Resolved
+AE-000304,ST-003-0015,ST-003,Alanine aminotransferase increased,10001551,Investigations,Moderate,N,N,2024-09-23,,Recovering/Resolving
+AE-000305,ST-003-0016,ST-003,Fatigue,10016256,General disorders and administration site conditions,Mild,N,N,2024-06-18,2024-07-01,Recovered/Resolved
+AE-000306,ST-003-0018,ST-003,Nausea,10028813,Gastrointestinal disorders,Moderate,N,N,2024-11-20,2024-12-18,Recovered/Resolved
+AE-000307,ST-003-0018,ST-003,Rash,10037844,Skin and subcutaneous tissue disorders,Mild,N,Y,2024-03-17,,Not recovered/Not resolved
+AE-000308,ST-003-0018,ST-003,Fatigue,10016256,General disorders and administration site conditions,Mild,N,N,2025-09-11,2025-09-14,Recovered/Resolved
+AE-000309,ST-003-0024,ST-003,Headache,10019211,Nervous system disorders,Moderate,N,Y,2025-01-24,2025-02-13,Recovered/Resolved
+AE-000310,ST-003-0024,ST-003,Dizziness,10013573,Nervous system disorders,Severe,Y,Y,2025-03-07,2025-03-08,Recovered/Resolved
+AE-000311,ST-003-0024,ST-003,Vomiting,10047700,Gastrointestinal disorders,Mild,N,N,2024-12-09,2024-12-17,Recovered/Resolved
+AE-000312,ST-003-0029,ST-003,Nasopharyngitis,10028810,Infections and infestations,Mild,N,N,2024-12-18,2024-12-28,Recovered/Resolved
+AE-000313,ST-003-0033,ST-003,Headache,10019211,Nervous system disorders,Moderate,N,Y,2025-05-23,2025-05-28,Recovered/Resolved
+AE-000314,ST-003-0034,ST-003,Headache,10019211,Nervous system disorders,Mild,N,N,2024-07-12,2024-08-11,Recovered/Resolved
+AE-000315,ST-003-0037,ST-003,Diarrhoea,10012735,Gastrointestinal disorders,Mild,N,Y,2024-09-05,2024-09-05,Recovered/Resolved
+AE-000316,ST-003-0037,ST-003,Fatigue,10016256,General disorders and administration site conditions,Mild,N,Y,2024-09-01,2024-09-05,Recovered/Resolved
+AE-000317,ST-003-0038,ST-003,Upper respiratory tract infection,10046306,Infections and infestations,Moderate,N,N,2024-08-14,,Not recovered/Not resolved
+AE-000318,ST-003-0039,ST-003,Headache,10019211,Nervous system disorders,Mild,Y,N,2024-04-18,,Recovering/Resolving
+AE-000319,ST-003-0040,ST-003,Headache,10019211,Nervous system disorders,Severe,N,Y,2024-10-08,2024-11-05,Recovered/Resolved
+AE-000320,ST-003-0040,ST-003,Fatigue,10016256,General disorders and administration site conditions,Mild,N,Y,2024-12-03,2024-12-20,Recovered/Resolved
+AE-000321,ST-003-0043,ST-003,Upper respiratory tract infection,10046306,Infections and infestations,Mild,N,N,2024-11-04,2024-11-16,Recovered/Resolved
+AE-000322,ST-003-0043,ST-003,Anaemia,10002272,Blood and lymphatic system disorders,Mild,N,N,2024-09-25,,Recovering/Resolving
+AE-000323,ST-003-0043,ST-003,Atrial fibrillation,10003658,Cardiac disorders,Mild,N,N,2024-08-02,2024-08-03,Recovered/Resolved
+AE-000324,ST-003-0045,ST-003,Upper respiratory tract infection,10046306,Infections and infestations,Mild,N,N,2024-07-02,,Not recovered/Not resolved
+AE-000325,ST-003-0049,ST-003,Upper respiratory tract infection,10046306,Infections and infestations,Severe,N,N,2024-10-13,2024-11-04,Recovered/Resolved
+AE-000326,ST-003-0050,ST-003,Pneumonia,10035664,Infections and infestations,Moderate,Y,N,2024-03-28,2024-03-29,Recovered/Resolved
+AE-000327,ST-003-0051,ST-003,Headache,10019211,Nervous system disorders,Moderate,N,Y,2025-12-03,2025-12-14,Recovered/Resolved
+AE-000328,ST-003-0055,ST-003,Confusional state,10010305,Psychiatric disorders,Mild,N,N,2025-08-15,2025-09-02,Recovered/Resolved
+AE-000329,ST-003-0055,ST-003,Nasopharyngitis,10028810,Infections and infestations,Mild,N,N,2024-07-23,2024-07-29,Recovered/Resolved
+AE-000330,ST-003-0059,ST-003,Rash,10037844,Skin and subcutaneous tissue disorders,Mild,N,N,2024-04-21,2024-04-23,Recovered/Resolved
+AE-000331,ST-003-0059,ST-003,Alanine aminotransferase increased,10001551,Investigations,Mild,N,N,2024-03-17,2024-04-16,Recovered/Resolved
+AE-000332,ST-003-0060,ST-003,Headache,10019211,Nervous system disorders,Mild,N,N,2024-02-13,2024-03-04,Recovered/Resolved
+AE-000333,ST-003-0060,ST-003,Diarrhoea,10012735,Gastrointestinal disorders,Moderate,N,N,2024-05-22,,Recovering/Resolving
+AE-000334,ST-003-0062,ST-003,Genital mycotic infection,10018087,Infections and infestations,Mild,N,Y,2024-07-09,2024-07-19,Recovered/Resolved
+AE-000335,ST-003-0067,ST-003,Hypotension,10021097,Vascular disorders,Mild,N,Y,2025-02-13,,Recovering/Resolving
+AE-000336,ST-003-0068,ST-003,Rash,10037844,Skin and subcutaneous tissue disorders,Mild,N,N,2024-03-20,2024-04-09,Recovered/Resolved
+AE-000337,ST-003-0068,ST-003,Nasopharyngitis,10028810,Infections and infestations,Moderate,N,Y,2024-04-24,2024-05-21,Recovered/Resolved
+AE-000338,ST-003-0068,ST-003,Headache,10019211,Nervous system disorders,Mild,N,Y,2024-03-25,2024-03-29,Recovered/Resolved
+AE-000339,ST-003-0068,ST-003,Neutropenia,10029354,Blood and lymphatic system disorders,Mild,N,N,2024-05-04,2024-05-08,Recovered/Resolved
+AE-000340,ST-003-0068,ST-003,Dizziness,10013573,Nervous system disorders,Moderate,N,Y,2024-03-19,2024-03-30,Recovered/Resolved
+AE-000341,ST-003-0069,ST-003,Neutropenia,10029354,Blood and lymphatic system disorders,Mild,N,N,2024-12-20,,Not recovered/Not resolved
+AE-000342,ST-003-0069,ST-003,Neutropenia,10029354,Blood and lymphatic system disorders,Mild,N,N,2024-12-10,2024-12-31,Recovered/Resolved
+AE-000343,ST-003-0071,ST-003,Alanine aminotransferase increased,10001551,Investigations,Moderate,Y,Y,2025-02-03,,Recovering/Resolving
+AE-000344,ST-003-0072,ST-003,Anaemia,10002272,Blood and lymphatic system disorders,Moderate,N,N,2025-01-25,2025-02-02,Recovered/Resolved
+AE-000345,ST-003-0072,ST-003,Anaemia,10002272,Blood and lymphatic system disorders,Mild,N,Y,2025-03-24,2025-04-03,Recovered/Resolved
+AE-000346,ST-003-0076,ST-003,Diarrhoea,10012735,Gastrointestinal disorders,Mild,N,N,2024-07-22,2024-07-28,Recovered/Resolved
+AE-000347,ST-003-0077,ST-003,Fatigue,10016256,General disorders and administration site conditions,Mild,N,Y,2025-01-09,2025-01-21,Recovered/Resolved
+AE-000348,ST-003-0077,ST-003,Nausea,10028813,Gastrointestinal disorders,Mild,N,Y,2025-08-23,,Not recovered/Not resolved
+AE-000349,ST-003-0077,ST-003,Genital mycotic infection,10018087,Infections and infestations,Mild,N,Y,2025-04-12,2025-04-27,Recovered/Resolved
+AE-000350,ST-003-0084,ST-003,Rash,10037844,Skin and subcutaneous tissue disorders,Mild,N,N,2025-06-23,2025-07-07,Recovered/Resolved
+AE-000351,ST-003-0085,ST-003,Anaemia,10002272,Blood and lymphatic system disorders,Moderate,N,Y,2025-01-17,2025-02-05,Recovered/Resolved
+AE-000352,ST-003-0085,ST-003,Upper respiratory tract infection,10046306,Infections and infestations,Mild,N,N,2024-11-02,2024-11-27,Recovered/Resolved
+AE-000353,ST-003-0085,ST-003,Fatigue,10016256,General disorders and administration site conditions,Moderate,N,N,2025-02-28,,Not recovered/Not resolved
+AE-000354,ST-003-0086,ST-003,Nausea,10028813,Gastrointestinal disorders,Mild,N,Y,2024-12-04,2024-12-08,Recovered/Resolved
+AE-000355,ST-003-0086,ST-003,Nausea,10028813,Gastrointestinal disorders,Mild,N,N,2024-11-27,2024-12-02,Recovered/Resolved
+AE-000356,ST-003-0086,ST-003,Nausea,10028813,Gastrointestinal disorders,Severe,N,N,2025-01-12,2025-01-24,Recovered/Resolved
+AE-000357,ST-003-0086,ST-003,Alanine aminotransferase increased,10001551,Investigations,Mild,N,Y,2024-11-28,2024-12-03,Recovered/Resolved
+AE-000358,ST-003-0086,ST-003,Hypertension,10020772,Vascular disorders,Mild,N,Y,2024-12-07,2024-12-23,Recovered/Resolved
+AE-000359,ST-003-0086,ST-003,Dizziness,10013573,Nervous system disorders,Moderate,N,N,2024-10-31,2024-11-12,Recovered/Resolved
+AE-000360,ST-003-0088,ST-003,Anaemia,10002272,Blood and lymphatic system disorders,Mild,N,Y,2025-01-03,2025-01-12,Recovered/Resolved
+AE-000361,ST-003-0090,ST-003,Genital mycotic infection,10018087,Infections and infestations,Moderate,N,Y,2024-10-13,2024-11-02,Recovered/Resolved
+AE-000362,ST-003-0090,ST-003,Genital mycotic infection,10018087,Infections and infestations,Severe,N,Y,2024-10-21,,Recovering/Resolving
+AE-000363,ST-003-0091,ST-003,Genital mycotic infection,10018087,Infections and infestations,Mild,Y,Y,2025-07-12,2025-08-01,Recovered/Resolved
+AE-000364,ST-003-0091,ST-003,Diarrhoea,10012735,Gastrointestinal disorders,Severe,N,N,2025-05-30,2025-06-22,Recovered/Resolved
+AE-000365,ST-003-0094,ST-003,Dizziness,10013573,Nervous system disorders,Mild,N,Y,2024-11-08,2024-11-17,Recovered/Resolved
+AE-000366,ST-003-0097,ST-003,Rash,10037844,Skin and subcutaneous tissue disorders,Moderate,N,N,2024-10-15,,Recovering/Resolving
+AE-000367,ST-003-0098,ST-003,Rash,10037844,Skin and subcutaneous tissue disorders,Mild,N,N,2024-10-21,2024-11-01,Recovered/Resolved
+AE-000368,ST-003-0105,ST-003,Fatigue,10016256,General disorders and administration site conditions,Moderate,N,N,2025-10-21,2025-11-19,Recovered/Resolved
+AE-000369,ST-003-0106,ST-003,Neutropenia,10029354,Blood and lymphatic system disorders,Moderate,N,N,2024-09-06,2024-09-08,Recovered/Resolved
+AE-000370,ST-003-0106,ST-003,Fatigue,10016256,General disorders and administration site conditions,Mild,N,Y,2024-07-13,2024-08-05,Recovered/Resolved
+AE-000371,ST-003-0107,ST-003,Vomiting,10047700,Gastrointestinal disorders,Moderate,N,N,2025-11-27,2025-12-06,Recovered/Resolved
+AE-000372,ST-003-0107,ST-003,Rash,10037844,Skin and subcutaneous tissue disorders,Mild,N,Y,2025-04-12,,Not recovered/Not resolved
+AE-000373,ST-003-0107,ST-003,Genital mycotic infection,10018087,Infections and infestations,Moderate,N,Y,2025-11-25,2025-12-08,Recovered/Resolved
+AE-000374,ST-003-0107,ST-003,Nausea,10028813,Gastrointestinal disorders,Mild,N,N,2024-09-11,2024-09-13,Recovered/Resolved
+AE-000375,ST-003-0108,ST-003,Upper respiratory tract infection,10046306,Infections and infestations,Moderate,N,N,2024-08-25,2024-09-01,Recovered/Resolved
+AE-000376,ST-003-0111,ST-003,Diarrhoea,10012735,Gastrointestinal disorders,Mild,N,Y,2024-04-27,2024-04-29,Recovered/Resolved
+AE-000377,ST-003-0112,ST-003,Alanine aminotransferase increased,10001551,Investigations,Moderate,N,Y,2025-01-21,2025-02-12,Recovered/Resolved
+AE-000378,ST-003-0113,ST-003,Vomiting,10047700,Gastrointestinal disorders,Mild,N,N,2024-06-04,2024-06-17,Recovered/Resolved
+AE-000379,ST-003-0113,ST-003,Rash,10037844,Skin and subcutaneous tissue disorders,Mild,N,N,2024-06-13,2024-06-24,Recovered/Resolved
+AE-000380,ST-003-0113,ST-003,Alanine aminotransferase increased,10001551,Investigations,Mild,N,Y,2024-05-14,2024-06-07,Recovered/Resolved
+AE-000381,ST-003-0114,ST-003,Dizziness,10013573,Nervous system disorders,Mild,N,N,2024-12-11,2025-01-02,Recovered/Resolved
+AE-000382,ST-003-0114,ST-003,Rash,10037844,Skin and subcutaneous tissue disorders,Moderate,N,N,2024-12-08,2025-01-01,Recovered/Resolved
+AE-000383,ST-003-0126,ST-003,Upper respiratory tract infection,10046306,Infections and infestations,Mild,N,N,2025-12-15,2025-12-27,Recovered/Resolved
+AE-000384,ST-003-0126,ST-003,Nasopharyngitis,10028810,Infections and infestations,Mild,N,N,2024-12-11,2024-12-19,Recovered/Resolved
+AE-000385,ST-003-0127,ST-003,Nasopharyngitis,10028810,Infections and infestations,Severe,N,Y,2024-01-25,,Recovering/Resolving
+AE-000386,ST-003-0128,ST-003,Diarrhoea,10012735,Gastrointestinal disorders,Moderate,N,N,2025-10-01,2025-10-25,Recovered/Resolved
+AE-000387,ST-003-0131,ST-003,Headache,10019211,Nervous system disorders,Mild,N,Y,2025-10-30,2025-11-29,Recovered/Resolved
+AE-000388,ST-003-0131,ST-003,Vomiting,10047700,Gastrointestinal disorders,Severe,N,Y,2024-06-14,2024-07-04,Recovered/Resolved
+AE-000389,ST-003-0131,ST-003,Upper respiratory tract infection,10046306,Infections and infestations,Moderate,N,Y,2025-06-01,2025-06-23,Recovered/Resolved
+AE-000390,ST-003-0131,ST-003,Genital mycotic infection,10018087,Infections and infestations,Mild,N,Y,2024-06-05,2024-06-14,Recovered/Resolved
+AE-000391,ST-003-0131,ST-003,Atrial fibrillation,10003658,Cardiac disorders,Mild,N,Y,2026-01-21,,Not recovered/Not resolved
+AE-000392,ST-003-0132,ST-003,Nausea,10028813,Gastrointestinal disorders,Mild,Y,N,2024-09-02,2024-09-18,Recovered/Resolved
+AE-000393,ST-003-0132,ST-003,Nausea,10028813,Gastrointestinal disorders,Severe,N,N,2025-05-06,,Recovering/Resolving
+AE-000394,ST-003-0132,ST-003,Headache,10019211,Nervous system disorders,Mild,N,Y,2024-04-23,2024-05-04,Recovered/Resolved
+AE-000395,ST-003-0134,ST-003,Upper respiratory tract infection,10046306,Infections and infestations,Mild,N,N,2025-08-20,2025-08-30,Recovered/Resolved
+AE-000396,ST-003-0135,ST-003,Genital mycotic infection,10018087,Infections and infestations,Severe,N,Y,2024-07-19,,Not recovered/Not resolved
+AE-000397,ST-003-0137,ST-003,Rash,10037844,Skin and subcutaneous tissue disorders,Mild,N,N,2026-01-31,2026-01-31,Recovered/Resolved
+AE-000398,ST-003-0138,ST-003,Diarrhoea,10012735,Gastrointestinal disorders,Mild,N,Y,2024-10-28,,Not recovered/Not resolved
+AE-000399,ST-003-0138,ST-003,Fatigue,10016256,General disorders and administration site conditions,Mild,N,N,2024-11-06,2024-11-06,Recovered/Resolved
+AE-000400,ST-003-0139,ST-003,Nausea,10028813,Gastrointestinal disorders,Severe,N,Y,2024-12-23,2025-01-08,Recovered/Resolved
+AE-000401,ST-003-0139,ST-003,Nausea,10028813,Gastrointestinal disorders,Moderate,N,N,2025-02-23,,Not recovered/Not resolved
+AE-000402,ST-003-0139,ST-003,Rash,10037844,Skin and subcutaneous tissue disorders,Mild,N,Y,2024-04-28,2024-05-08,Recovered/Resolved
+AE-000403,ST-003-0140,ST-003,Hypertension,10020772,Vascular disorders,Mild,N,N,2024-05-03,,Not recovered/Not resolved
+AE-000404,ST-003-0141,ST-003,Confusional state,10010305,Psychiatric disorders,Mild,N,N,2024-08-23,2024-08-27,Recovered/Resolved
+AE-000405,ST-003-0142,ST-003,Hypotension,10021097,Vascular disorders,Mild,N,Y,2025-03-15,,Not recovered/Not resolved
+AE-000406,ST-003-0142,ST-003,Genital mycotic infection,10018087,Infections and infestations,Mild,N,Y,2026-01-14,2026-01-31,Recovered/Resolved
+AE-000407,ST-003-0142,ST-003,Nasopharyngitis,10028810,Infections and infestations,Mild,N,N,2025-06-08,2025-06-17,Recovered/Resolved
+AE-000408,ST-003-0142,ST-003,Neutropenia,10029354,Blood and lymphatic system disorders,Mild,N,Y,2025-09-17,2025-09-25,Recovered/Resolved
+AE-000409,ST-003-0147,ST-003,Genital mycotic infection,10018087,Infections and infestations,Mild,Y,Y,2025-02-26,2025-03-15,Recovered/Resolved
+AE-000410,ST-003-0147,ST-003,Headache,10019211,Nervous system disorders,Mild,N,N,2024-12-13,2024-12-22,Recovered/Resolved
+AE-000411,ST-003-0147,ST-003,Alanine aminotransferase increased,10001551,Investigations,Mild,N,Y,2025-04-05,,Not recovered/Not resolved
+AE-000412,ST-003-0148,ST-003,Confusional state,10010305,Psychiatric disorders,Moderate,N,N,2025-11-28,,Not recovered/Not resolved
+AE-000413,ST-003-0149,ST-003,Genital mycotic infection,10018087,Infections and infestations,Mild,N,Y,2025-02-27,2025-03-10,Recovered/Resolved
+AE-000414,ST-003-0149,ST-003,Upper respiratory tract infection,10046306,Infections and infestations,Moderate,N,N,2025-10-11,2025-10-22,Recovered/Resolved
+AE-000415,ST-003-0149,ST-003,Vomiting,10047700,Gastrointestinal disorders,Moderate,N,N,2025-04-21,2025-05-15,Recovered/Resolved
+AE-000416,ST-003-0149,ST-003,Nausea,10028813,Gastrointestinal disorders,Mild,N,Y,2025-10-29,2025-10-31,Recovered/Resolved
+AE-000417,ST-003-0150,ST-003,Nasopharyngitis,10028810,Infections and infestations,Mild,N,N,2026-01-23,2026-01-31,Recovered/Resolved
+AE-000418,ST-003-0151,ST-003,Nausea,10028813,Gastrointestinal disorders,Mild,N,Y,2025-02-27,2025-03-29,Recovered/Resolved
+AE-000419,ST-003-0152,ST-003,Diarrhoea,10012735,Gastrointestinal disorders,Mild,N,N,2025-04-14,2025-04-24,Recovered/Resolved
+AE-000420,ST-003-0154,ST-003,Headache,10019211,Nervous system disorders,Moderate,N,N,2024-12-23,2025-01-14,Recovered/Resolved
+AE-000421,ST-003-0156,ST-003,Fatigue,10016256,General disorders and administration site conditions,Mild,N,Y,2025-12-09,2025-12-11,Recovered/Resolved
+AE-000422,ST-003-0156,ST-003,Nasopharyngitis,10028810,Infections and infestations,Mild,N,N,2025-09-08,2025-09-12,Recovered/Resolved
+AE-000423,ST-003-0156,ST-003,Diarrhoea,10012735,Gastrointestinal disorders,Mild,N,Y,2025-07-06,2025-08-02,Recovered/Resolved
+AE-000424,ST-003-0156,ST-003,Nasopharyngitis,10028810,Infections and infestations,Moderate,N,N,2024-09-05,,Not recovered/Not resolved
+AE-000425,ST-003-0157,ST-003,Upper respiratory tract infection,10046306,Infections and infestations,Moderate,N,Y,2025-11-24,2025-11-30,Recovered/Resolved
+AE-000426,ST-003-0158,ST-003,Nausea,10028813,Gastrointestinal disorders,Mild,N,Y,2025-08-18,2025-09-14,Recovered/Resolved
+AE-000427,ST-003-0164,ST-003,Hypertension,10020772,Vascular disorders,Mild,N,Y,2024-05-24,2024-05-30,Recovered/Resolved
+AE-000428,ST-003-0177,ST-003,Alanine aminotransferase increased,10001551,Investigations,Moderate,N,Y,2025-07-14,2025-07-25,Recovered/Resolved
+AE-000429,ST-003-0180,ST-003,Genital mycotic infection,10018087,Infections and infestations,Mild,N,N,2024-07-14,2024-07-21,Recovered/Resolved
+AE-000430,ST-003-0180,ST-003,Alanine aminotransferase increased,10001551,Investigations,Moderate,N,N,2024-08-25,2024-08-29,Recovered/Resolved
+AE-000431,ST-003-0181,ST-003,Genital mycotic infection,10018087,Infections and infestations,Mild,N,Y,2024-05-26,2024-05-27,Recovered/Resolved
+AE-000432,ST-003-0181,ST-003,Nasopharyngitis,10028810,Infections and infestations,Severe,Y,Y,2024-05-16,2024-05-23,Recovered/Resolved
+AE-000433,ST-003-0181,ST-003,Hypotension,10021097,Vascular disorders,Mild,N,Y,2024-03-07,2024-03-12,Recovered/Resolved
+AE-000434,ST-003-0183,ST-003,Upper respiratory tract infection,10046306,Infections and infestations,Mild,N,N,2025-08-07,2025-08-28,Recovered/Resolved
+AE-000435,ST-003-0183,ST-003,Hypertension,10020772,Vascular disorders,Moderate,N,N,2026-01-31,2026-01-31,Recovered/Resolved
+AE-000436,ST-003-0183,ST-003,Hypertension,10020772,Vascular disorders,Severe,N,N,2024-08-09,2024-08-17,Recovered/Resolved
+AE-000437,ST-003-0184,ST-003,Diarrhoea,10012735,Gastrointestinal disorders,Severe,Y,Y,2025-12-29,2026-01-23,Recovered/Resolved
+AE-000438,ST-003-0187,ST-003,Alanine aminotransferase increased,10001551,Investigations,Mild,N,Y,2025-11-14,2025-12-14,Recovered/Resolved
+AE-000439,ST-003-0187,ST-003,Rash,10037844,Skin and subcutaneous tissue disorders,Moderate,N,Y,2025-07-04,,Not recovered/Not resolved
+AE-000440,ST-003-0187,ST-003,Dizziness,10013573,Nervous system disorders,Moderate,N,N,2025-07-19,2025-07-24,Recovered/Resolved
+AE-000441,ST-003-0187,ST-003,Nausea,10028813,Gastrointestinal disorders,Moderate,Y,Y,2025-07-25,2025-07-27,Recovered/Resolved
+AE-000442,ST-003-0187,ST-003,Headache,10019211,Nervous system disorders,Mild,N,Y,2024-10-07,2024-10-09,Recovered/Resolved
+AE-000443,ST-003-0189,ST-003,Confusional state,10010305,Psychiatric disorders,Severe,Y,Y,2025-07-09,2025-07-31,Recovered/Resolved
+AE-000444,ST-003-0189,ST-003,Nasopharyngitis,10028810,Infections and infestations,Mild,N,Y,2025-09-10,2025-09-23,Recovered/Resolved
+AE-000445,ST-003-0189,ST-003,Alanine aminotransferase increased,10001551,Investigations,Mild,N,N,2025-04-28,,Not recovered/Not resolved
+AE-000446,ST-003-0189,ST-003,Genital mycotic infection,10018087,Infections and infestations,Moderate,N,Y,2024-09-20,,Recovering/Resolving
+AE-000447,ST-003-0192,ST-003,Headache,10019211,Nervous system disorders,Mild,N,Y,2025-07-05,,Recovering/Resolving
+AE-000448,ST-003-0193,ST-003,Headache,10019211,Nervous system disorders,Severe,Y,Y,2025-07-08,,Not recovered/Not resolved
+AE-000449,ST-003-0193,ST-003,Rash,10037844,Skin and subcutaneous tissue disorders,Severe,N,N,2024-09-21,,Recovering/Resolving
+AE-000450,ST-003-0193,ST-003,Nasopharyngitis,10028810,Infections and infestations,Mild,N,N,2026-01-02,2026-01-29,Recovered/Resolved
+AE-000451,ST-003-0193,ST-003,Genital mycotic infection,10018087,Infections and infestations,Mild,N,Y,2025-03-23,2025-04-09,Recovered/Resolved
+AE-000452,ST-003-0194,ST-003,Fatigue,10016256,General disorders and administration site conditions,Moderate,N,N,2025-10-02,2025-10-05,Recovered/Resolved
+AE-000453,ST-003-0196,ST-003,Headache,10019211,Nervous system disorders,Mild,N,N,2024-05-29,2024-06-10,Recovered/Resolved
+AE-000454,ST-003-0200,ST-003,Upper respiratory tract infection,10046306,Infections and infestations,Mild,N,Y,2024-11-20,2024-11-24,Recovered/Resolved
+AE-000455,ST-004-0005,ST-004,Diarrhoea,10012735,Gastrointestinal disorders,Mild,N,N,2026-01-01,2026-01-15,Recovered/Resolved
+AE-000456,ST-004-0007,ST-004,Headache,10019211,Nervous system disorders,Mild,N,Y,2026-01-28,2026-01-31,Recovered/Resolved
+AE-000457,ST-004-0008,ST-004,Nausea,10028813,Gastrointestinal disorders,Moderate,N,N,2025-10-29,2025-11-18,Recovered/Resolved
+AE-000458,ST-004-0012,ST-004,Alanine aminotransferase increased,10001551,Investigations,Mild,N,Y,2025-06-23,2025-07-09,Recovered/Resolved
+AE-000459,ST-004-0012,ST-004,Nausea,10028813,Gastrointestinal disorders,Mild,N,Y,2025-05-27,2025-06-04,Recovered/Resolved
+AE-000460,ST-004-0012,ST-004,Upper respiratory tract infection,10046306,Infections and infestations,Mild,N,Y,2025-07-03,2025-07-09,Recovered/Resolved
+AE-000461,ST-004-0015,ST-004,Atrial fibrillation,10003658,Cardiac disorders,Mild,N,Y,2025-12-30,2026-01-07,Recovered/Resolved
+AE-000462,ST-004-0016,ST-004,Anaemia,10002272,Blood and lymphatic system disorders,Moderate,N,N,2025-08-19,2025-09-04,Recovered/Resolved
+AE-000463,ST-004-0017,ST-004,Nausea,10028813,Gastrointestinal disorders,Moderate,N,Y,2026-01-06,2026-01-18,Recovered/Resolved
+AE-000464,ST-004-0019,ST-004,Headache,10019211,Nervous system disorders,Severe,Y,N,2025-08-18,2025-08-24,Recovered/Resolved
+AE-000465,ST-004-0019,ST-004,Confusional state,10010305,Psychiatric disorders,Moderate,N,Y,2025-08-31,2025-09-15,Recovered/Resolved
+AE-000466,ST-004-0019,ST-004,Hypotension,10021097,Vascular disorders,Mild,N,N,2025-09-09,2025-09-21,Recovered/Resolved
+AE-000467,ST-004-0021,ST-004,Rash,10037844,Skin and subcutaneous tissue disorders,Moderate,N,N,2025-07-05,,Not recovered/Not resolved
+AE-000468,ST-004-0021,ST-004,Headache,10019211,Nervous system disorders,Mild,N,Y,2026-01-10,2026-01-30,Recovered/Resolved
+AE-000469,ST-004-0021,ST-004,Amyloid related imaging abnormalities,10083555,Nervous system disorders,Moderate,Y,Y,2026-01-06,2026-01-12,Recovered/Resolved
+AE-000470,ST-004-0023,ST-004,Amyloid related imaging abnormalities,10083555,Nervous system disorders,Mild,N,N,2025-10-31,2025-11-29,Recovered/Resolved
+AE-000471,ST-004-0023,ST-004,Headache,10019211,Nervous system disorders,Mild,N,Y,2025-12-23,2026-01-05,Recovered/Resolved
+AE-000472,ST-004-0024,ST-004,Nasopharyngitis,10028810,Infections and infestations,Moderate,N,Y,2025-12-27,2026-01-11,Recovered/Resolved
+AE-000473,ST-004-0025,ST-004,Headache,10019211,Nervous system disorders,Mild,N,N,2025-09-17,2025-09-22,Recovered/Resolved
+AE-000474,ST-004-0026,ST-004,Fatigue,10016256,General disorders and administration site conditions,Mild,N,Y,2025-06-11,2025-06-23,Recovered/Resolved
+AE-000475,ST-004-0028,ST-004,Neutropenia,10029354,Blood and lymphatic system disorders,Mild,N,N,2025-10-13,2025-10-14,Recovered/Resolved
+AE-000476,ST-004-0030,ST-004,Headache,10019211,Nervous system disorders,Moderate,Y,Y,2025-10-20,2025-11-06,Recovered/Resolved
+AE-000477,ST-004-0034,ST-004,Confusional state,10010305,Psychiatric disorders,Moderate,N,N,2026-01-28,2026-01-31,Recovered/Resolved
+AE-000478,ST-004-0034,ST-004,Vomiting,10047700,Gastrointestinal disorders,Mild,N,N,2026-01-26,2026-01-31,Recovered/Resolved
+AE-000479,ST-004-0035,ST-004,Diarrhoea,10012735,Gastrointestinal disorders,Mild,N,N,2026-01-28,2026-01-31,Recovered/Resolved
+AE-000480,ST-004-0038,ST-004,Headache,10019211,Nervous system disorders,Moderate,N,Y,2026-01-12,2026-01-29,Recovered/Resolved
+AE-000481,ST-004-0038,ST-004,Fatigue,10016256,General disorders and administration site conditions,Mild,N,Y,2026-01-19,2026-01-31,Recovered/Resolved
+AE-000482,ST-004-0039,ST-004,Genital mycotic infection,10018087,Infections and infestations,Mild,N,N,2026-01-27,,Not recovered/Not resolved
+AE-000483,ST-004-0039,ST-004,Nasopharyngitis,10028810,Infections and infestations,Mild,N,N,2026-01-20,2026-01-25,Recovered/Resolved
+AE-000484,ST-004-0040,ST-004,Confusional state,10010305,Psychiatric disorders,Moderate,N,Y,2025-09-25,2025-10-14,Recovered/Resolved
+AE-000485,ST-004-0040,ST-004,Vomiting,10047700,Gastrointestinal disorders,Moderate,N,N,2025-10-19,2025-10-29,Recovered/Resolved
+AE-000486,ST-004-0041,ST-004,Headache,10019211,Nervous system disorders,Severe,N,Y,2025-11-13,,Not recovered/Not resolved
+AE-000487,ST-004-0042,ST-004,Upper respiratory tract infection,10046306,Infections and infestations,Mild,N,N,2025-12-15,2025-12-19,Recovered/Resolved
+AE-000488,ST-004-0045,ST-004,Nausea,10028813,Gastrointestinal disorders,Mild,N,N,2025-06-15,,Recovering/Resolving
+AE-000489,ST-004-0045,ST-004,Fatigue,10016256,General disorders and administration site conditions,Mild,N,N,2025-07-01,2025-07-10,Recovered/Resolved
+AE-000490,ST-004-0045,ST-004,Pneumonia,10035664,Infections and infestations,Moderate,Y,N,2025-05-31,,Not recovered/Not resolved
+AE-000491,ST-004-0046,ST-004,Amyloid related imaging abnormalities,10083555,Nervous system disorders,Mild,N,Y,2026-01-19,2026-01-31,Recovered/Resolved
+AE-000492,ST-004-0046,ST-004,Atrial fibrillation,10003658,Cardiac disorders,Mild,N,Y,2025-12-17,2025-12-19,Recovered/Resolved
+AE-000493,ST-004-0046,ST-004,Amyloid related imaging abnormalities,10083555,Nervous system disorders,Mild,N,Y,2026-01-06,2026-01-25,Recovered/Resolved
+AE-000494,ST-004-0046,ST-004,Amyloid related imaging abnormalities,10083555,Nervous system disorders,Mild,N,Y,2025-12-06,2025-12-16,Recovered/Resolved
+AE-000495,ST-004-0048,ST-004,Amyloid related imaging abnormalities,10083555,Nervous system disorders,Mild,N,N,2025-09-03,2025-10-03,Recovered/Resolved
+AE-000496,ST-004-0049,ST-004,Confusional state,10010305,Psychiatric disorders,Mild,N,N,2025-09-02,2025-09-15,Recovered/Resolved
+AE-000497,ST-004-0054,ST-004,Nausea,10028813,Gastrointestinal disorders,Mild,N,Y,2025-09-18,2025-09-20,Recovered/Resolved
+AE-000498,ST-004-0056,ST-004,Hypotension,10021097,Vascular disorders,Mild,N,N,2026-01-16,,Recovering/Resolving
+AE-000499,ST-004-0056,ST-004,Nausea,10028813,Gastrointestinal disorders,Mild,N,N,2026-01-27,2026-01-31,Recovered/Resolved
+AE-000500,ST-004-0059,ST-004,Nasopharyngitis,10028810,Infections and infestations,Moderate,Y,N,2026-01-29,2026-01-31,Recovered/Resolved
+AE-000501,ST-004-0065,ST-004,Hypertension,10020772,Vascular disorders,Mild,N,Y,2025-12-01,2025-12-07,Recovered/Resolved
+AE-000502,ST-004-0070,ST-004,Amyloid related imaging abnormalities,10083555,Nervous system disorders,Mild,Y,Y,2026-01-02,2026-01-09,Recovered/Resolved
+AE-000503,ST-004-0071,ST-004,Dizziness,10013573,Nervous system disorders,Moderate,N,N,2025-09-09,2025-09-22,Recovered/Resolved
+AE-000504,ST-004-0075,ST-004,Headache,10019211,Nervous system disorders,Mild,N,N,2025-05-18,2025-06-14,Recovered/Resolved
+AE-000505,ST-004-0075,ST-004,Vomiting,10047700,Gastrointestinal disorders,Moderate,N,Y,2025-11-05,2025-11-30,Recovered/Resolved
+AE-000506,ST-004-0075,ST-004,Herpes zoster,10019974,Infections and infestations,Moderate,N,Y,2026-01-09,2026-01-20,Recovered/Resolved
+AE-000507,ST-004-0075,ST-004,Nasopharyngitis,10028810,Infections and infestations,Mild,N,N,2025-07-28,2025-08-24,Recovered/Resolved
+AE-000508,ST-004-0075,ST-004,Rash,10037844,Skin and subcutaneous tissue disorders,Moderate,N,Y,2026-01-23,,Recovering/Resolving
+AE-000509,ST-004-0077,ST-004,Amyloid related imaging abnormalities,10083555,Nervous system disorders,Mild,N,Y,2026-01-14,2026-01-15,Recovered/Resolved
+AE-000510,ST-004-0077,ST-004,Genital mycotic infection,10018087,Infections and infestations,Mild,N,Y,2026-01-31,2026-01-31,Recovered/Resolved
+AE-000511,ST-004-0077,ST-004,Amyloid related imaging abnormalities,10083555,Nervous system disorders,Moderate,N,Y,2026-01-24,,Not recovered/Not resolved
+AE-000512,ST-004-0077,ST-004,Amyloid related imaging abnormalities,10083555,Nervous system disorders,Mild,N,Y,2026-01-18,2026-01-31,Recovered/Resolved
+AE-000513,ST-004-0077,ST-004,Neutropenia,10029354,Blood and lymphatic system disorders,Mild,Y,N,2026-01-12,2026-01-31,Recovered/Resolved
+AE-000514,ST-004-0078,ST-004,Atrial fibrillation,10003658,Cardiac disorders,Moderate,N,N,2025-12-18,2026-01-04,Recovered/Resolved
+AE-000515,ST-004-0080,ST-004,Diarrhoea,10012735,Gastrointestinal disorders,Severe,Y,N,2025-12-02,,Recovering/Resolving
+AE-000516,ST-004-0080,ST-004,Confusional state,10010305,Psychiatric disorders,Moderate,N,N,2025-12-07,2025-12-12,Recovered/Resolved
+AE-000517,ST-004-0081,ST-004,Anaemia,10002272,Blood and lymphatic system disorders,Mild,N,N,2025-11-29,2025-12-17,Recovered/Resolved
+AE-000518,ST-004-0081,ST-004,Hypertension,10020772,Vascular disorders,Moderate,N,Y,2026-01-09,2026-01-31,Recovered/Resolved
+AE-000519,ST-004-0081,ST-004,Headache,10019211,Nervous system disorders,Mild,N,Y,2026-01-28,,Recovering/Resolving
+AE-000520,ST-004-0083,ST-004,Headache,10019211,Nervous system disorders,Mild,N,Y,2025-12-25,,Not recovered/Not resolved
+AE-000521,ST-004-0084,ST-004,Hypotension,10021097,Vascular disorders,Moderate,N,Y,2026-01-18,2026-01-31,Recovered/Resolved
+AE-000522,ST-004-0086,ST-004,Headache,10019211,Nervous system disorders,Mild,N,N,2026-01-23,2026-01-31,Recovered/Resolved
+AE-000523,ST-004-0090,ST-004,Headache,10019211,Nervous system disorders,Mild,N,Y,2025-09-08,2025-09-10,Recovered/Resolved
+AE-000524,ST-004-0091,ST-004,Dizziness,10013573,Nervous system disorders,Moderate,N,N,2026-01-06,2026-01-10,Recovered/Resolved
+AE-000525,ST-004-0091,ST-004,Rash,10037844,Skin and subcutaneous tissue disorders,Mild,N,N,2026-01-25,,Recovering/Resolving
+AE-000526,ST-004-0092,ST-004,Amyloid related imaging abnormalities,10083555,Nervous system disorders,Mild,N,Y,2025-07-12,2025-07-21,Recovered/Resolved
+AE-000527,ST-004-0092,ST-004,Dizziness,10013573,Nervous system disorders,Moderate,N,Y,2025-07-15,2025-07-29,Recovered/Resolved
+AE-000528,ST-004-0092,ST-004,Nasopharyngitis,10028810,Infections and infestations,Mild,N,N,2025-06-17,,Recovering/Resolving
+AE-000529,ST-004-0094,ST-004,Headache,10019211,Nervous system disorders,Moderate,N,N,2026-01-02,2026-01-12,Recovered/Resolved
+AE-000530,ST-004-0095,ST-004,Nasopharyngitis,10028810,Infections and infestations,Severe,Y,Y,2026-01-29,2026-01-31,Recovered/Resolved
+AE-000531,ST-004-0096,ST-004,Rash,10037844,Skin and subcutaneous tissue disorders,Mild,Y,N,2025-12-12,,Recovering/Resolving
+AE-000532,ST-004-0097,ST-004,Dizziness,10013573,Nervous system disorders,Severe,N,Y,2025-08-12,2025-08-18,Recovered/Resolved
+AE-000533,ST-004-0097,ST-004,Atrial fibrillation,10003658,Cardiac disorders,Mild,N,N,2025-07-21,2025-08-14,Recovered/Resolved
+AE-000534,ST-004-0100,ST-004,Vomiting,10047700,Gastrointestinal disorders,Mild,N,Y,2025-07-27,2025-08-09,Recovered/Resolved
+AE-000535,ST-004-0101,ST-004,Amyloid related imaging abnormalities,10083555,Nervous system disorders,Moderate,N,Y,2025-12-19,2026-01-16,Recovered/Resolved
+AE-000536,ST-004-0103,ST-004,Diarrhoea,10012735,Gastrointestinal disorders,Mild,N,N,2025-06-16,2025-07-16,Recovered/Resolved
+AE-000537,ST-004-0103,ST-004,Nasopharyngitis,10028810,Infections and infestations,Severe,N,N,2026-01-20,2026-01-29,Recovered/Resolved
+AE-000538,ST-004-0103,ST-004,Nausea,10028813,Gastrointestinal disorders,Severe,N,N,2026-01-02,2026-01-05,Recovered/Resolved
+AE-000539,ST-004-0104,ST-004,Amyloid related imaging abnormalities,10083555,Nervous system disorders,Mild,N,Y,2026-01-31,2026-01-31,Recovered/Resolved
+AE-000540,ST-004-0108,ST-004,Headache,10019211,Nervous system disorders,Moderate,N,Y,2025-08-29,2025-08-30,Recovered/Resolved
+AE-000541,ST-004-0108,ST-004,Nasopharyngitis,10028810,Infections and infestations,Mild,N,Y,2025-09-05,2025-09-11,Recovered/Resolved
+AE-000542,ST-004-0111,ST-004,Amyloid related imaging abnormalities,10083555,Nervous system disorders,Mild,N,Y,2025-07-17,2025-07-28,Recovered/Resolved
+AE-000543,ST-004-0114,ST-004,Fatigue,10016256,General disorders and administration site conditions,Mild,N,Y,2025-11-28,2025-12-22,Recovered/Resolved
+AE-000544,ST-005-0005,ST-005,Headache,10019211,Nervous system disorders,Mild,N,N,2024-01-08,,Not recovered/Not resolved
+AE-000545,ST-005-0005,ST-005,Fatigue,10016256,General disorders and administration site conditions,Moderate,N,N,2023-10-10,2023-10-21,Recovered/Resolved
+AE-000546,ST-005-0007,ST-005,Hypotension,10021097,Vascular disorders,Mild,N,Y,2023-12-29,2024-01-24,Recovered/Resolved
+AE-000547,ST-005-0008,ST-005,Hypotension,10021097,Vascular disorders,Mild,N,Y,2023-11-24,,Recovering/Resolving
+AE-000548,ST-005-0008,ST-005,Nausea,10028813,Gastrointestinal disorders,Moderate,Y,Y,2024-02-22,2024-03-09,Recovered/Resolved
+AE-000549,ST-005-0010,ST-005,Hypertension,10020772,Vascular disorders,Mild,N,N,2024-03-11,2024-03-12,Recovered/Resolved
+AE-000550,ST-005-0010,ST-005,Rash,10037844,Skin and subcutaneous tissue disorders,Mild,N,Y,2024-03-29,,Recovering/Resolving
+AE-000551,ST-005-0012,ST-005,Dizziness,10013573,Nervous system disorders,Moderate,N,N,2024-01-27,2024-02-05,Recovered/Resolved
+AE-000552,ST-005-0012,ST-005,Nausea,10028813,Gastrointestinal disorders,Moderate,N,N,2023-11-20,2023-12-04,Recovered/Resolved
+AE-000553,ST-005-0014,ST-005,Upper respiratory tract infection,10046306,Infections and infestations,Moderate,N,Y,2023-11-08,,Recovering/Resolving
+AE-000554,ST-005-0016,ST-005,Fatigue,10016256,General disorders and administration site conditions,Mild,N,Y,2024-03-01,2024-03-23,Recovered/Resolved
+AE-000555,ST-005-0016,ST-005,Nausea,10028813,Gastrointestinal disorders,Mild,N,N,2024-04-04,2024-04-09,Recovered/Resolved
+AE-000556,ST-005-0016,ST-005,Fatigue,10016256,General disorders and administration site conditions,Mild,N,N,2024-02-02,2024-03-02,Recovered/Resolved
+AE-000557,ST-005-0016,ST-005,Nasopharyngitis,10028810,Infections and infestations,Mild,N,N,2023-11-27,2023-12-25,Recovered/Resolved
+AE-000558,ST-005-0018,ST-005,Neutropenia,10029354,Blood and lymphatic system disorders,Mild,N,Y,2024-04-15,2024-04-18,Recovered/Resolved
+AE-000559,ST-005-0019,ST-005,Pneumonia,10035664,Infections and infestations,Moderate,Y,N,2024-03-16,2024-03-25,Recovered/Resolved
+AE-000560,ST-005-0021,ST-005,Rash,10037844,Skin and subcutaneous tissue disorders,Mild,N,Y,2024-01-02,2024-01-26,Recovered/Resolved
+AE-000561,ST-005-0022,ST-005,Fatigue,10016256,General disorders and administration site conditions,Moderate,N,Y,2024-01-12,2024-02-10,Recovered/Resolved
+AE-000562,ST-005-0024,ST-005,Nausea,10028813,Gastrointestinal disorders,Mild,N,N,2024-02-14,2024-02-27,Recovered/Resolved

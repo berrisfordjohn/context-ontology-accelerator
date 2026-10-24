@@ -1,0 +1,382 @@
+{
+  "compounds": [
+    {
+      "name": "drug_id",
+      "type": "string"
+    },
+    {
+      "name": "drug_name",
+      "type": "string"
+    },
+    {
+      "name": "inn",
+      "type": "string"
+    },
+    {
+      "name": "drug_class",
+      "type": "string"
+    },
+    {
+      "name": "mechanism_of_action",
+      "type": "string"
+    },
+    {
+      "name": "target",
+      "type": "string"
+    },
+    {
+      "name": "atc_code",
+      "type": "string"
+    }
+  ],
+  "studies": [
+    {
+      "name": "study_id",
+      "type": "string"
+    },
+    {
+      "name": "nct_id",
+      "type": "string"
+    },
+    {
+      "name": "title",
+      "type": "string"
+    },
+    {
+      "name": "phase",
+      "type": "string"
+    },
+    {
+      "name": "therapeutic_area",
+      "type": "string"
+    },
+    {
+      "name": "indication",
+      "type": "string"
+    },
+    {
+      "name": "sponsor",
+      "type": "string"
+    },
+    {
+      "name": "status",
+      "type": "string"
+    },
+    {
+      "name": "start_date",
+      "type": "date"
+    },
+    {
+      "name": "planned_enrollment",
+      "type": "int"
+    },
+    {
+      "name": "primary_endpoint",
+      "type": "string"
+    },
+    {
+      "name": "endpoint_unit",
+      "type": "string"
+    },
+    {
+      "name": "drug_id",
+      "type": "string"
+    }
+  ],
+  "study_arms": [
+    {
+      "name": "arm_id",
+      "type": "string"
+    },
+    {
+      "name": "study_id",
+      "type": "string"
+    },
+    {
+      "name": "arm_name",
+      "type": "string"
+    },
+    {
+      "name": "arm_type",
+      "type": "string"
+    },
+    {
+      "name": "drug_id",
+      "type": "string"
+    },
+    {
+      "name": "dose_mg",
+      "type": "double"
+    }
+  ],
+  "sites": [
+    {
+      "name": "site_id",
+      "type": "string"
+    },
+    {
+      "name": "study_id",
+      "type": "string"
+    },
+    {
+      "name": "site_name",
+      "type": "string"
+    },
+    {
+      "name": "country",
+      "type": "string"
+    },
+    {
+      "name": "city",
+      "type": "string"
+    },
+    {
+      "name": "principal_investigator",
+      "type": "string"
+    },
+    {
+      "name": "site_status",
+      "type": "string"
+    },
+    {
+      "name": "activation_date",
+      "type": "date"
+    }
+  ],
+  "subjects": [
+    {
+      "name": "subject_id",
+      "type": "string"
+    },
+    {
+      "name": "study_id",
+      "type": "string"
+    },
+    {
+      "name": "site_id",
+      "type": "string"
+    },
+    {
+      "name": "arm_id",
+      "type": "string"
+    },
+    {
+      "name": "age",
+      "type": "int"
+    },
+    {
+      "name": "sex",
+      "type": "string"
+    },
+    {
+      "name": "race",
+      "type": "string"
+    },
+    {
+      "name": "country",
+      "type": "string"
+    },
+    {
+      "name": "consent_date",
+      "type": "date"
+    },
+    {
+      "name": "randomization_date",
+      "type": "date"
+    },
+    {
+      "name": "completion_status",
+      "type": "string"
+    },
+    {
+      "name": "discontinuation_reason",
+      "type": "string"
+    },
+    {
+      "name": "last_contact_date",
+      "type": "date"
+    }
+  ],
+  "adverse_events": [
+    {
+      "name": "ae_id",
+      "type": "string"
+    },
+    {
+      "name": "subject_id",
+      "type": "string"
+    },
+    {
+      "name": "study_id",
+      "type": "string"
+    },
+    {
+      "name": "preferred_term",
+      "type": "string"
+    },
+    {
+      "name": "meddra_pt_code",
+      "type": "string"
+    },
+    {
+      "name": "system_organ_class",
+      "type": "string"
+    },
+    {
+      "name": "severity",
+      "type": "string"
+    },
+    {
+      "name": "is_serious",
+      "type": "string"
+    },
+    {
+      "name": "is_related_to_treatment",
+      "type": "string"
+    },
+    {
+      "name": "start_date",
+      "type": "date"
+    },
+    {
+      "name": "end_date",
+      "type": "date"
+    },
+    {
+      "name": "outcome",
+      "type": "string"
+    }
+  ],
+  "lab_results": [
+    {
+      "name": "lab_id",
+      "type": "string"
+    },
+    {
+      "name": "subject_id",
+      "type": "string"
+    },
+    {
+      "name": "study_id",
+      "type": "string"
+    },
+    {
+      "name": "visit",
+      "type": "string"
+    },
+    {
+      "name": "collection_date",
+      "type": "date"
+    },
+    {
+      "name": "test_code",
+      "type": "string"
+    },
+    {
+      "name": "test_name",
+      "type": "string"
+    },
+    {
+      "name": "result_value",
+      "type": "double"
+    },
+    {
+      "name": "result_unit",
+      "type": "string"
+    },
+    {
+      "name": "ref_range_low",
+      "type": "double"
+    },
+    {
+      "name": "ref_range_high",
+      "type": "double"
+    },
+    {
+      "name": "abnormal_flag",
+      "type": "string"
+    }
+  ],
+  "efficacy_results": [
+    {
+      "name": "efficacy_id",
+      "type": "string"
+    },
+    {
+      "name": "subject_id",
+      "type": "string"
+    },
+    {
+      "name": "study_id",
+      "type": "string"
+    },
+    {
+      "name": "endpoint_name",
+      "type": "string"
+    },
+    {
+      "name": "visit",
+      "type": "string"
+    },
+    {
+      "name": "assessment_date",
+      "type": "date"
+    },
+    {
+      "name": "value",
+      "type": "double"
+    },
+    {
+      "name": "unit",
+      "type": "string"
+    },
+    {
+      "name": "is_baseline",
+      "type": "string"
+    }
+  ],
+  "protocol_deviations": [
+    {
+      "name": "deviation_id",
+      "type": "string"
+    },
+    {
+      "name": "subject_id",
+      "type": "string"
+    },
+    {
+      "name": "study_id",
+      "type": "string"
+    },
+    {
+      "name": "site_id",
+      "type": "string"
+    },
+    {
+      "name": "description",
+      "type": "string"
+    },
+    {
+      "name": "category",
+      "type": "string"
+    },
+    {
+      "name": "deviation_date",
+      "type": "date"
+    }
+  ],
+  "meddra_dictionary": [
+    {
+      "name": "meddra_pt_code",
+      "type": "string"
+    },
+    {
+      "name": "preferred_term",
+      "type": "string"
+    },
+    {
+      "name": "system_organ_class",
+      "type": "string"
+    }
+  ]
+}

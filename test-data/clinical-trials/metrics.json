@@ -1,0 +1,55 @@
+{
+  "_note": "Request bodies for POST /namespaces/{namespaceId}/metrics. Replace REPLACE_WITH_SOURCE_ID with the approved Glue source's dataSourceId. SQL is read-only, one source table each.",
+  "metrics": [
+    {
+      "name": "total_adverse_events",
+      "description": "Total number of adverse events recorded across all studies.",
+      "dataSourceId": "REPLACE_WITH_SOURCE_ID",
+      "sourceTable": "adverse_events",
+      "unit": "count",
+      "returnType": "integer",
+      "expression": { "dialects": [ { "dialect": "TRINO", "expression": "SELECT COUNT(*) AS total_adverse_events FROM adverse_events" } ] },
+      "aiContext": { "synonyms": ["AE count", "number of side effects"], "examples": ["How many adverse events are there in total?"] }
+    },
+    {
+      "name": "serious_adverse_event_count",
+      "description": "Number of serious adverse events (SAEs): adverse events with is_serious = 'Y'.",
+      "dataSourceId": "REPLACE_WITH_SOURCE_ID",
+      "sourceTable": "adverse_events",
+      "unit": "count",
+      "returnType": "integer",
+      "expression": { "dialects": [ { "dialect": "TRINO", "expression": "SELECT COUNT(*) AS serious_adverse_event_count FROM adverse_events WHERE is_serious = 'Y'" } ] },
+      "aiContext": { "synonyms": ["SAE count", "serious AEs"], "examples": ["How many serious adverse events have been reported?"] }
+    },
+    {
+      "name": "enrolled_subjects",
+      "description": "Number of randomised subjects across all studies.",
+      "dataSourceId": "REPLACE_WITH_SOURCE_ID",
+      "sourceTable": "subjects",
+      "unit": "count",
+      "returnType": "integer",
+      "expression": { "dialects": [ { "dialect": "TRINO", "expression": "SELECT COUNT(*) AS enrolled_subjects FROM subjects" } ] },
+      "aiContext": { "synonyms": ["total enrollment", "number of patients"], "examples": ["How many subjects are enrolled?"] }
+    },
+    {
+      "name": "discontinuation_rate",
+      "description": "Percentage of randomised subjects whose completion_status is 'Discontinued'.",
+      "dataSourceId": "REPLACE_WITH_SOURCE_ID",
+      "sourceTable": "subjects",
+      "unit": "percent",
+      "returnType": "decimal",
+      "expression": { "dialects": [ { "dialect": "TRINO", "expression": "SELECT ROUND(100.0 * SUM(CASE WHEN completion_status = 'Discontinued' THEN 1 ELSE 0 END) / COUNT(*), 1) AS discontinuation_rate FROM subjects" } ] },
+      "aiContext": { "synonyms": ["dropout rate", "withdrawal rate"], "examples": ["What is the overall discontinuation rate?"] }
+    },
+    {
+      "name": "major_protocol_deviation_count",
+      "description": "Number of protocol deviations categorised as Major.",
+      "dataSourceId": "REPLACE_WITH_SOURCE_ID",
+      "sourceTable": "protocol_deviations",
+      "unit": "count",
+      "returnType": "integer",
+      "expression": { "dialects": [ { "dialect": "TRINO", "expression": "SELECT COUNT(*) AS major_protocol_deviation_count FROM protocol_deviations WHERE category = 'Major'" } ] },
+      "aiContext": { "synonyms": ["major deviations"], "examples": ["How many major protocol deviations are there?"] }
+    }
+  ]
+}

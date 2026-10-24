@@ -1,0 +1,163 @@
+{
+  "_note": "Ground truth computed from the generated CSVs. Query answers should agree (allow rounding).",
+  "total_subjects": 574,
+  "subjects_per_study": {
+    "ST-001": 150,
+    "ST-002": 80,
+    "ST-003": 200,
+    "ST-004": 120,
+    "ST-005": 24
+  },
+  "subjects_per_arm": {
+    "Zorvantil 5 mg (ST-001)": 52,
+    "Zorvantil 10 mg (ST-001)": 52,
+    "Placebo (ST-001)": 46,
+    "Docetaxel 75 mg/m2 (ST-002)": 42,
+    "Oncotra 1200 mg (ST-002)": 38,
+    "Placebo (ST-003)": 102,
+    "Cardiprex 10 mg (ST-003)": 98,
+    "Placebo (ST-004)": 60,
+    "Neurolynt 10 mg/kg (ST-004)": 60,
+    "Cardiprex 5 mg (ST-005)": 8,
+    "Cardiprex 10 mg (ST-005)": 8,
+    "Cardiprex 20 mg (ST-005)": 8
+  },
+  "total_adverse_events": 562,
+  "adverse_events_per_study": {
+    "ST-001": 158,
+    "ST-002": 132,
+    "ST-003": 164,
+    "ST-004": 89,
+    "ST-005": 19
+  },
+  "serious_adverse_events_per_study": {
+    "ST-001": 11,
+    "ST-002": 12,
+    "ST-003": 14,
+    "ST-004": 10,
+    "ST-005": 2
+  },
+  "herpes_zoster_events_by_arm": {
+    "Zorvantil 10 mg": 8,
+    "Zorvantil 5 mg": 3,
+    "Placebo": 1,
+    "Neurolynt 10 mg/kg": 1
+  },
+  "neutropenia_events_by_arm_ST-002": {
+    "Docetaxel 75 mg/m2": 26
+  },
+  "subjects_with_ARIA_ST-004": 10,
+  "genital_mycotic_infection_events_by_arm_ST-003": {
+    "Cardiprex 10 mg": 14,
+    "Placebo": 1
+  },
+  "discontinued_subjects_per_study": {
+    "ST-001": 22,
+    "ST-002": 18,
+    "ST-003": 49,
+    "ST-004": 32,
+    "ST-005": 1
+  },
+  "discontinued_due_to_AE_per_study": {
+    "ST-001": 5,
+    "ST-002": 2,
+    "ST-003": 8,
+    "ST-004": 4
+  },
+  "major_protocol_deviations_per_study": {
+    "ST-001": 10,
+    "ST-002": 4,
+    "ST-003": 14,
+    "ST-004": 6,
+    "ST-005": 2
+  },
+  "sites_per_country": {
+    "Germany": 7,
+    "Poland": 2,
+    "United Kingdom": 7,
+    "Spain": 2,
+    "United States": 9,
+    "France": 2,
+    "Japan": 2,
+    "Sweden": 2,
+    "Brazil": 2,
+    "Canada": 4,
+    "Netherlands": 2
+  },
+  "high_ALT_results_by_arm_ST-001": {
+    "Zorvantil 5 mg": 92,
+    "Zorvantil 10 mg": 91,
+    "Placebo": 3
+  },
+  "top5_adverse_event_terms": [
+    [
+      "Headache",
+      61
+    ],
+    [
+      "Nausea",
+      54
+    ],
+    [
+      "Fatigue",
+      46
+    ],
+    [
+      "Upper respiratory tract infection",
+      41
+    ],
+    [
+      "Neutropenia",
+      39
+    ]
+  ],
+  "top3_system_organ_classes": [
+    [
+      "Infections and infestations",
+      119
+    ],
+    [
+      "Gastrointestinal disorders",
+      108
+    ],
+    [
+      "Nervous system disorders",
+      99
+    ]
+  ],
+  "mean_week24_change_ST-001": {
+    "ST-001-A1": {
+      "mean_change": -0.38,
+      "n": 38
+    },
+    "ST-001-A2": {
+      "mean_change": -1.42,
+      "n": 45
+    },
+    "ST-001-A3": {
+      "mean_change": -2.1,
+      "n": 45
+    }
+  },
+  "mean_week24_change_ST-003": {
+    "ST-003-A1": {
+      "mean_change": -95.18,
+      "n": 79
+    },
+    "ST-003-A2": {
+      "mean_change": -292.76,
+      "n": 72
+    }
+  },
+  "studies_using_Cardiprex": [
+    "ST-003",
+    "ST-005"
+  ],
+  "drug_names": {
+    "CPD-101": "Zorvantil",
+    "CPD-102": "Oncotra",
+    "CPD-103": "Cardiprex",
+    "CPD-104": "Neurolynt",
+    "CPD-900": "Docetaxel"
+  }
+}

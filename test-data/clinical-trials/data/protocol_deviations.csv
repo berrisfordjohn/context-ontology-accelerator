@@ -1,0 +1,69 @@
+deviation_id,subject_id,study_id,site_id,description,category,deviation_date
+PD-00001,ST-001-0012,ST-001,ST-001-S01,Missed visit window,Minor,2023-05-03
+PD-00002,ST-001-0013,ST-001,ST-001-S10,Informed consent version error,Major,2023-11-22
+PD-00003,ST-001-0019,ST-001,ST-001-S02,Missed visit window,Minor,2023-08-04
+PD-00004,ST-001-0024,ST-001,ST-001-S08,Out-of-window dosing,Minor,2023-11-15
+PD-00005,ST-001-0033,ST-001,ST-001-S06,Informed consent version error,Major,2023-07-10
+PD-00006,ST-001-0039,ST-001,ST-001-S01,Out-of-window dosing,Minor,2023-06-20
+PD-00007,ST-001-0051,ST-001,ST-001-S08,Missed safety lab,Minor,2023-07-19
+PD-00008,ST-001-0053,ST-001,ST-001-S06,Out-of-window dosing,Minor,2023-08-07
+PD-00009,ST-001-0060,ST-001,ST-001-S01,Informed consent version error,Major,2023-06-17
+PD-00010,ST-001-0076,ST-001,ST-001-S03,Prohibited concomitant medication,Major,2023-09-28
+PD-00011,ST-001-0077,ST-001,ST-001-S02,Missed visit window,Minor,2023-12-26
+PD-00012,ST-001-0084,ST-001,ST-001-S04,Inclusion criterion not met,Major,2023-07-07
+PD-00013,ST-001-0093,ST-001,ST-001-S10,Out-of-window dosing,Minor,2023-06-04
+PD-00014,ST-001-0097,ST-001,ST-001-S09,Inclusion criterion not met,Major,2023-08-03
+PD-00015,ST-001-0099,ST-001,ST-001-S07,Inclusion criterion not met,Major,2023-08-20
+PD-00016,ST-001-0103,ST-001,ST-001-S02,Informed consent version error,Major,2023-06-10
+PD-00017,ST-001-0120,ST-001,ST-001-S02,Informed consent version error,Major,2023-08-25
+PD-00018,ST-001-0145,ST-001,ST-001-S06,Informed consent version error,Major,2023-08-02
+PD-00019,ST-002-0001,ST-002,ST-002-S07,Missed visit window,Minor,2024-12-10
+PD-00020,ST-002-0006,ST-002,ST-002-S05,Out-of-window dosing,Minor,2025-02-26
+PD-00021,ST-002-0013,ST-002,ST-002-S07,Inclusion criterion not met,Major,2024-11-04
+PD-00022,ST-002-0016,ST-002,ST-002-S03,Missed safety lab,Minor,2024-11-18
+PD-00023,ST-002-0023,ST-002,ST-002-S04,Out-of-window dosing,Minor,2024-11-25
+PD-00024,ST-002-0026,ST-002,ST-002-S04,Out-of-window dosing,Minor,2025-01-05
+PD-00025,ST-002-0030,ST-002,ST-002-S07,Out-of-window dosing,Minor,2025-03-08
+PD-00026,ST-002-0032,ST-002,ST-002-S06,Informed consent version error,Major,2024-12-24
+PD-00027,ST-002-0074,ST-002,ST-002-S01,Informed consent version error,Major,2025-01-12
+PD-00028,ST-002-0079,ST-002,ST-002-S05,Informed consent version error,Major,2025-04-10
+PD-00029,ST-003-0009,ST-003,ST-003-S11,Inclusion criterion not met,Major,2024-08-24
+PD-00030,ST-003-0011,ST-003,ST-003-S11,Inclusion criterion not met,Major,2024-12-15
+PD-00031,ST-003-0021,ST-003,ST-003-S03,Missed safety lab,Minor,2024-09-04
+PD-00032,ST-003-0027,ST-003,ST-003-S04,Out-of-window dosing,Minor,2024-12-21
+PD-00033,ST-003-0031,ST-003,ST-003-S11,Missed visit window,Minor,2024-03-18
+PD-00034,ST-003-0053,ST-003,ST-003-S07,Inclusion criterion not met,Major,2024-11-15
+PD-00035,ST-003-0056,ST-003,ST-003-S14,Missed safety lab,Minor,2024-12-28
+PD-00036,ST-003-0063,ST-003,ST-003-S06,Missed safety lab,Minor,2024-05-31
+PD-00037,ST-003-0066,ST-003,ST-003-S08,Prohibited concomitant medication,Major,2024-07-11
+PD-00038,ST-003-0070,ST-003,ST-003-S03,Missed safety lab,Minor,2025-01-19
+PD-00039,ST-003-0071,ST-003,ST-003-S10,Missed safety lab,Minor,2024-03-16
+PD-00040,ST-003-0075,ST-003,ST-003-S14,Informed consent version error,Major,2024-10-29
+PD-00041,ST-003-0082,ST-003,ST-003-S08,Informed consent version error,Major,2024-12-10
+PD-00042,ST-003-0101,ST-003,ST-003-S08,Prohibited concomitant medication,Major,2025-02-11
+PD-00043,ST-003-0102,ST-003,ST-003-S05,Out-of-window dosing,Minor,2024-06-10
+PD-00044,ST-003-0103,ST-003,ST-003-S12,Out-of-window dosing,Minor,2024-10-28
+PD-00045,ST-003-0111,ST-003,ST-003-S05,Missed safety lab,Minor,2024-04-04
+PD-00046,ST-003-0123,ST-003,ST-003-S09,Missed safety lab,Minor,2024-12-09
+PD-00047,ST-003-0131,ST-003,ST-003-S08,Inclusion criterion not met,Major,2024-08-03
+PD-00048,ST-003-0137,ST-003,ST-003-S10,Prohibited concomitant medication,Major,2024-04-20
+PD-00049,ST-003-0144,ST-003,ST-003-S08,Out-of-window dosing,Minor,2024-05-18
+PD-00050,ST-003-0149,ST-003,ST-003-S02,Prohibited concomitant medication,Major,2025-01-28
+PD-00051,ST-003-0152,ST-003,ST-003-S01,Prohibited concomitant medication,Major,2024-06-16
+PD-00052,ST-003-0154,ST-003,ST-003-S03,Informed consent version error,Major,2024-11-23
+PD-00053,ST-003-0177,ST-003,ST-003-S13,Missed visit window,Minor,2025-01-18
+PD-00054,ST-003-0184,ST-003,ST-003-S08,Informed consent version error,Major,2024-07-30
+PD-00055,ST-003-0185,ST-003,ST-003-S01,Prohibited concomitant medication,Major,2024-08-10
+PD-00056,ST-004-0006,ST-004,ST-004-S07,Inclusion criterion not met,Major,2026-01-12
+PD-00057,ST-004-0008,ST-004,ST-004-S05,Inclusion criterion not met,Major,2025-11-19
+PD-00058,ST-004-0035,ST-004,ST-004-S04,Inclusion criterion not met,Major,2026-01-31
+PD-00059,ST-004-0050,ST-004,ST-004-S04,Missed safety lab,Minor,2025-09-10
+PD-00060,ST-004-0096,ST-004,ST-004-S06,Missed visit window,Minor,2025-12-07
+PD-00061,ST-004-0103,ST-004,ST-004-S08,Informed consent version error,Major,2025-10-12
+PD-00062,ST-004-0105,ST-004,ST-004-S07,Informed consent version error,Major,2025-09-13
+PD-00063,ST-004-0118,ST-004,ST-004-S06,Prohibited concomitant medication,Major,2025-12-11
+PD-00064,ST-005-0003,ST-005,ST-005-S01,Inclusion criterion not met,Major,2023-11-08
+PD-00065,ST-005-0009,ST-005,ST-005-S01,Missed safety lab,Minor,2023-10-26
+PD-00066,ST-005-0012,ST-005,ST-005-S01,Missed visit window,Minor,2023-10-21
+PD-00067,ST-005-0013,ST-005,ST-005-S01,Out-of-window dosing,Minor,2023-12-25
+PD-00068,ST-005-0014,ST-005,ST-005-S01,Informed consent version error,Major,2024-01-16

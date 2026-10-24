@@ -1,0 +1,21 @@
+meddra_pt_code,preferred_term,system_organ_class
+10019211,Headache,Nervous system disorders
+10013573,Dizziness,Nervous system disorders
+10028813,Nausea,Gastrointestinal disorders
+10012735,Diarrhoea,Gastrointestinal disorders
+10047700,Vomiting,Gastrointestinal disorders
+10028810,Nasopharyngitis,Infections and infestations
+10046306,Upper respiratory tract infection,Infections and infestations
+10035664,Pneumonia,Infections and infestations
+10019974,Herpes zoster,Infections and infestations
+10001551,Alanine aminotransferase increased,Investigations
+10029354,Neutropenia,Blood and lymphatic system disorders
+10002272,Anaemia,Blood and lymphatic system disorders
+10016256,Fatigue,General disorders and administration site conditions
+10037844,Rash,Skin and subcutaneous tissue disorders
+10020772,Hypertension,Vascular disorders
+10021097,Hypotension,Vascular disorders
+10003658,Atrial fibrillation,Cardiac disorders
+10010305,Confusional state,Psychiatric disorders
+10018087,Genital mycotic infection,Infections and infestations
+10083555,Amyloid related imaging abnormalities,Nervous system disorders
