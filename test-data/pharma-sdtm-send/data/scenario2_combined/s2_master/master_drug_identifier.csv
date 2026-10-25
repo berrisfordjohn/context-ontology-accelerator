@@ -1,0 +1,13 @@
+DRUG_IRI,ID_SCHEME,ID_VALUE,VALID_FROM,VALID_TO
+http://example.org/pharma/drug/DRG-0001,PRECLINICAL,PC-ZV-0417,2015-01-01,
+http://example.org/pharma/drug/DRG-0001,CLINICAL_PH12,CD-48213,2018-06-01,
+http://example.org/pharma/drug/DRG-0001,PUBLIC_PH3,zorvantinib,2021-01-01,
+http://example.org/pharma/drug/DRG-0002,PRECLINICAL,PC-ON-0233,2015-01-01,
+http://example.org/pharma/drug/DRG-0002,CLINICAL_PH12,CD-51877,2018-06-01,
+http://example.org/pharma/drug/DRG-0002,PUBLIC_PH3,oncotrabine,2021-01-01,
+http://example.org/pharma/drug/DRG-0003,PRECLINICAL,PC-CP-0098,2015-01-01,
+http://example.org/pharma/drug/DRG-0003,CLINICAL_PH12,CD-60022,2018-06-01,
+http://example.org/pharma/drug/DRG-0003,PUBLIC_PH3,cardiprexol,2021-01-01,
+http://example.org/pharma/drug/DRG-0004,PRECLINICAL,PC-NL-0571,2015-01-01,
+http://example.org/pharma/drug/DRG-0004,CLINICAL_PH12,CD-70419,2018-06-01,
+http://example.org/pharma/drug/DRG-0005,PRECLINICAL,PC-VX-0820,2015-01-01,

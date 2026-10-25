@@ -1,0 +1,200 @@
+{
+ "_note": "Request bodies for POST /namespaces/{ns}/metrics. Replace the REPLACE_WITH_* placeholders with the approved source ids.",
+ "metrics": [
+  {
+   "name": "enrolled_patient_count",
+   "description": "Human patients enrolled in clinical (SDTM) studies; excludes screen failures. Not animals.",
+   "dataSourceId": "REPLACE_WITH_SDTM_SOURCE_ID",
+   "sourceTable": "dm",
+   "unit": "count",
+   "returnType": "integer",
+   "expression": {
+    "dialects": [
+     {
+      "dialect": "TRINO",
+      "expression": "SELECT COUNT(*) AS enrolled_patient_count FROM dm WHERE armcd <> 'SCRNFAIL'"
+     }
+    ]
+   },
+   "aiContext": {
+    "synonyms": [
+     "number of patients",
+     "enrolled subjects"
+    ],
+    "examples": [
+     "How many patients are enrolled?"
+    ]
+   }
+  },
+  {
+   "name": "patients_bmi_over_30",
+   "description": "Enrolled human patients with baseline BMI above 30 (height in/m/cm and weight lb/kg normalised).",
+   "dataSourceId": "REPLACE_WITH_SDTM_SOURCE_ID",
+   "sourceTable": "vs",
+   "unit": "count",
+   "returnType": "integer",
+   "expression": {
+    "dialects": [
+     {
+      "dialect": "TRINO",
+      "expression": "WITH b AS (SELECT usubjid, MAX(CASE WHEN vstestcd='HEIGHT' THEN TRY_CAST(NULLIF(vsorres,'') AS double) * CASE vsorresu WHEN 'in' THEN 2.54 WHEN 'cm' THEN 1 WHEN 'm' THEN 100 END END) AS h_cm, MAX(CASE WHEN vstestcd='WEIGHT' THEN TRY_CAST(NULLIF(vsorres,'') AS double) * CASE vsorresu WHEN 'lb' THEN 0.45359237 WHEN 'kg' THEN 1 END END) AS w_kg FROM vs WHERE vsblfl='Y' AND vstestcd IN ('HEIGHT','WEIGHT') GROUP BY usubjid) SELECT COUNT(*) AS patients_bmi_over_30 FROM b WHERE w_kg / ((h_cm/100) * (h_cm/100)) > 30"
+     }
+    ]
+   },
+   "aiContext": {
+    "synonyms": [
+     "obese patients",
+     "BMI > 30"
+    ],
+    "examples": [
+     "How many patients have a BMI over 30?"
+    ]
+   }
+  },
+  {
+   "name": "mean_baseline_bmi",
+   "description": "Mean baseline BMI of human patients (unit-normalised).",
+   "dataSourceId": "REPLACE_WITH_SDTM_SOURCE_ID",
+   "sourceTable": "vs",
+   "unit": "kg/m2",
+   "returnType": "decimal",
+   "expression": {
+    "dialects": [
+     {
+      "dialect": "TRINO",
+      "expression": "WITH b AS (SELECT usubjid, MAX(CASE WHEN vstestcd='HEIGHT' THEN TRY_CAST(NULLIF(vsorres,'') AS double) * CASE vsorresu WHEN 'in' THEN 2.54 WHEN 'cm' THEN 1 WHEN 'm' THEN 100 END END) AS h_cm, MAX(CASE WHEN vstestcd='WEIGHT' THEN TRY_CAST(NULLIF(vsorres,'') AS double) * CASE vsorresu WHEN 'lb' THEN 0.45359237 WHEN 'kg' THEN 1 END END) AS w_kg FROM vs WHERE vsblfl='Y' AND vstestcd IN ('HEIGHT','WEIGHT') GROUP BY usubjid) SELECT ROUND(AVG(w_kg / ((h_cm/100) * (h_cm/100))), 2) AS mean_baseline_bmi FROM b"
+     }
+    ]
+   },
+   "aiContext": {
+    "synonyms": [
+     "average BMI"
+    ],
+    "examples": [
+     "What is the mean baseline BMI?"
+    ]
+   }
+  },
+  {
+   "name": "serious_adverse_event_count",
+   "description": "Serious adverse events (AESER = 'Y') in clinical studies.",
+   "dataSourceId": "REPLACE_WITH_SDTM_SOURCE_ID",
+   "sourceTable": "ae",
+   "unit": "count",
+   "returnType": "integer",
+   "expression": {
+    "dialects": [
+     {
+      "dialect": "TRINO",
+      "expression": "SELECT COUNT(*) AS serious_adverse_event_count FROM ae WHERE aeser = 'Y'"
+     }
+    ]
+   },
+   "aiContext": {
+    "synonyms": [
+     "SAE count"
+    ],
+    "examples": [
+     "How many serious adverse events are there?"
+    ]
+   }
+  },
+  {
+   "name": "animal_count",
+   "description": "Animals in in-vivo (SEND) studies. Not human patients.",
+   "dataSourceId": "REPLACE_WITH_SEND_SOURCE_ID",
+   "sourceTable": "dm",
+   "unit": "count",
+   "returnType": "integer",
+   "expression": {
+    "dialects": [
+     {
+      "dialect": "TRINO",
+      "expression": "SELECT COUNT(*) AS animal_count FROM dm"
+     }
+    ]
+   },
+   "aiContext": {
+    "synonyms": [
+     "number of animals"
+    ],
+    "examples": [
+     "How many animals are in the in vivo studies?"
+    ]
+   }
+  },
+  {
+   "name": "mean_day1_body_weight_g",
+   "description": "Mean Day-1 body weight (grams) of animals in SEND studies.",
+   "dataSourceId": "REPLACE_WITH_SEND_SOURCE_ID",
+   "sourceTable": "bw",
+   "unit": "g",
+   "returnType": "decimal",
+   "expression": {
+    "dialects": [
+     {
+      "dialect": "TRINO",
+      "expression": "SELECT ROUND(AVG(bwstresn), 1) AS mean_day1_body_weight_g FROM bw WHERE bwdy = 1"
+     }
+    ]
+   },
+   "aiContext": {
+    "synonyms": [
+     "average animal weight"
+    ],
+    "examples": [
+     "What is the average animal body weight at day 1?"
+    ]
+   }
+  },
+  {
+   "name": "ongoing_study_count",
+   "description": "Number of clinical studies whose USDM study status is 'Ongoing'.",
+   "dataSourceId": "REPLACE_WITH_USDM_SOURCE_ID",
+   "sourceTable": "usdm_study",
+   "unit": "count",
+   "returnType": "integer",
+   "expression": {
+    "dialects": [
+     {
+      "dialect": "TRINO",
+      "expression": "SELECT COUNT(*) AS ongoing_study_count FROM usdm_study WHERE study_status = 'Ongoing'"
+     }
+    ]
+   },
+   "aiContext": {
+    "synonyms": [
+     "active studies",
+     "running trials"
+    ],
+    "examples": [
+     "How many studies are ongoing?"
+    ]
+   }
+  },
+  {
+   "name": "clinical_stage_drug_count",
+   "description": "Number of master-data drugs in a clinical phase (Phase 1-3).",
+   "dataSourceId": "REPLACE_WITH_MASTER_SOURCE_ID",
+   "sourceTable": "master_drug",
+   "unit": "count",
+   "returnType": "integer",
+   "expression": {
+    "dialects": [
+     {
+      "dialect": "TRINO",
+      "expression": "SELECT COUNT(*) AS clinical_stage_drug_count FROM master_drug WHERE lifecycle_stage LIKE 'Phase%'"
+     }
+    ]
+   },
+   "aiContext": {
+    "synonyms": [
+     "drugs in clinical development"
+    ],
+    "examples": [
+     "How many drugs are in clinical development?"
+    ]
+   }
+  }
+ ]
+}

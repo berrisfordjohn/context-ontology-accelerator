@@ -1,0 +1,110 @@
+@prefix ph:   <http://example.org/pharma/> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+
+<http://example.org/pharma> a owl:Ontology ;
+    rdfs:label "Pharma reference ontology (SDTM / SEND / USDM / master drug)" ;
+    rdfs:comment "Reference ontology used for grounding. Key rule: tables with identical names and columns (DM, EX, LB) mean different things depending on the CDISC standard of the database they live in: SDTM = human clinical, SEND = animal in vivo." .
+
+ph:sourceStandard a owl:AnnotationProperty ; rdfs:label "source standard" ; rdfs:comment "CDISC standard of the source data: SDTM, SEND or USDM." .
+ph:sourceDomain a owl:AnnotationProperty ; rdfs:label "source domain" ; rdfs:comment "Two-letter CDISC domain / table the class is populated from." .
+
+# ---- studies
+ph:Study a owl:Class ; rdfs:label "Study" ; skos:definition "Any investigation of a drug, human or animal." .
+ph:ClinicalStudy a owl:Class ; rdfs:subClassOf ph:Study ; rdfs:label "Clinical Study" ;
+    skos:altLabel "clinical trial", "human study", "trial" ;
+    skos:definition "A study in human participants. Operational data in USDM, subject data in SDTM." ;
+    ph:sourceStandard "SDTM, USDM" ; owl:disjointWith ph:InVivoStudy .
+ph:InVivoStudy a owl:Class ; rdfs:subClassOf ph:Study ; rdfs:label "In Vivo Study" ;
+    skos:altLabel "animal study", "preclinical study", "nonclinical study", "tox study" ;
+    skos:definition "A nonclinical study in animals. Data in SEND." ; ph:sourceStandard "SEND" .
+
+# ---- subjects
+ph:Subject a owl:Class ; rdfs:label "Subject" ; skos:definition "A study participant: a patient or an animal. Ambiguous on its own; prefer Patient or Animal." .
+ph:Patient a owl:Class ; rdfs:subClassOf ph:Subject ; rdfs:label "Patient" ;
+    skos:altLabel "human subject", "participant", "enrolled subject", "volunteer" ;
+    skos:definition "A human enrolled in a clinical study (DM row in an SDTM database). Screen failures (ARMCD = SCRNFAIL) are not enrolled patients." ;
+    ph:sourceStandard "SDTM" ; ph:sourceDomain "DM" ; owl:disjointWith ph:Animal .
+ph:Animal a owl:Class ; rdfs:subClassOf ph:Subject ; rdfs:label "Animal" ;
+    skos:altLabel "test animal", "rat", "mouse", "dog", "in vivo subject" ;
+    skos:definition "An animal on an in vivo study (DM row in a SEND database). Has SPECIES and STRAIN." ;
+    ph:sourceStandard "SEND" ; ph:sourceDomain "DM" .
+ph:ScreenFailure a owl:Class ; rdfs:subClassOf ph:Subject ; rdfs:label "Screen Failure" ;
+    skos:definition "A human who was screened but not enrolled (ARMCD = SCRNFAIL). Only screening measurements exist." ; ph:sourceStandard "SDTM" .
+
+# ---- drugs and identifiers
+ph:Drug a owl:Class ; rdfs:label "Drug" ; skos:altLabel "compound", "investigational product", "molecule", "asset" ;
+    skos:definition "A drug asset in the master drug data, identified by an IRI. Its working identifier changes over the lifecycle." .
+ph:DrugIdentifier a owl:Class ; rdfs:label "Drug Identifier" ; skos:definition "A lifecycle-dependent identifier of a Drug." .
+ph:PreclinicalDrugId a owl:Class ; rdfs:subClassOf ph:DrugIdentifier ; rdfs:label "Preclinical Drug ID" ;
+    skos:definition "Identifier used in in vivo (SEND) studies. ID_SCHEME = PRECLINICAL." .
+ph:ClinicalDrugId a owl:Class ; rdfs:subClassOf ph:DrugIdentifier ; rdfs:label "Clinical Drug ID" ;
+    skos:definition "Coded identifier used in Phase 1 and Phase 2 clinical studies. ID_SCHEME = CLINICAL_PH12." .
+ph:PublicDrugId a owl:Class ; rdfs:subClassOf ph:DrugIdentifier ; rdfs:label "Public Drug ID" ;
+    skos:definition "Public human-readable identifier used in Phase 3 studies. ID_SCHEME = PUBLIC_PH3." .
+
+# ---- exposure
+ph:Exposure a owl:Class ; rdfs:label "Exposure" ; skos:definition "A dosing record (EX). EXTRT holds the drug identifier in the form used by that study." .
+ph:PatientExposure a owl:Class ; rdfs:subClassOf ph:Exposure ; rdfs:label "Patient Exposure" ; skos:altLabel "human dosing", "clinical exposure" ;
+    ph:sourceStandard "SDTM" ; ph:sourceDomain "EX" ; owl:disjointWith ph:AnimalExposure .
+ph:AnimalExposure a owl:Class ; rdfs:subClassOf ph:Exposure ; rdfs:label "Animal Exposure" ; skos:altLabel "animal dosing", "in vivo dosing" ;
+    ph:sourceStandard "SEND" ; ph:sourceDomain "EX" .
+
+# ---- measurements
+ph:Measurement a owl:Class ; rdfs:label "Measurement" .
+ph:VitalSignMeasurement a owl:Class ; rdfs:subClassOf ph:Measurement ; rdfs:label "Vital Sign Measurement" ;
+    skos:altLabel "height", "weight", "blood pressure", "VS" ; ph:sourceStandard "SDTM" ; ph:sourceDomain "VS" ;
+    rdfs:comment "Long format: one row per test (VSTESTCD HEIGHT, WEIGHT, SYSBP, DIABP). VSORRES is the value as recorded in VSORRESU (in, cm, m, lb, kg); VSSTRESN is standardised (cm, kg) but only populated for EU sites. Baseline = VSBLFL 'Y'." .
+ph:BodyWeightMeasurement a owl:Class ; rdfs:subClassOf ph:Measurement ; rdfs:label "Animal Body Weight Measurement" ;
+    skos:altLabel "animal weight", "BW" ; ph:sourceStandard "SEND" ; ph:sourceDomain "BW" ; rdfs:comment "Animal weights in grams. Not comparable with human VS weights." .
+ph:BodyMassIndex a owl:Class ; rdfs:subClassOf ph:Measurement ; rdfs:label "Body Mass Index" ; skos:altLabel "BMI" ;
+    skos:definition "Derived, humans only: baseline weight in kg divided by height in metres squared. Convert in x 2.54 = cm, m x 100 = cm, lb x 0.45359237 = kg before computing. Obese: BMI over 30." ;
+    ph:sourceStandard "SDTM" ; ph:sourceDomain "VS" .
+ph:LabResult a owl:Class ; rdfs:label "Laboratory Result" ; skos:altLabel "lab value", "LB" .
+ph:PatientLabResult a owl:Class ; rdfs:subClassOf ph:LabResult ; rdfs:label "Patient Lab Result" ; ph:sourceStandard "SDTM" ; ph:sourceDomain "LB" ;
+    rdfs:comment "LBORRES in original units (US conventional or SI); LBSTRESN standardised. ALT upper limit of normal in LBNRHI." .
+ph:AnimalLabResult a owl:Class ; rdfs:subClassOf ph:LabResult ; rdfs:label "Animal Lab Result" ; ph:sourceStandard "SEND" ; ph:sourceDomain "LB" .
+ph:AdverseEvent a owl:Class ; rdfs:label "Adverse Event" ; skos:altLabel "AE", "side effect" ; ph:sourceStandard "SDTM" ; ph:sourceDomain "AE" ;
+    skos:definition "Human adverse event. AESER = 'Y' means serious (SAE). There is no adverse event table for animals." .
+ph:ClinicalObservation a owl:Class ; rdfs:label "Animal Clinical Observation" ; skos:altLabel "CL" ; ph:sourceStandard "SEND" ; ph:sourceDomain "CL" .
+ph:Disposition a owl:Class ; rdfs:label "Disposition" ; skos:altLabel "study completion", "discontinuation" ; ph:sourceStandard "SDTM" ; ph:sourceDomain "DS" ;
+    skos:definition "Why a patient finished participation. DSDECOD other than COMPLETED means discontinued." .
+ph:Species a owl:Class ; rdfs:label "Species" .
+
+# ---- operational (USDM)
+ph:StudyMilestone a owl:Class ; rdfs:label "Study Milestone" ; skos:altLabel "FSI", "LSI", "LSLV", "database lock" ; ph:sourceStandard "USDM" ;
+    skos:definition "A dated operational milestone: FSI first subject in, LSI last subject in, LSLV last subject last visit, DBL database lock. Planned and actual dates." .
+ph:StudyStatus a owl:Class ; rdfs:label "Study Status" ; skos:definition "Operational status: Ongoing, Completed or Terminated." ; ph:sourceStandard "USDM" .
+
+# ---- object properties
+ph:enrolledIn a owl:ObjectProperty ; rdfs:label "enrolled in" ; rdfs:domain ph:Patient ; rdfs:range ph:ClinicalStudy ; skos:altLabel "STUDYID" .
+ph:testedIn a owl:ObjectProperty ; rdfs:label "tested in" ; rdfs:domain ph:Animal ; rdfs:range ph:InVivoStudy ; skos:altLabel "STUDYID" .
+ph:hasMilestone a owl:ObjectProperty ; rdfs:label "has milestone" ; rdfs:domain ph:ClinicalStudy ; rdfs:range ph:StudyMilestone .
+ph:receivedExposure a owl:ObjectProperty ; rdfs:label "received exposure" ; rdfs:domain ph:Subject ; rdfs:range ph:Exposure ; skos:altLabel "USUBJID" .
+ph:exposureTo a owl:ObjectProperty ; rdfs:label "exposure to drug" ; rdfs:domain ph:Exposure ; rdfs:range ph:Drug ;
+    rdfs:comment "Resolve EXTRT through master_drug_identifier.ID_VALUE to the drug IRI, whichever identifier scheme it uses." .
+ph:hasIdentifier a owl:ObjectProperty ; rdfs:label "has identifier" ; rdfs:domain ph:Drug ; rdfs:range ph:DrugIdentifier ; skos:altLabel "DRUG_IRI" .
+ph:studiesDrug a owl:ObjectProperty ; rdfs:label "studies drug" ; rdfs:domain ph:Study ; rdfs:range ph:Drug ;
+    rdfs:comment "Derived: the non-placebo, non-vehicle EXTRT of the study's exposure records." .
+
+# ---- datatype properties
+ph:studyAcronym a owl:DatatypeProperty ; rdfs:label "study acronym" ; rdfs:domain ph:ClinicalStudy ; rdfs:range xsd:string ; skos:altLabel "STUDY_ACRONYM" .
+ph:studyPhase a owl:DatatypeProperty ; rdfs:label "study phase" ; rdfs:domain ph:ClinicalStudy ; rdfs:range xsd:string ; skos:altLabel "STUDY_PHASE" .
+ph:studyStatus a owl:DatatypeProperty ; rdfs:label "study status" ; rdfs:domain ph:ClinicalStudy ; rdfs:range xsd:string ; skos:altLabel "STUDY_STATUS" ; rdfs:comment "Ongoing, Completed or Terminated." .
+ph:milestoneCode a owl:DatatypeProperty ; rdfs:label "milestone code" ; rdfs:domain ph:StudyMilestone ; rdfs:range xsd:string ; skos:altLabel "MILESTONE_CODE" .
+ph:actualDate a owl:DatatypeProperty ; rdfs:label "actual date" ; rdfs:domain ph:StudyMilestone ; rdfs:range xsd:date ; skos:altLabel "ACTUAL_DATE" .
+ph:plannedDate a owl:DatatypeProperty ; rdfs:label "planned date" ; rdfs:domain ph:StudyMilestone ; rdfs:range xsd:date ; skos:altLabel "PLANNED_DATE" .
+ph:drugName a owl:DatatypeProperty ; rdfs:label "drug name" ; rdfs:domain ph:Drug ; rdfs:range xsd:string ; skos:altLabel "DRUG_NAME" .
+ph:lifecycleStage a owl:DatatypeProperty ; rdfs:label "lifecycle stage" ; rdfs:domain ph:Drug ; rdfs:range xsd:string ; skos:altLabel "LIFECYCLE_STAGE" .
+ph:identifierValue a owl:DatatypeProperty ; rdfs:label "identifier value" ; rdfs:domain ph:DrugIdentifier ; rdfs:range xsd:string ; skos:altLabel "ID_VALUE", "EXTRT", "drug id" .
+ph:identifierScheme a owl:DatatypeProperty ; rdfs:label "identifier scheme" ; rdfs:domain ph:DrugIdentifier ; rdfs:range xsd:string ; skos:altLabel "ID_SCHEME" .
+ph:species a owl:DatatypeProperty ; rdfs:label "species" ; rdfs:domain ph:Animal ; rdfs:range xsd:string ; skos:altLabel "SPECIES" .
+ph:sex a owl:DatatypeProperty ; rdfs:label "sex" ; rdfs:domain ph:Subject ; rdfs:range xsd:string ; skos:altLabel "SEX" .
+ph:age a owl:DatatypeProperty ; rdfs:label "age" ; rdfs:domain ph:Subject ; rdfs:range xsd:integer ; skos:altLabel "AGE" ; rdfs:comment "Years for patients, weeks for animals (AGEU)." .
+ph:country a owl:DatatypeProperty ; rdfs:label "country" ; rdfs:domain ph:Patient ; rdfs:range xsd:string ; skos:altLabel "COUNTRY" ;
+    rdfs:comment "ISO country of the site. US sites record height in inches and weight in pounds; other countries use cm (sometimes m) and kg." .
+ph:serious a owl:DatatypeProperty ; rdfs:label "serious" ; rdfs:domain ph:AdverseEvent ; rdfs:range xsd:string ; skos:altLabel "AESER", "SAE" .
+ph:baselineBmi a owl:DatatypeProperty ; rdfs:label "baseline BMI" ; rdfs:domain ph:Patient ; rdfs:range xsd:decimal ; skos:altLabel "BMI" .

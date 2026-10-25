@@ -1,0 +1,225 @@
+{
+ "_note": "Computed from the generated rows; identical for scenario 1 and 2. 'patients' = DM rows with ARMCD != 'SCRNFAIL' (screen failures excluded). Placebo/vehicle subjects are not attributed to a drug in per-drug counts.",
+ "bmi_definition": "baseline (VSBLFL='Y') weight kg / (height m)^2; in x 2.54 = cm, m x 100 = cm, lb x 0.45359237 = kg; patients without baseline height excluded",
+ "q_bmi_over_30": [
+  {
+   "study_id": "CS-101",
+   "study_acronym": "ZOR-SAD",
+   "patients": 10,
+   "drug_name": "Zorvantil",
+   "drug_id": "CD-48213",
+   "study_status": "Completed",
+   "first_subject_in_year": 2019
+  },
+  {
+   "study_id": "CS-102",
+   "study_acronym": "ZOR-RA2",
+   "patients": 12,
+   "drug_name": "Zorvantil",
+   "drug_id": "CD-48213",
+   "study_status": "Completed",
+   "first_subject_in_year": 2020
+  },
+  {
+   "study_id": "CS-103",
+   "study_acronym": "ZOR-RA3",
+   "patients": 65,
+   "drug_name": "Zorvantil",
+   "drug_id": "zorvantinib",
+   "study_status": "Ongoing",
+   "first_subject_in_year": 2022
+  },
+  {
+   "study_id": "CS-201",
+   "study_acronym": "ONC-XT2",
+   "patients": 15,
+   "drug_name": "Oncotra",
+   "drug_id": "CD-51877",
+   "study_status": "Completed",
+   "first_subject_in_year": 2021
+  },
+  {
+   "study_id": "CS-202",
+   "study_acronym": "ONC-XT3",
+   "patients": 35,
+   "drug_name": "Oncotra",
+   "drug_id": "oncotrabine",
+   "study_status": "Ongoing",
+   "first_subject_in_year": 2023
+  },
+  {
+   "study_id": "CS-301",
+   "study_acronym": "CARD-HF3",
+   "patients": 84,
+   "drug_name": "Cardiprex",
+   "drug_id": "cardiprexol",
+   "study_status": "Completed",
+   "first_subject_in_year": 2021
+  },
+  {
+   "study_id": "CS-401",
+   "study_acronym": "NEURO-AD1",
+   "patients": 5,
+   "drug_name": "Neurolynt",
+   "drug_id": "CD-70419",
+   "study_status": "Terminated",
+   "first_subject_in_year": 2024
+  }
+ ],
+ "total_patients_bmi_over_30": 226,
+ "patients_bmi_over_30_by_country": {
+  "DE": 41,
+  "ES": 14,
+  "FR": 25,
+  "GB": 31,
+  "PL": 14,
+  "US": 101
+ },
+ "total_patients_enrolled": 544,
+ "patients_per_study": {
+  "CS-101": 24,
+  "CS-102": 60,
+  "CS-103": 150,
+  "CS-201": 50,
+  "CS-202": 100,
+  "CS-301": 140,
+  "CS-401": 20
+ },
+ "screen_failures": 44,
+ "total_animals": 186,
+ "animals_per_study": {
+  "IV-001": 40,
+  "IV-002": 30,
+  "IV-003": 40,
+  "IV-004": 16,
+  "IV-005": 30,
+  "IV-006": 30
+ },
+ "male_animals_per_species": {
+  "RAT": 55,
+  "MOUSE": 30,
+  "DOG": 8
+ },
+ "mean_baseline_bmi_per_study": {
+  "CS-101": 29.56,
+  "CS-102": 26.5,
+  "CS-103": 29.11,
+  "CS-201": 28.13,
+  "CS-202": 27.88,
+  "CS-301": 31.72,
+  "CS-401": 26.08
+ },
+ "mean_baseline_weight_kg_per_study": {
+  "CS-101": 84.7,
+  "CS-102": 74.7,
+  "CS-103": 83.2,
+  "CS-201": 79.4,
+  "CS-202": 80.4,
+  "CS-301": 91.5,
+  "CS-401": 73.6
+ },
+ "mean_day1_body_weight_g_per_study": {
+  "IV-001": 240.0,
+  "IV-002": 24.9,
+  "IV-003": 242.4,
+  "IV-004": 10381.9,
+  "IV-005": 23.7,
+  "IV-006": 242.0
+ },
+ "treated_patients_per_drug": {
+  "Zorvantil": 158,
+  "Oncotra": 97,
+  "Cardiprex": 95,
+  "Neurolynt": 10
+ },
+ "treated_animals_per_drug": {
+  "Zorvantil": 46,
+  "Oncotra": 20,
+  "Cardiprex": 26,
+  "Neurolynt": 10,
+  "Vexalin": 20
+ },
+ "zorvantil_exposure_split": {
+  "patients": 158,
+  "animals": 46
+ },
+ "serious_aes_per_study_acronym": {
+  "ZOR-SAD": 5,
+  "ZOR-RA2": 4,
+  "ZOR-RA3": 20,
+  "ONC-XT2": 4,
+  "ONC-XT3": 7,
+  "CARD-HF3": 13,
+  "NEURO-AD1": 2
+ },
+ "serious_aes_total": 55,
+ "discontinued_patients_per_study_acronym": {
+  "ZOR-SAD": 7,
+  "ZOR-RA2": 15,
+  "ZOR-RA3": 11,
+  "ONC-XT2": 10,
+  "ONC-XT3": 8,
+  "CARD-HF3": 31,
+  "NEURO-AD1": 16
+ },
+ "ongoing_studies_fsi_year": {
+  "ZOR-RA3": 2022,
+  "ONC-XT3": 2023
+ },
+ "ongoing_study_count": 2,
+ "studies_lsi_later_than_planned": [
+  "CS-102",
+  "CS-103",
+  "CS-201",
+  "CS-301"
+ ],
+ "patients_alt_over_3xuln_active_arms_per_drug": {
+  "Zorvantil": 34,
+  "Oncotra": 0,
+  "Cardiprex": 0,
+  "Neurolynt": 0
+ },
+ "drug_identifiers": {
+  "Zorvantil": {
+   "PRECLINICAL": "PC-ZV-0417",
+   "CLINICAL_PH12": "CD-48213",
+   "PUBLIC_PH3": "zorvantinib"
+  },
+  "Oncotra": {
+   "PRECLINICAL": "PC-ON-0233",
+   "CLINICAL_PH12": "CD-51877",
+   "PUBLIC_PH3": "oncotrabine"
+  },
+  "Cardiprex": {
+   "PRECLINICAL": "PC-CP-0098",
+   "CLINICAL_PH12": "CD-60022",
+   "PUBLIC_PH3": "cardiprexol"
+  },
+  "Neurolynt": {
+   "PRECLINICAL": "PC-NL-0571",
+   "CLINICAL_PH12": "CD-70419",
+   "PUBLIC_PH3": null
+  },
+  "Vexalin": {
+   "PRECLINICAL": "PC-VX-0820",
+   "CLINICAL_PH12": null,
+   "PUBLIC_PH3": null
+  }
+ },
+ "drugs_with_both_invivo_and_clinical": [
+  "Cardiprex",
+  "Neurolynt",
+  "Oncotra",
+  "Zorvantil"
+ ],
+ "drugs_invivo_only": [
+  "Vexalin"
+ ],
+ "completed_phase3_fsi_before_2022": [
+  {
+   "study_id": "CS-301",
+   "acronym": "CARD-HF3",
+   "patients": 140
+  }
+ ]
+}

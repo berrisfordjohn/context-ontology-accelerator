@@ -1,0 +1,8 @@
+STUDY_ID,STUDY_ACRONYM,STUDY_TITLE,STUDY_PHASE,STUDY_STATUS,THERAPEUTIC_AREA,PLANNED_ENROLLMENT,STUDY_REGION
+CS-101,ZOR-SAD,Single ascending dose study of Zorvantil in healthy volunteers,Phase 1,Completed,Immunology,24,US
+CS-102,ZOR-RA2,Phase 2 dose-ranging study of Zorvantil in rheumatoid arthritis,Phase 2,Completed,Immunology,60,EU
+CS-103,ZOR-RA3,Phase 3 efficacy and safety study of Zorvantil in rheumatoid arthritis,Phase 3,Ongoing,Immunology,150,GLOBAL
+CS-201,ONC-XT2,Phase 2 study of Oncotra in non-small cell lung cancer,Phase 2,Completed,Oncology,50,US
+CS-202,ONC-XT3,Phase 3 study of Oncotra versus standard of care in NSCLC,Phase 3,Ongoing,Oncology,100,GLOBAL
+CS-301,CARD-HF3,Phase 3 cardiovascular outcomes study of Cardiprex in heart failure,Phase 3,Completed,Cardiometabolic,140,GLOBAL
+CS-401,NEURO-AD1,Phase 1 safety study of Neurolynt in early Alzheimer's disease,Phase 1,Terminated,Neurology,20,EU

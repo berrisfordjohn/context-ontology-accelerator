@@ -1,0 +1,390 @@
+{
+ "_note": "Request bodies for POST /namespaces/{ns}/metrics. Replace the REPLACE_WITH_* placeholders with the approved source ids.",
+ "metrics": [
+  {
+   "name": "patients_bmi_over_30_cs_101",
+   "description": "Baseline BMI > 30 patients in study CS-101 (SDTM).",
+   "dataSourceId": "REPLACE_WITH_S1_SDTM_CS101_SOURCE_ID",
+   "sourceTable": "vs",
+   "unit": "count",
+   "returnType": "integer",
+   "expression": {
+    "dialects": [
+     {
+      "dialect": "TRINO",
+      "expression": "WITH b AS (SELECT usubjid, MAX(CASE WHEN vstestcd='HEIGHT' THEN TRY_CAST(NULLIF(vsorres,'') AS double) * CASE vsorresu WHEN 'in' THEN 2.54 WHEN 'cm' THEN 1 WHEN 'm' THEN 100 END END) AS h_cm, MAX(CASE WHEN vstestcd='WEIGHT' THEN TRY_CAST(NULLIF(vsorres,'') AS double) * CASE vsorresu WHEN 'lb' THEN 0.45359237 WHEN 'kg' THEN 1 END END) AS w_kg FROM vs WHERE vsblfl='Y' AND vstestcd IN ('HEIGHT','WEIGHT') GROUP BY usubjid) SELECT COUNT(*) AS patients_bmi_over_30 FROM b WHERE w_kg / ((h_cm/100) * (h_cm/100)) > 30"
+     }
+    ]
+   },
+   "aiContext": {
+    "synonyms": [
+     "obese patients"
+    ],
+    "examples": [
+     "How many patients in CS-101 have BMI over 30?"
+    ]
+   }
+  },
+  {
+   "name": "enrolled_patient_count_cs_101",
+   "description": "Enrolled patients (no screen failures) in study CS-101.",
+   "dataSourceId": "REPLACE_WITH_S1_SDTM_CS101_SOURCE_ID",
+   "sourceTable": "dm",
+   "unit": "count",
+   "returnType": "integer",
+   "expression": {
+    "dialects": [
+     {
+      "dialect": "TRINO",
+      "expression": "SELECT COUNT(*) AS enrolled_patient_count FROM dm WHERE armcd <> 'SCRNFAIL'"
+     }
+    ]
+   },
+   "aiContext": {
+    "synonyms": [
+     "patients"
+    ],
+    "examples": [
+     "How many patients in CS-101?"
+    ]
+   }
+  },
+  {
+   "name": "patients_bmi_over_30_cs_102",
+   "description": "Baseline BMI > 30 patients in study CS-102 (SDTM).",
+   "dataSourceId": "REPLACE_WITH_S1_SDTM_CS102_SOURCE_ID",
+   "sourceTable": "vs",
+   "unit": "count",
+   "returnType": "integer",
+   "expression": {
+    "dialects": [
+     {
+      "dialect": "TRINO",
+      "expression": "WITH b AS (SELECT usubjid, MAX(CASE WHEN vstestcd='HEIGHT' THEN TRY_CAST(NULLIF(vsorres,'') AS double) * CASE vsorresu WHEN 'in' THEN 2.54 WHEN 'cm' THEN 1 WHEN 'm' THEN 100 END END) AS h_cm, MAX(CASE WHEN vstestcd='WEIGHT' THEN TRY_CAST(NULLIF(vsorres,'') AS double) * CASE vsorresu WHEN 'lb' THEN 0.45359237 WHEN 'kg' THEN 1 END END) AS w_kg FROM vs WHERE vsblfl='Y' AND vstestcd IN ('HEIGHT','WEIGHT') GROUP BY usubjid) SELECT COUNT(*) AS patients_bmi_over_30 FROM b WHERE w_kg / ((h_cm/100) * (h_cm/100)) > 30"
+     }
+    ]
+   },
+   "aiContext": {
+    "synonyms": [
+     "obese patients"
+    ],
+    "examples": [
+     "How many patients in CS-102 have BMI over 30?"
+    ]
+   }
+  },
+  {
+   "name": "enrolled_patient_count_cs_102",
+   "description": "Enrolled patients (no screen failures) in study CS-102.",
+   "dataSourceId": "REPLACE_WITH_S1_SDTM_CS102_SOURCE_ID",
+   "sourceTable": "dm",
+   "unit": "count",
+   "returnType": "integer",
+   "expression": {
+    "dialects": [
+     {
+      "dialect": "TRINO",
+      "expression": "SELECT COUNT(*) AS enrolled_patient_count FROM dm WHERE armcd <> 'SCRNFAIL'"
+     }
+    ]
+   },
+   "aiContext": {
+    "synonyms": [
+     "patients"
+    ],
+    "examples": [
+     "How many patients in CS-102?"
+    ]
+   }
+  },
+  {
+   "name": "patients_bmi_over_30_cs_103",
+   "description": "Baseline BMI > 30 patients in study CS-103 (SDTM).",
+   "dataSourceId": "REPLACE_WITH_S1_SDTM_CS103_SOURCE_ID",
+   "sourceTable": "vs",
+   "unit": "count",
+   "returnType": "integer",
+   "expression": {
+    "dialects": [
+     {
+      "dialect": "TRINO",
+      "expression": "WITH b AS (SELECT usubjid, MAX(CASE WHEN vstestcd='HEIGHT' THEN TRY_CAST(NULLIF(vsorres,'') AS double) * CASE vsorresu WHEN 'in' THEN 2.54 WHEN 'cm' THEN 1 WHEN 'm' THEN 100 END END) AS h_cm, MAX(CASE WHEN vstestcd='WEIGHT' THEN TRY_CAST(NULLIF(vsorres,'') AS double) * CASE vsorresu WHEN 'lb' THEN 0.45359237 WHEN 'kg' THEN 1 END END) AS w_kg FROM vs WHERE vsblfl='Y' AND vstestcd IN ('HEIGHT','WEIGHT') GROUP BY usubjid) SELECT COUNT(*) AS patients_bmi_over_30 FROM b WHERE w_kg / ((h_cm/100) * (h_cm/100)) > 30"
+     }
+    ]
+   },
+   "aiContext": {
+    "synonyms": [
+     "obese patients"
+    ],
+    "examples": [
+     "How many patients in CS-103 have BMI over 30?"
+    ]
+   }
+  },
+  {
+   "name": "enrolled_patient_count_cs_103",
+   "description": "Enrolled patients (no screen failures) in study CS-103.",
+   "dataSourceId": "REPLACE_WITH_S1_SDTM_CS103_SOURCE_ID",
+   "sourceTable": "dm",
+   "unit": "count",
+   "returnType": "integer",
+   "expression": {
+    "dialects": [
+     {
+      "dialect": "TRINO",
+      "expression": "SELECT COUNT(*) AS enrolled_patient_count FROM dm WHERE armcd <> 'SCRNFAIL'"
+     }
+    ]
+   },
+   "aiContext": {
+    "synonyms": [
+     "patients"
+    ],
+    "examples": [
+     "How many patients in CS-103?"
+    ]
+   }
+  },
+  {
+   "name": "patients_bmi_over_30_cs_201",
+   "description": "Baseline BMI > 30 patients in study CS-201 (SDTM).",
+   "dataSourceId": "REPLACE_WITH_S1_SDTM_CS201_SOURCE_ID",
+   "sourceTable": "vs",
+   "unit": "count",
+   "returnType": "integer",
+   "expression": {
+    "dialects": [
+     {
+      "dialect": "TRINO",
+      "expression": "WITH b AS (SELECT usubjid, MAX(CASE WHEN vstestcd='HEIGHT' THEN TRY_CAST(NULLIF(vsorres,'') AS double) * CASE vsorresu WHEN 'in' THEN 2.54 WHEN 'cm' THEN 1 WHEN 'm' THEN 100 END END) AS h_cm, MAX(CASE WHEN vstestcd='WEIGHT' THEN TRY_CAST(NULLIF(vsorres,'') AS double) * CASE vsorresu WHEN 'lb' THEN 0.45359237 WHEN 'kg' THEN 1 END END) AS w_kg FROM vs WHERE vsblfl='Y' AND vstestcd IN ('HEIGHT','WEIGHT') GROUP BY usubjid) SELECT COUNT(*) AS patients_bmi_over_30 FROM b WHERE w_kg / ((h_cm/100) * (h_cm/100)) > 30"
+     }
+    ]
+   },
+   "aiContext": {
+    "synonyms": [
+     "obese patients"
+    ],
+    "examples": [
+     "How many patients in CS-201 have BMI over 30?"
+    ]
+   }
+  },
+  {
+   "name": "enrolled_patient_count_cs_201",
+   "description": "Enrolled patients (no screen failures) in study CS-201.",
+   "dataSourceId": "REPLACE_WITH_S1_SDTM_CS201_SOURCE_ID",
+   "sourceTable": "dm",
+   "unit": "count",
+   "returnType": "integer",
+   "expression": {
+    "dialects": [
+     {
+      "dialect": "TRINO",
+      "expression": "SELECT COUNT(*) AS enrolled_patient_count FROM dm WHERE armcd <> 'SCRNFAIL'"
+     }
+    ]
+   },
+   "aiContext": {
+    "synonyms": [
+     "patients"
+    ],
+    "examples": [
+     "How many patients in CS-201?"
+    ]
+   }
+  },
+  {
+   "name": "patients_bmi_over_30_cs_202",
+   "description": "Baseline BMI > 30 patients in study CS-202 (SDTM).",
+   "dataSourceId": "REPLACE_WITH_S1_SDTM_CS202_SOURCE_ID",
+   "sourceTable": "vs",
+   "unit": "count",
+   "returnType": "integer",
+   "expression": {
+    "dialects": [
+     {
+      "dialect": "TRINO",
+      "expression": "WITH b AS (SELECT usubjid, MAX(CASE WHEN vstestcd='HEIGHT' THEN TRY_CAST(NULLIF(vsorres,'') AS double) * CASE vsorresu WHEN 'in' THEN 2.54 WHEN 'cm' THEN 1 WHEN 'm' THEN 100 END END) AS h_cm, MAX(CASE WHEN vstestcd='WEIGHT' THEN TRY_CAST(NULLIF(vsorres,'') AS double) * CASE vsorresu WHEN 'lb' THEN 0.45359237 WHEN 'kg' THEN 1 END END) AS w_kg FROM vs WHERE vsblfl='Y' AND vstestcd IN ('HEIGHT','WEIGHT') GROUP BY usubjid) SELECT COUNT(*) AS patients_bmi_over_30 FROM b WHERE w_kg / ((h_cm/100) * (h_cm/100)) > 30"
+     }
+    ]
+   },
+   "aiContext": {
+    "synonyms": [
+     "obese patients"
+    ],
+    "examples": [
+     "How many patients in CS-202 have BMI over 30?"
+    ]
+   }
+  },
+  {
+   "name": "enrolled_patient_count_cs_202",
+   "description": "Enrolled patients (no screen failures) in study CS-202.",
+   "dataSourceId": "REPLACE_WITH_S1_SDTM_CS202_SOURCE_ID",
+   "sourceTable": "dm",
+   "unit": "count",
+   "returnType": "integer",
+   "expression": {
+    "dialects": [
+     {
+      "dialect": "TRINO",
+      "expression": "SELECT COUNT(*) AS enrolled_patient_count FROM dm WHERE armcd <> 'SCRNFAIL'"
+     }
+    ]
+   },
+   "aiContext": {
+    "synonyms": [
+     "patients"
+    ],
+    "examples": [
+     "How many patients in CS-202?"
+    ]
+   }
+  },
+  {
+   "name": "patients_bmi_over_30_cs_301",
+   "description": "Baseline BMI > 30 patients in study CS-301 (SDTM).",
+   "dataSourceId": "REPLACE_WITH_S1_SDTM_CS301_SOURCE_ID",
+   "sourceTable": "vs",
+   "unit": "count",
+   "returnType": "integer",
+   "expression": {
+    "dialects": [
+     {
+      "dialect": "TRINO",
+      "expression": "WITH b AS (SELECT usubjid, MAX(CASE WHEN vstestcd='HEIGHT' THEN TRY_CAST(NULLIF(vsorres,'') AS double) * CASE vsorresu WHEN 'in' THEN 2.54 WHEN 'cm' THEN 1 WHEN 'm' THEN 100 END END) AS h_cm, MAX(CASE WHEN vstestcd='WEIGHT' THEN TRY_CAST(NULLIF(vsorres,'') AS double) * CASE vsorresu WHEN 'lb' THEN 0.45359237 WHEN 'kg' THEN 1 END END) AS w_kg FROM vs WHERE vsblfl='Y' AND vstestcd IN ('HEIGHT','WEIGHT') GROUP BY usubjid) SELECT COUNT(*) AS patients_bmi_over_30 FROM b WHERE w_kg / ((h_cm/100) * (h_cm/100)) > 30"
+     }
+    ]
+   },
+   "aiContext": {
+    "synonyms": [
+     "obese patients"
+    ],
+    "examples": [
+     "How many patients in CS-301 have BMI over 30?"
+    ]
+   }
+  },
+  {
+   "name": "enrolled_patient_count_cs_301",
+   "description": "Enrolled patients (no screen failures) in study CS-301.",
+   "dataSourceId": "REPLACE_WITH_S1_SDTM_CS301_SOURCE_ID",
+   "sourceTable": "dm",
+   "unit": "count",
+   "returnType": "integer",
+   "expression": {
+    "dialects": [
+     {
+      "dialect": "TRINO",
+      "expression": "SELECT COUNT(*) AS enrolled_patient_count FROM dm WHERE armcd <> 'SCRNFAIL'"
+     }
+    ]
+   },
+   "aiContext": {
+    "synonyms": [
+     "patients"
+    ],
+    "examples": [
+     "How many patients in CS-301?"
+    ]
+   }
+  },
+  {
+   "name": "patients_bmi_over_30_cs_401",
+   "description": "Baseline BMI > 30 patients in study CS-401 (SDTM).",
+   "dataSourceId": "REPLACE_WITH_S1_SDTM_CS401_SOURCE_ID",
+   "sourceTable": "vs",
+   "unit": "count",
+   "returnType": "integer",
+   "expression": {
+    "dialects": [
+     {
+      "dialect": "TRINO",
+      "expression": "WITH b AS (SELECT usubjid, MAX(CASE WHEN vstestcd='HEIGHT' THEN TRY_CAST(NULLIF(vsorres,'') AS double) * CASE vsorresu WHEN 'in' THEN 2.54 WHEN 'cm' THEN 1 WHEN 'm' THEN 100 END END) AS h_cm, MAX(CASE WHEN vstestcd='WEIGHT' THEN TRY_CAST(NULLIF(vsorres,'') AS double) * CASE vsorresu WHEN 'lb' THEN 0.45359237 WHEN 'kg' THEN 1 END END) AS w_kg FROM vs WHERE vsblfl='Y' AND vstestcd IN ('HEIGHT','WEIGHT') GROUP BY usubjid) SELECT COUNT(*) AS patients_bmi_over_30 FROM b WHERE w_kg / ((h_cm/100) * (h_cm/100)) > 30"
+     }
+    ]
+   },
+   "aiContext": {
+    "synonyms": [
+     "obese patients"
+    ],
+    "examples": [
+     "How many patients in CS-401 have BMI over 30?"
+    ]
+   }
+  },
+  {
+   "name": "enrolled_patient_count_cs_401",
+   "description": "Enrolled patients (no screen failures) in study CS-401.",
+   "dataSourceId": "REPLACE_WITH_S1_SDTM_CS401_SOURCE_ID",
+   "sourceTable": "dm",
+   "unit": "count",
+   "returnType": "integer",
+   "expression": {
+    "dialects": [
+     {
+      "dialect": "TRINO",
+      "expression": "SELECT COUNT(*) AS enrolled_patient_count FROM dm WHERE armcd <> 'SCRNFAIL'"
+     }
+    ]
+   },
+   "aiContext": {
+    "synonyms": [
+     "patients"
+    ],
+    "examples": [
+     "How many patients in CS-401?"
+    ]
+   }
+  },
+  {
+   "name": "ongoing_study_count",
+   "description": "Number of clinical studies whose USDM study status is 'Ongoing'.",
+   "dataSourceId": "REPLACE_WITH_USDM_SOURCE_ID",
+   "sourceTable": "usdm_study",
+   "unit": "count",
+   "returnType": "integer",
+   "expression": {
+    "dialects": [
+     {
+      "dialect": "TRINO",
+      "expression": "SELECT COUNT(*) AS ongoing_study_count FROM usdm_study WHERE study_status = 'Ongoing'"
+     }
+    ]
+   },
+   "aiContext": {
+    "synonyms": [
+     "active studies",
+     "running trials"
+    ],
+    "examples": [
+     "How many studies are ongoing?"
+    ]
+   }
+  },
+  {
+   "name": "clinical_stage_drug_count",
+   "description": "Number of master-data drugs in a clinical phase (Phase 1-3).",
+   "dataSourceId": "REPLACE_WITH_MASTER_SOURCE_ID",
+   "sourceTable": "master_drug",
+   "unit": "count",
+   "returnType": "integer",
+   "expression": {
+    "dialects": [
+     {
+      "dialect": "TRINO",
+      "expression": "SELECT COUNT(*) AS clinical_stage_drug_count FROM master_drug WHERE lifecycle_stage LIKE 'Phase%'"
+     }
+    ]
+   },
+   "aiContext": {
+    "synonyms": [
+     "drugs in clinical development"
+    ],
+    "examples": [
+     "How many drugs are in clinical development?"
+    ]
+   }
+  }
+ ]
+}

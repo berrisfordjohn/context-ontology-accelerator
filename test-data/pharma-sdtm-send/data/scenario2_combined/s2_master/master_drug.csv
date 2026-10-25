@@ -1,0 +1,6 @@
+DRUG_IRI,DRUG_NAME,DRUG_CLASS,THERAPEUTIC_AREA,LIFECYCLE_STAGE
+http://example.org/pharma/drug/DRG-0001,Zorvantil,JAK inhibitor,Immunology,Phase 3
+http://example.org/pharma/drug/DRG-0002,Oncotra,Kinase inhibitor,Oncology,Phase 3
+http://example.org/pharma/drug/DRG-0003,Cardiprex,SGLT2 inhibitor,Cardiometabolic,Phase 3
+http://example.org/pharma/drug/DRG-0004,Neurolynt,Anti-amyloid antibody,Neurology,Phase 1
+http://example.org/pharma/drug/DRG-0005,Vexalin,GLP-1 agonist,Cardiometabolic,Preclinical
