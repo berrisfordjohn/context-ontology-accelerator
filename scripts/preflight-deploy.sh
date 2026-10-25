@@ -261,7 +261,7 @@ fi
 # `cdk bootstrap <REGION>` and never mentioned the second one.
 if command -v aws >/dev/null 2>&1 && aws sts get-caller-identity >/dev/null 2>&1; then
   _bootstrap_regions="$REGION"
-  [ "$REGION" != "us-east-1" ] && _bootstrap_regions="$REGION us-east-1"
+  :
   for _bsr in $_bootstrap_regions; do
     if aws cloudformation describe-stacks --stack-name CDKToolkit --region "$_bsr" \
         >/dev/null 2>&1; then

@@ -463,7 +463,7 @@ async function deploy(): Promise<void> {
   // us-east-1 via EdgeWafStack and have WebStack read the ARN from SSM.
   let edgeWaf: EdgeWafStack | undefined;
   let cfAutoWebAclParam: { name: string; region: string } | undefined;
-  if (!cloudfrontWebAclId && deployAccount) {
+  if (!cloudfrontWebAclId && deployAccount && !process.env.COA_SKIP_EDGE_WAF) {
     edgeWaf = new EdgeWafStack(app, `${stackPrefix}-edge-waf`, {
       env: { account: deployAccount, region: "us-east-1" },
       webAclArnParameterName: cfWebAclParamName,

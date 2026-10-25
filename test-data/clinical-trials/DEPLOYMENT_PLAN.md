@@ -194,6 +194,37 @@ A manually pushed tag is not used by the stacks until you redeploy them with tha
 - No role named `Admin` existed, so `SCL_SMUS_ADMIN_ARNS` was required (`arn:aws:iam::<acct>:role/<admin-role-name>`).
 - `SCL_LAMBDA_RESERVED_CONCURRENCY=0` skipped the Lambda headroom check.
 
+## 3b. Scripted deploy and teardown (low-token path)
+
+Scripts in [scripts/](scripts/), run from WSL2/Linux in a checkout of this repo:
+
+```bash
+export COA_ADMIN_EMAIL=<you@example.com>   # optional: SCL_PREFIX=coa2, COA_MODEL=<model id>
+test-data/clinical-trials/scripts/preflight.sh    # checks only, ~30 s, near-zero cost
+test-data/clinical-trials/scripts/deploy.sh       # runs preflight, writes config, deploys (~60 min)
+test-data/clinical-trials/scripts/teardown.sh     # removes data, stacks, WAF ACL, config
+```
+
+Order of work: preflight, then deploy, then (Phases 4-8) sign in, create the namespace, run `load_to_aws.py`, register sources, ask the test questions, then `teardown.sh`. No Bedrock tokens are spent until Phase 7.
+
+### Preflight checks that can stop a deployment (all run by `preflight.sh`, and it aborts before any cost is incurred)
+
+| # | Check | Blocks when | Remedy |
+|---|---|---|---|
+| 1 | AWS credentials | Session expired | `aws login` |
+| 2 | Account plan and credit | Not `PAID`/`ACTIVE`, or credit exhausted or a spend limit hit (the account is paused and calls return AccessDenied) | AWS Settings > Billing; ask a project owner to raise the limit |
+| 3 | Tools: docker, node, pnpm, java; Docker daemon running | Missing or daemon stopped | Start Docker Desktop, or use the EC2 build host (3a) |
+| 4 | SCP probe: `cognito-idp:CreateUserPool` (create, then delete) | Explicit SCP deny (seen on 2026-10-24, after it worked on the first deploy) | Needs the org policy changed or advanced features activated; no workaround, the auth stack needs Cognito |
+| 5 | SCP probe: `ec2:AllocateAddress` (NAT needs it; `CreateNatGateway` is only proven by the deploy, so the network stack goes first and fails fast) | Explicit SCP deny | Same as above |
+| 6 | SCP probe: WAF CloudFront ACL in us-east-1 | Denied | Warning only: CloudFront is deployed without a WAF |
+| 7 | Bedrock model invoked for real (`converse`, 5 tokens) | `ThrottlingException` (quota 0), `AccessDenied` (model not enabled or not offered to the account), `ServiceUnavailable` | Support case for quota; choose a model that responds; the preflight in the repo only checks that a model is listed |
+| 8 | Embedding model invoked for real | Same as above | Same as above |
+| 9 | Stale stacks with the same prefix in `DELETE_FAILED`/`ROLLBACK_*` | CloudFormation cannot deploy over them | Delete them, or use another `SCL_PREFIX` (AgentCore ENIs can hold a network stack for ~8 h) |
+| 10 | VPC headroom (limit 5) | 5 VPCs exist | Delete unused VPCs |
+| 11 | CDK bootstrap in the region | Missing | `cdk bootstrap aws://<account>/<region>` (us-east-1 cannot be bootstrapped under this SCP, so that check is patched out) |
+
+`deploy.sh` additionally: derives the admin role ARN for `SCL_SMUS_ADMIN_ARNS`, sets `SCL_LAMBDA_RESERVED_CONCURRENCY=0`, writes SSM `/<prefix>/config` with a single model for LLM, induction and chat (default Sonnet 4.6, the newest model this account can invoke) plus Cohere Embed v4, creates the CloudFront WAF ACL by hand (or skips the edge stack when WAF is denied), and applies the three local-only patches described above.
+
 ## 4. Risks and fallbacks
 
 | Risk | Likelihood | Fallback |
