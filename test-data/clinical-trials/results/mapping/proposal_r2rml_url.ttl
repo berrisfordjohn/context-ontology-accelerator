@@ -1,0 +1,742 @@
+@prefix ind: <http://example.org/clinical-trials/> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix scl: <http://coa.amazon.com/vocab/coa#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ind:TriplesMap_AdverseEvents a rr:TriplesMap ;
+    scl:datasourceId "<GLUE_SOURCE_ID>" ;
+    scl:sourceSchema "clinical_trials" ;
+    rr:logicalTable [ rr:tableName "\"adverse_events\"" ] ;
+    rr:predicateObjectMap <http://example.org/clinical-trials/TriplesMap_AdverseEvents/POM_AeId>,
+        <http://example.org/clinical-trials/TriplesMap_AdverseEvents/POM_EndDate>,
+        <http://example.org/clinical-trials/TriplesMap_AdverseEvents/POM_IsRelatedToTreatment>,
+        <http://example.org/clinical-trials/TriplesMap_AdverseEvents/POM_IsSerious>,
+        <http://example.org/clinical-trials/TriplesMap_AdverseEvents/POM_MeddraPtCode>,
+        <http://example.org/clinical-trials/TriplesMap_AdverseEvents/POM_Outcome>,
+        <http://example.org/clinical-trials/TriplesMap_AdverseEvents/POM_PreferredTerm>,
+        <http://example.org/clinical-trials/TriplesMap_AdverseEvents/POM_Severity>,
+        <http://example.org/clinical-trials/TriplesMap_AdverseEvents/POM_StartDate>,
+        <http://example.org/clinical-trials/TriplesMap_AdverseEvents/POM_StudyId>,
+        <http://example.org/clinical-trials/TriplesMap_AdverseEvents/POM_SubjectId>,
+        <http://example.org/clinical-trials/TriplesMap_AdverseEvents/POM_SystemOrganClass> ;
+    rr:subjectMap <http://example.org/clinical-trials/TriplesMap_AdverseEvents/SubjectMap> .
+
+ind:TriplesMap_EfficacyResults a rr:TriplesMap ;
+    scl:datasourceId "<GLUE_SOURCE_ID>" ;
+    scl:sourceSchema "clinical_trials" ;
+    rr:logicalTable [ rr:tableName "\"efficacy_results\"" ] ;
+    rr:predicateObjectMap <http://example.org/clinical-trials/TriplesMap_EfficacyResults/POM_AssessmentDate>,
+        <http://example.org/clinical-trials/TriplesMap_EfficacyResults/POM_EfficacyId>,
+        <http://example.org/clinical-trials/TriplesMap_EfficacyResults/POM_EndpointName>,
+        <http://example.org/clinical-trials/TriplesMap_EfficacyResults/POM_IsBaseline>,
+        <http://example.org/clinical-trials/TriplesMap_EfficacyResults/POM_StudyId>,
+        <http://example.org/clinical-trials/TriplesMap_EfficacyResults/POM_SubjectId>,
+        <http://example.org/clinical-trials/TriplesMap_EfficacyResults/POM_Unit>,
+        <http://example.org/clinical-trials/TriplesMap_EfficacyResults/POM_Value>,
+        <http://example.org/clinical-trials/TriplesMap_EfficacyResults/POM_Visit> ;
+    rr:subjectMap <http://example.org/clinical-trials/TriplesMap_EfficacyResults/SubjectMap> .
+
+ind:TriplesMap_LabResults a rr:TriplesMap ;
+    scl:datasourceId "<GLUE_SOURCE_ID>" ;
+    scl:sourceSchema "clinical_trials" ;
+    rr:logicalTable [ rr:tableName "\"lab_results\"" ] ;
+    rr:predicateObjectMap <http://example.org/clinical-trials/TriplesMap_LabResults/POM_AbnormalFlag>,
+        <http://example.org/clinical-trials/TriplesMap_LabResults/POM_CollectionDate>,
+        <http://example.org/clinical-trials/TriplesMap_LabResults/POM_LabId>,
+        <http://example.org/clinical-trials/TriplesMap_LabResults/POM_RefRangeHigh>,
+        <http://example.org/clinical-trials/TriplesMap_LabResults/POM_RefRangeLow>,
+        <http://example.org/clinical-trials/TriplesMap_LabResults/POM_ResultUnit>,
+        <http://example.org/clinical-trials/TriplesMap_LabResults/POM_ResultValue>,
+        <http://example.org/clinical-trials/TriplesMap_LabResults/POM_StudyId>,
+        <http://example.org/clinical-trials/TriplesMap_LabResults/POM_SubjectId>,
+        <http://example.org/clinical-trials/TriplesMap_LabResults/POM_TestCode>,
+        <http://example.org/clinical-trials/TriplesMap_LabResults/POM_TestName>,
+        <http://example.org/clinical-trials/TriplesMap_LabResults/POM_Visit> ;
+    rr:subjectMap <http://example.org/clinical-trials/TriplesMap_LabResults/SubjectMap> .
+
+ind:TriplesMap_ProtocolDeviations a rr:TriplesMap ;
+    scl:datasourceId "<GLUE_SOURCE_ID>" ;
+    scl:sourceSchema "clinical_trials" ;
+    rr:logicalTable [ rr:tableName "\"protocol_deviations\"" ] ;
+    rr:predicateObjectMap <http://example.org/clinical-trials/TriplesMap_ProtocolDeviations/POM_Category>,
+        <http://example.org/clinical-trials/TriplesMap_ProtocolDeviations/POM_Description>,
+        <http://example.org/clinical-trials/TriplesMap_ProtocolDeviations/POM_DeviationDate>,
+        <http://example.org/clinical-trials/TriplesMap_ProtocolDeviations/POM_DeviationId>,
+        <http://example.org/clinical-trials/TriplesMap_ProtocolDeviations/POM_SiteId>,
+        <http://example.org/clinical-trials/TriplesMap_ProtocolDeviations/POM_StudyId>,
+        <http://example.org/clinical-trials/TriplesMap_ProtocolDeviations/POM_SubjectId> ;
+    rr:subjectMap <http://example.org/clinical-trials/TriplesMap_ProtocolDeviations/SubjectMap> .
+
+<http://example.org/clinical-trials/TriplesMap_AdverseEvents/POM_AeId> rr:objectMap <http://example.org/clinical-trials/TriplesMap_AdverseEvents/POM_AeId/ObjectMap> ;
+    rr:predicate ind:adverseEvents_aeId .
+
+<http://example.org/clinical-trials/TriplesMap_AdverseEvents/POM_AeId/ObjectMap> rr:column "\"ae_id\"" ;
+    rr:datatype xsd:string .
+
+<http://example.org/clinical-trials/TriplesMap_AdverseEvents/POM_EndDate> rr:objectMap <http://example.org/clinical-trials/TriplesMap_AdverseEvents/POM_EndDate/ObjectMap> ;
+    rr:predicate ind:adverseEvents_endDate .
+
+<http://example.org/clinical-trials/TriplesMap_AdverseEvents/POM_EndDate/ObjectMap> rr:column "\"end_date\"" ;
+    rr:datatype xsd:date .
+
+<http://example.org/clinical-trials/TriplesMap_AdverseEvents/POM_IsRelatedToTreatment> rr:objectMap <http://example.org/clinical-trials/TriplesMap_AdverseEvents/POM_IsRelatedToTreatment/ObjectMap> ;
+    rr:predicate ind:adverseEvents_isRelatedToTreatment .
+
+<http://example.org/clinical-trials/TriplesMap_AdverseEvents/POM_IsRelatedToTreatment/ObjectMap> rr:column "\"is_related_to_treatment\"" ;
+    rr:datatype xsd:string .
+
+<http://example.org/clinical-trials/TriplesMap_AdverseEvents/POM_IsSerious> rr:objectMap <http://example.org/clinical-trials/TriplesMap_AdverseEvents/POM_IsSerious/ObjectMap> ;
+    rr:predicate ind:adverseEvents_isSerious .
+
+<http://example.org/clinical-trials/TriplesMap_AdverseEvents/POM_IsSerious/ObjectMap> rr:column "\"is_serious\"" ;
+    rr:datatype xsd:string .
+
+<http://example.org/clinical-trials/TriplesMap_AdverseEvents/POM_MeddraPtCode> rr:objectMap <http://example.org/clinical-trials/TriplesMap_AdverseEvents/POM_MeddraPtCode/ObjectMap> ;
+    rr:predicate ind:adverseEvents_meddraPtCode .
+
+<http://example.org/clinical-trials/TriplesMap_AdverseEvents/POM_MeddraPtCode/ObjectMap> rr:joinCondition [ rr:child "\"meddra_pt_code\"" ;
+            rr:parent "\"meddra_pt_code\"" ] ;
+    rr:parentTriplesMap ind:TriplesMap_MeddraDictionary .
+
+<http://example.org/clinical-trials/TriplesMap_AdverseEvents/POM_Outcome> rr:objectMap <http://example.org/clinical-trials/TriplesMap_AdverseEvents/POM_Outcome/ObjectMap> ;
+    rr:predicate ind:adverseEvents_outcome .
+
+<http://example.org/clinical-trials/TriplesMap_AdverseEvents/POM_Outcome/ObjectMap> rr:column "\"outcome\"" ;
+    rr:datatype xsd:string .
+
+<http://example.org/clinical-trials/TriplesMap_AdverseEvents/POM_PreferredTerm> rr:objectMap <http://example.org/clinical-trials/TriplesMap_AdverseEvents/POM_PreferredTerm/ObjectMap> ;
+    rr:predicate ind:adverseEvents_preferredTerm .
+
+<http://example.org/clinical-trials/TriplesMap_AdverseEvents/POM_PreferredTerm/ObjectMap> rr:column "\"preferred_term\"" ;
+    rr:datatype xsd:string .
+
+<http://example.org/clinical-trials/TriplesMap_AdverseEvents/POM_Severity> rr:objectMap <http://example.org/clinical-trials/TriplesMap_AdverseEvents/POM_Severity/ObjectMap> ;
+    rr:predicate ind:adverseEvents_severity .
+
+<http://example.org/clinical-trials/TriplesMap_AdverseEvents/POM_Severity/ObjectMap> rr:column "\"severity\"" ;
+    rr:datatype xsd:string .
+
+<http://example.org/clinical-trials/TriplesMap_AdverseEvents/POM_StartDate> rr:objectMap <http://example.org/clinical-trials/TriplesMap_AdverseEvents/POM_StartDate/ObjectMap> ;
+    rr:predicate ind:adverseEvents_startDate .
+
+<http://example.org/clinical-trials/TriplesMap_AdverseEvents/POM_StartDate/ObjectMap> rr:column "\"start_date\"" ;
+    rr:datatype xsd:date .
+
+<http://example.org/clinical-trials/TriplesMap_AdverseEvents/POM_StudyId> rr:objectMap <http://example.org/clinical-trials/TriplesMap_AdverseEvents/POM_StudyId/ObjectMap> ;
+    rr:predicate ind:adverseEvents_studyId .
+
+<http://example.org/clinical-trials/TriplesMap_AdverseEvents/POM_StudyId/ObjectMap> rr:joinCondition [ rr:child "\"study_id\"" ;
+            rr:parent "\"study_id\"" ] ;
+    rr:parentTriplesMap ind:TriplesMap_Studies .
+
+<http://example.org/clinical-trials/TriplesMap_AdverseEvents/POM_SubjectId> rr:objectMap <http://example.org/clinical-trials/TriplesMap_AdverseEvents/POM_SubjectId/ObjectMap> ;
+    rr:predicate ind:adverseEvents_subjectId .
+
+<http://example.org/clinical-trials/TriplesMap_AdverseEvents/POM_SubjectId/ObjectMap> rr:joinCondition [ rr:child "\"subject_id\"" ;
+            rr:parent "\"subject_id\"" ] ;
+    rr:parentTriplesMap ind:TriplesMap_Subjects .
+
+<http://example.org/clinical-trials/TriplesMap_AdverseEvents/POM_SystemOrganClass> rr:objectMap <http://example.org/clinical-trials/TriplesMap_AdverseEvents/POM_SystemOrganClass/ObjectMap> ;
+    rr:predicate ind:adverseEvents_systemOrganClass .
+
+<http://example.org/clinical-trials/TriplesMap_AdverseEvents/POM_SystemOrganClass/ObjectMap> rr:column "\"system_organ_class\"" ;
+    rr:datatype xsd:string .
+
+<http://example.org/clinical-trials/TriplesMap_AdverseEvents/SubjectMap> rr:class ind:AdverseEvents ;
+    rr:template "http://example.org/clinical-trials/adverse_events/{\"ae_id\"}" .
+
+<http://example.org/clinical-trials/TriplesMap_Compounds/POM_AtcCode> rr:objectMap <http://example.org/clinical-trials/TriplesMap_Compounds/POM_AtcCode/ObjectMap> ;
+    rr:predicate ind:compounds_atcCode .
+
+<http://example.org/clinical-trials/TriplesMap_Compounds/POM_AtcCode/ObjectMap> rr:column "\"atc_code\"" ;
+    rr:datatype xsd:string .
+
+<http://example.org/clinical-trials/TriplesMap_Compounds/POM_DrugClass> rr:objectMap <http://example.org/clinical-trials/TriplesMap_Compounds/POM_DrugClass/ObjectMap> ;
+    rr:predicate ind:compounds_drugClass .
+
+<http://example.org/clinical-trials/TriplesMap_Compounds/POM_DrugClass/ObjectMap> rr:column "\"drug_class\"" ;
+    rr:datatype xsd:string .
+
+<http://example.org/clinical-trials/TriplesMap_Compounds/POM_DrugId> rr:objectMap <http://example.org/clinical-trials/TriplesMap_Compounds/POM_DrugId/ObjectMap> ;
+    rr:predicate ind:compounds_drugId .
+
+<http://example.org/clinical-trials/TriplesMap_Compounds/POM_DrugId/ObjectMap> rr:column "\"drug_id\"" ;
+    rr:datatype xsd:string .
+
+<http://example.org/clinical-trials/TriplesMap_Compounds/POM_DrugName> rr:objectMap <http://example.org/clinical-trials/TriplesMap_Compounds/POM_DrugName/ObjectMap> ;
+    rr:predicate ind:compounds_drugName .
+
+<http://example.org/clinical-trials/TriplesMap_Compounds/POM_DrugName/ObjectMap> rr:column "\"drug_name\"" ;
+    rr:datatype xsd:string .
+
+<http://example.org/clinical-trials/TriplesMap_Compounds/POM_Inn> rr:objectMap <http://example.org/clinical-trials/TriplesMap_Compounds/POM_Inn/ObjectMap> ;
+    rr:predicate ind:compounds_inn .
+
+<http://example.org/clinical-trials/TriplesMap_Compounds/POM_Inn/ObjectMap> rr:column "\"inn\"" ;
+    rr:datatype xsd:string .
+
+<http://example.org/clinical-trials/TriplesMap_Compounds/POM_MechanismOfAction> rr:objectMap <http://example.org/clinical-trials/TriplesMap_Compounds/POM_MechanismOfAction/ObjectMap> ;
+    rr:predicate ind:compounds_mechanismOfAction .
+
+<http://example.org/clinical-trials/TriplesMap_Compounds/POM_MechanismOfAction/ObjectMap> rr:column "\"mechanism_of_action\"" ;
+    rr:datatype xsd:string .
+
+<http://example.org/clinical-trials/TriplesMap_Compounds/POM_Target> rr:objectMap <http://example.org/clinical-trials/TriplesMap_Compounds/POM_Target/ObjectMap> ;
+    rr:predicate ind:compounds_target .
+
+<http://example.org/clinical-trials/TriplesMap_Compounds/POM_Target/ObjectMap> rr:column "\"target\"" ;
+    rr:datatype xsd:string .
+
+<http://example.org/clinical-trials/TriplesMap_Compounds/SubjectMap> rr:class ind:Compounds ;
+    rr:template "http://example.org/clinical-trials/compounds/{\"drug_id\"}" .
+
+<http://example.org/clinical-trials/TriplesMap_EfficacyResults/POM_AssessmentDate> rr:objectMap <http://example.org/clinical-trials/TriplesMap_EfficacyResults/POM_AssessmentDate/ObjectMap> ;
+    rr:predicate ind:efficacyResults_assessmentDate .
+
+<http://example.org/clinical-trials/TriplesMap_EfficacyResults/POM_AssessmentDate/ObjectMap> rr:column "\"assessment_date\"" ;
+    rr:datatype xsd:date .
+
+<http://example.org/clinical-trials/TriplesMap_EfficacyResults/POM_EfficacyId> rr:objectMap <http://example.org/clinical-trials/TriplesMap_EfficacyResults/POM_EfficacyId/ObjectMap> ;
+    rr:predicate ind:efficacyResults_efficacyId .
+
+<http://example.org/clinical-trials/TriplesMap_EfficacyResults/POM_EfficacyId/ObjectMap> rr:column "\"efficacy_id\"" ;
+    rr:datatype xsd:string .
+
+<http://example.org/clinical-trials/TriplesMap_EfficacyResults/POM_EndpointName> rr:objectMap <http://example.org/clinical-trials/TriplesMap_EfficacyResults/POM_EndpointName/ObjectMap> ;
+    rr:predicate ind:efficacyResults_endpointName .
+
+<http://example.org/clinical-trials/TriplesMap_EfficacyResults/POM_EndpointName/ObjectMap> rr:column "\"endpoint_name\"" ;
+    rr:datatype xsd:string .
+
+<http://example.org/clinical-trials/TriplesMap_EfficacyResults/POM_IsBaseline> rr:objectMap <http://example.org/clinical-trials/TriplesMap_EfficacyResults/POM_IsBaseline/ObjectMap> ;
+    rr:predicate ind:efficacyResults_isBaseline .
+
+<http://example.org/clinical-trials/TriplesMap_EfficacyResults/POM_IsBaseline/ObjectMap> rr:column "\"is_baseline\"" ;
+    rr:datatype xsd:string .
+
+<http://example.org/clinical-trials/TriplesMap_EfficacyResults/POM_StudyId> rr:objectMap <http://example.org/clinical-trials/TriplesMap_EfficacyResults/POM_StudyId/ObjectMap> ;
+    rr:predicate ind:efficacyResults_studyId .
+
+<http://example.org/clinical-trials/TriplesMap_EfficacyResults/POM_StudyId/ObjectMap> rr:joinCondition [ rr:child "\"study_id\"" ;
+            rr:parent "\"study_id\"" ] ;
+    rr:parentTriplesMap ind:TriplesMap_Studies .
+
+<http://example.org/clinical-trials/TriplesMap_EfficacyResults/POM_SubjectId> rr:objectMap <http://example.org/clinical-trials/TriplesMap_EfficacyResults/POM_SubjectId/ObjectMap> ;
+    rr:predicate ind:efficacyResults_subjectId .
+
+<http://example.org/clinical-trials/TriplesMap_EfficacyResults/POM_SubjectId/ObjectMap> rr:joinCondition [ rr:child "\"subject_id\"" ;
+            rr:parent "\"subject_id\"" ] ;
+    rr:parentTriplesMap ind:TriplesMap_Subjects .
+
+<http://example.org/clinical-trials/TriplesMap_EfficacyResults/POM_Unit> rr:objectMap <http://example.org/clinical-trials/TriplesMap_EfficacyResults/POM_Unit/ObjectMap> ;
+    rr:predicate ind:efficacyResults_unit .
+
+<http://example.org/clinical-trials/TriplesMap_EfficacyResults/POM_Unit/ObjectMap> rr:column "\"unit\"" ;
+    rr:datatype xsd:string .
+
+<http://example.org/clinical-trials/TriplesMap_EfficacyResults/POM_Value> rr:objectMap <http://example.org/clinical-trials/TriplesMap_EfficacyResults/POM_Value/ObjectMap> ;
+    rr:predicate ind:efficacyResults_value .
+
+<http://example.org/clinical-trials/TriplesMap_EfficacyResults/POM_Value/ObjectMap> rr:column "\"value\"" ;
+    rr:datatype xsd:double .
+
+<http://example.org/clinical-trials/TriplesMap_EfficacyResults/POM_Visit> rr:objectMap <http://example.org/clinical-trials/TriplesMap_EfficacyResults/POM_Visit/ObjectMap> ;
+    rr:predicate ind:efficacyResults_visit .
+
+<http://example.org/clinical-trials/TriplesMap_EfficacyResults/POM_Visit/ObjectMap> rr:column "\"visit\"" ;
+    rr:datatype xsd:string .
+
+<http://example.org/clinical-trials/TriplesMap_EfficacyResults/SubjectMap> rr:class ind:EfficacyResults ;
+    rr:template "http://example.org/clinical-trials/efficacy_results/{\"efficacy_id\"}" .
+
+<http://example.org/clinical-trials/TriplesMap_LabResults/POM_AbnormalFlag> rr:objectMap <http://example.org/clinical-trials/TriplesMap_LabResults/POM_AbnormalFlag/ObjectMap> ;
+    rr:predicate ind:labResults_abnormalFlag .
+
+<http://example.org/clinical-trials/TriplesMap_LabResults/POM_AbnormalFlag/ObjectMap> rr:column "\"abnormal_flag\"" ;
+    rr:datatype xsd:string .
+
+<http://example.org/clinical-trials/TriplesMap_LabResults/POM_CollectionDate> rr:objectMap <http://example.org/clinical-trials/TriplesMap_LabResults/POM_CollectionDate/ObjectMap> ;
+    rr:predicate ind:labResults_collectionDate .
+
+<http://example.org/clinical-trials/TriplesMap_LabResults/POM_CollectionDate/ObjectMap> rr:column "\"collection_date\"" ;
+    rr:datatype xsd:date .
+
+<http://example.org/clinical-trials/TriplesMap_LabResults/POM_LabId> rr:objectMap <http://example.org/clinical-trials/TriplesMap_LabResults/POM_LabId/ObjectMap> ;
+    rr:predicate ind:labResults_labId .
+
+<http://example.org/clinical-trials/TriplesMap_LabResults/POM_LabId/ObjectMap> rr:column "\"lab_id\"" ;
+    rr:datatype xsd:string .
+
+<http://example.org/clinical-trials/TriplesMap_LabResults/POM_RefRangeHigh> rr:objectMap <http://example.org/clinical-trials/TriplesMap_LabResults/POM_RefRangeHigh/ObjectMap> ;
+    rr:predicate ind:labResults_refRangeHigh .
+
+<http://example.org/clinical-trials/TriplesMap_LabResults/POM_RefRangeHigh/ObjectMap> rr:column "\"ref_range_high\"" ;
+    rr:datatype xsd:double .
+
+<http://example.org/clinical-trials/TriplesMap_LabResults/POM_RefRangeLow> rr:objectMap <http://example.org/clinical-trials/TriplesMap_LabResults/POM_RefRangeLow/ObjectMap> ;
+    rr:predicate ind:labResults_refRangeLow .
+
+<http://example.org/clinical-trials/TriplesMap_LabResults/POM_RefRangeLow/ObjectMap> rr:column "\"ref_range_low\"" ;
+    rr:datatype xsd:double .
+
+<http://example.org/clinical-trials/TriplesMap_LabResults/POM_ResultUnit> rr:objectMap <http://example.org/clinical-trials/TriplesMap_LabResults/POM_ResultUnit/ObjectMap> ;
+    rr:predicate ind:labResults_resultUnit .
+
+<http://example.org/clinical-trials/TriplesMap_LabResults/POM_ResultUnit/ObjectMap> rr:column "\"result_unit\"" ;
+    rr:datatype xsd:string .
+
+<http://example.org/clinical-trials/TriplesMap_LabResults/POM_ResultValue> rr:objectMap <http://example.org/clinical-trials/TriplesMap_LabResults/POM_ResultValue/ObjectMap> ;
+    rr:predicate ind:labResults_resultValue .
+
+<http://example.org/clinical-trials/TriplesMap_LabResults/POM_ResultValue/ObjectMap> rr:column "\"result_value\"" ;
+    rr:datatype xsd:double .
+
+<http://example.org/clinical-trials/TriplesMap_LabResults/POM_StudyId> rr:objectMap <http://example.org/clinical-trials/TriplesMap_LabResults/POM_StudyId/ObjectMap> ;
+    rr:predicate ind:labResults_studyId .
+
+<http://example.org/clinical-trials/TriplesMap_LabResults/POM_StudyId/ObjectMap> rr:joinCondition [ rr:child "\"study_id\"" ;
+            rr:parent "\"study_id\"" ] ;
+    rr:parentTriplesMap ind:TriplesMap_Studies .
+
+<http://example.org/clinical-trials/TriplesMap_LabResults/POM_SubjectId> rr:objectMap <http://example.org/clinical-trials/TriplesMap_LabResults/POM_SubjectId/ObjectMap> ;
+    rr:predicate ind:labResults_subjectId .
+
+<http://example.org/clinical-trials/TriplesMap_LabResults/POM_SubjectId/ObjectMap> rr:joinCondition [ rr:child "\"subject_id\"" ;
+            rr:parent "\"subject_id\"" ] ;
+    rr:parentTriplesMap ind:TriplesMap_Subjects .
+
+<http://example.org/clinical-trials/TriplesMap_LabResults/POM_TestCode> rr:objectMap <http://example.org/clinical-trials/TriplesMap_LabResults/POM_TestCode/ObjectMap> ;
+    rr:predicate ind:labResults_testCode .
+
+<http://example.org/clinical-trials/TriplesMap_LabResults/POM_TestCode/ObjectMap> rr:column "\"test_code\"" ;
+    rr:datatype xsd:string .
+
+<http://example.org/clinical-trials/TriplesMap_LabResults/POM_TestName> rr:objectMap <http://example.org/clinical-trials/TriplesMap_LabResults/POM_TestName/ObjectMap> ;
+    rr:predicate ind:labResults_testName .
+
+<http://example.org/clinical-trials/TriplesMap_LabResults/POM_TestName/ObjectMap> rr:column "\"test_name\"" ;
+    rr:datatype xsd:string .
+
+<http://example.org/clinical-trials/TriplesMap_LabResults/POM_Visit> rr:objectMap <http://example.org/clinical-trials/TriplesMap_LabResults/POM_Visit/ObjectMap> ;
+    rr:predicate ind:labResults_visit .
+
+<http://example.org/clinical-trials/TriplesMap_LabResults/POM_Visit/ObjectMap> rr:column "\"visit\"" ;
+    rr:datatype xsd:string .
+
+<http://example.org/clinical-trials/TriplesMap_LabResults/SubjectMap> rr:class ind:LabResults ;
+    rr:template "http://example.org/clinical-trials/lab_results/{\"lab_id\"}" .
+
+ind:TriplesMap_MeddraDictionary a rr:TriplesMap ;
+    scl:datasourceId "<GLUE_SOURCE_ID>" ;
+    scl:sourceSchema "clinical_trials" ;
+    rr:logicalTable [ rr:tableName "\"meddra_dictionary\"" ] ;
+    rr:predicateObjectMap <http://example.org/clinical-trials/TriplesMap_MeddraDictionary/POM_MeddraPtCode>,
+        <http://example.org/clinical-trials/TriplesMap_MeddraDictionary/POM_PreferredTerm>,
+        <http://example.org/clinical-trials/TriplesMap_MeddraDictionary/POM_SystemOrganClass> ;
+    rr:subjectMap <http://example.org/clinical-trials/TriplesMap_MeddraDictionary/SubjectMap> .
+
+<http://example.org/clinical-trials/TriplesMap_MeddraDictionary/POM_MeddraPtCode> rr:objectMap <http://example.org/clinical-trials/TriplesMap_MeddraDictionary/POM_MeddraPtCode/ObjectMap> ;
+    rr:predicate ind:meddraDictionary_meddraPtCode .
+
+<http://example.org/clinical-trials/TriplesMap_MeddraDictionary/POM_MeddraPtCode/ObjectMap> rr:column "\"meddra_pt_code\"" ;
+    rr:datatype xsd:string .
+
+<http://example.org/clinical-trials/TriplesMap_MeddraDictionary/POM_PreferredTerm> rr:objectMap <http://example.org/clinical-trials/TriplesMap_MeddraDictionary/POM_PreferredTerm/ObjectMap> ;
+    rr:predicate ind:meddraDictionary_preferredTerm .
+
+<http://example.org/clinical-trials/TriplesMap_MeddraDictionary/POM_PreferredTerm/ObjectMap> rr:column "\"preferred_term\"" ;
+    rr:datatype xsd:string .
+
+<http://example.org/clinical-trials/TriplesMap_MeddraDictionary/POM_SystemOrganClass> rr:objectMap <http://example.org/clinical-trials/TriplesMap_MeddraDictionary/POM_SystemOrganClass/ObjectMap> ;
+    rr:predicate ind:meddraDictionary_systemOrganClass .
+
+<http://example.org/clinical-trials/TriplesMap_MeddraDictionary/POM_SystemOrganClass/ObjectMap> rr:column "\"system_organ_class\"" ;
+    rr:datatype xsd:string .
+
+<http://example.org/clinical-trials/TriplesMap_MeddraDictionary/SubjectMap> rr:class ind:MeddraDictionary ;
+    rr:template "http://example.org/clinical-trials/meddra_dictionary/{\"meddra_pt_code\"}" .
+
+<http://example.org/clinical-trials/TriplesMap_ProtocolDeviations/POM_Category> rr:objectMap <http://example.org/clinical-trials/TriplesMap_ProtocolDeviations/POM_Category/ObjectMap> ;
+    rr:predicate ind:protocolDeviations_category .
+
+<http://example.org/clinical-trials/TriplesMap_ProtocolDeviations/POM_Category/ObjectMap> rr:column "\"category\"" ;
+    rr:datatype xsd:string .
+
+<http://example.org/clinical-trials/TriplesMap_ProtocolDeviations/POM_Description> rr:objectMap <http://example.org/clinical-trials/TriplesMap_ProtocolDeviations/POM_Description/ObjectMap> ;
+    rr:predicate ind:protocolDeviations_description .
+
+<http://example.org/clinical-trials/TriplesMap_ProtocolDeviations/POM_Description/ObjectMap> rr:column "\"description\"" ;
+    rr:datatype xsd:string .
+
+<http://example.org/clinical-trials/TriplesMap_ProtocolDeviations/POM_DeviationDate> rr:objectMap <http://example.org/clinical-trials/TriplesMap_ProtocolDeviations/POM_DeviationDate/ObjectMap> ;
+    rr:predicate ind:protocolDeviations_deviationDate .
+
+<http://example.org/clinical-trials/TriplesMap_ProtocolDeviations/POM_DeviationDate/ObjectMap> rr:column "\"deviation_date\"" ;
+    rr:datatype xsd:date .
+
+<http://example.org/clinical-trials/TriplesMap_ProtocolDeviations/POM_DeviationId> rr:objectMap <http://example.org/clinical-trials/TriplesMap_ProtocolDeviations/POM_DeviationId/ObjectMap> ;
+    rr:predicate ind:protocolDeviations_deviationId .
+
+<http://example.org/clinical-trials/TriplesMap_ProtocolDeviations/POM_DeviationId/ObjectMap> rr:column "\"deviation_id\"" ;
+    rr:datatype xsd:string .
+
+<http://example.org/clinical-trials/TriplesMap_ProtocolDeviations/POM_SiteId> rr:objectMap <http://example.org/clinical-trials/TriplesMap_ProtocolDeviations/POM_SiteId/ObjectMap> ;
+    rr:predicate ind:protocolDeviations_siteId .
+
+<http://example.org/clinical-trials/TriplesMap_ProtocolDeviations/POM_SiteId/ObjectMap> rr:joinCondition [ rr:child "\"site_id\"" ;
+            rr:parent "\"site_id\"" ] ;
+    rr:parentTriplesMap ind:TriplesMap_Sites .
+
+<http://example.org/clinical-trials/TriplesMap_ProtocolDeviations/POM_StudyId> rr:objectMap <http://example.org/clinical-trials/TriplesMap_ProtocolDeviations/POM_StudyId/ObjectMap> ;
+    rr:predicate ind:protocolDeviations_studyId .
+
+<http://example.org/clinical-trials/TriplesMap_ProtocolDeviations/POM_StudyId/ObjectMap> rr:joinCondition [ rr:child "\"study_id\"" ;
+            rr:parent "\"study_id\"" ] ;
+    rr:parentTriplesMap ind:TriplesMap_Studies .
+
+<http://example.org/clinical-trials/TriplesMap_ProtocolDeviations/POM_SubjectId> rr:objectMap <http://example.org/clinical-trials/TriplesMap_ProtocolDeviations/POM_SubjectId/ObjectMap> ;
+    rr:predicate ind:protocolDeviations_subjectId .
+
+<http://example.org/clinical-trials/TriplesMap_ProtocolDeviations/POM_SubjectId/ObjectMap> rr:joinCondition [ rr:child "\"subject_id\"" ;
+            rr:parent "\"subject_id\"" ] ;
+    rr:parentTriplesMap ind:TriplesMap_Subjects .
+
+<http://example.org/clinical-trials/TriplesMap_ProtocolDeviations/SubjectMap> rr:class ind:ProtocolDeviations ;
+    rr:template "http://example.org/clinical-trials/protocol_deviations/{\"deviation_id\"}" .
+
+<http://example.org/clinical-trials/TriplesMap_Sites/POM_ActivationDate> rr:objectMap <http://example.org/clinical-trials/TriplesMap_Sites/POM_ActivationDate/ObjectMap> ;
+    rr:predicate ind:sites_activationDate .
+
+<http://example.org/clinical-trials/TriplesMap_Sites/POM_ActivationDate/ObjectMap> rr:column "\"activation_date\"" ;
+    rr:datatype xsd:date .
+
+<http://example.org/clinical-trials/TriplesMap_Sites/POM_City> rr:objectMap <http://example.org/clinical-trials/TriplesMap_Sites/POM_City/ObjectMap> ;
+    rr:predicate ind:sites_city .
+
+<http://example.org/clinical-trials/TriplesMap_Sites/POM_City/ObjectMap> rr:column "\"city\"" ;
+    rr:datatype xsd:string .
+
+<http://example.org/clinical-trials/TriplesMap_Sites/POM_Country> rr:objectMap <http://example.org/clinical-trials/TriplesMap_Sites/POM_Country/ObjectMap> ;
+    rr:predicate ind:sites_country .
+
+<http://example.org/clinical-trials/TriplesMap_Sites/POM_Country/ObjectMap> rr:column "\"country\"" ;
+    rr:datatype xsd:string .
+
+<http://example.org/clinical-trials/TriplesMap_Sites/POM_PrincipalInvestigator> rr:objectMap <http://example.org/clinical-trials/TriplesMap_Sites/POM_PrincipalInvestigator/ObjectMap> ;
+    rr:predicate ind:sites_principalInvestigator .
+
+<http://example.org/clinical-trials/TriplesMap_Sites/POM_PrincipalInvestigator/ObjectMap> rr:column "\"principal_investigator\"" ;
+    rr:datatype xsd:string .
+
+<http://example.org/clinical-trials/TriplesMap_Sites/POM_SiteId> rr:objectMap <http://example.org/clinical-trials/TriplesMap_Sites/POM_SiteId/ObjectMap> ;
+    rr:predicate ind:sites_siteId .
+
+<http://example.org/clinical-trials/TriplesMap_Sites/POM_SiteId/ObjectMap> rr:column "\"site_id\"" ;
+    rr:datatype xsd:string .
+
+<http://example.org/clinical-trials/TriplesMap_Sites/POM_SiteName> rr:objectMap <http://example.org/clinical-trials/TriplesMap_Sites/POM_SiteName/ObjectMap> ;
+    rr:predicate ind:sites_siteName .
+
+<http://example.org/clinical-trials/TriplesMap_Sites/POM_SiteName/ObjectMap> rr:column "\"site_name\"" ;
+    rr:datatype xsd:string .
+
+<http://example.org/clinical-trials/TriplesMap_Sites/POM_SiteStatus> rr:objectMap <http://example.org/clinical-trials/TriplesMap_Sites/POM_SiteStatus/ObjectMap> ;
+    rr:predicate ind:sites_siteStatus .
+
+<http://example.org/clinical-trials/TriplesMap_Sites/POM_SiteStatus/ObjectMap> rr:column "\"site_status\"" ;
+    rr:datatype xsd:string .
+
+<http://example.org/clinical-trials/TriplesMap_Sites/POM_StudyId> rr:objectMap <http://example.org/clinical-trials/TriplesMap_Sites/POM_StudyId/ObjectMap> ;
+    rr:predicate ind:sites_studyId .
+
+<http://example.org/clinical-trials/TriplesMap_Sites/POM_StudyId/ObjectMap> rr:joinCondition [ rr:child "\"study_id\"" ;
+            rr:parent "\"study_id\"" ] ;
+    rr:parentTriplesMap ind:TriplesMap_Studies .
+
+<http://example.org/clinical-trials/TriplesMap_Sites/SubjectMap> rr:class ind:Sites ;
+    rr:template "http://example.org/clinical-trials/sites/{\"site_id\"}" .
+
+<http://example.org/clinical-trials/TriplesMap_Studies/POM_DrugId> rr:objectMap <http://example.org/clinical-trials/TriplesMap_Studies/POM_DrugId/ObjectMap> ;
+    rr:predicate ind:studies_drugId .
+
+<http://example.org/clinical-trials/TriplesMap_Studies/POM_DrugId/ObjectMap> rr:joinCondition [ rr:child "\"drug_id\"" ;
+            rr:parent "\"drug_id\"" ] ;
+    rr:parentTriplesMap ind:TriplesMap_Compounds .
+
+<http://example.org/clinical-trials/TriplesMap_Studies/POM_EndpointUnit> rr:objectMap <http://example.org/clinical-trials/TriplesMap_Studies/POM_EndpointUnit/ObjectMap> ;
+    rr:predicate ind:studies_endpointUnit .
+
+<http://example.org/clinical-trials/TriplesMap_Studies/POM_EndpointUnit/ObjectMap> rr:column "\"endpoint_unit\"" ;
+    rr:datatype xsd:string .
+
+<http://example.org/clinical-trials/TriplesMap_Studies/POM_Indication> rr:objectMap <http://example.org/clinical-trials/TriplesMap_Studies/POM_Indication/ObjectMap> ;
+    rr:predicate ind:studies_indication .
+
+<http://example.org/clinical-trials/TriplesMap_Studies/POM_Indication/ObjectMap> rr:column "\"indication\"" ;
+    rr:datatype xsd:string .
+
+<http://example.org/clinical-trials/TriplesMap_Studies/POM_NctId> rr:objectMap <http://example.org/clinical-trials/TriplesMap_Studies/POM_NctId/ObjectMap> ;
+    rr:predicate ind:studies_nctId .
+
+<http://example.org/clinical-trials/TriplesMap_Studies/POM_NctId/ObjectMap> rr:column "\"nct_id\"" ;
+    rr:datatype xsd:string .
+
+<http://example.org/clinical-trials/TriplesMap_Studies/POM_Phase> rr:objectMap <http://example.org/clinical-trials/TriplesMap_Studies/POM_Phase/ObjectMap> ;
+    rr:predicate ind:studies_phase .
+
+<http://example.org/clinical-trials/TriplesMap_Studies/POM_Phase/ObjectMap> rr:column "\"phase\"" ;
+    rr:datatype xsd:string .
+
+<http://example.org/clinical-trials/TriplesMap_Studies/POM_PlannedEnrollment> rr:objectMap <http://example.org/clinical-trials/TriplesMap_Studies/POM_PlannedEnrollment/ObjectMap> ;
+    rr:predicate ind:studies_plannedEnrollment .
+
+<http://example.org/clinical-trials/TriplesMap_Studies/POM_PlannedEnrollment/ObjectMap> rr:column "\"planned_enrollment\"" ;
+    rr:datatype xsd:integer .
+
+<http://example.org/clinical-trials/TriplesMap_Studies/POM_PrimaryEndpoint> rr:objectMap <http://example.org/clinical-trials/TriplesMap_Studies/POM_PrimaryEndpoint/ObjectMap> ;
+    rr:predicate ind:studies_primaryEndpoint .
+
+<http://example.org/clinical-trials/TriplesMap_Studies/POM_PrimaryEndpoint/ObjectMap> rr:column "\"primary_endpoint\"" ;
+    rr:datatype xsd:string .
+
+<http://example.org/clinical-trials/TriplesMap_Studies/POM_Sponsor> rr:objectMap <http://example.org/clinical-trials/TriplesMap_Studies/POM_Sponsor/ObjectMap> ;
+    rr:predicate ind:studies_sponsor .
+
+<http://example.org/clinical-trials/TriplesMap_Studies/POM_Sponsor/ObjectMap> rr:column "\"sponsor\"" ;
+    rr:datatype xsd:string .
+
+<http://example.org/clinical-trials/TriplesMap_Studies/POM_StartDate> rr:objectMap <http://example.org/clinical-trials/TriplesMap_Studies/POM_StartDate/ObjectMap> ;
+    rr:predicate ind:studies_startDate .
+
+<http://example.org/clinical-trials/TriplesMap_Studies/POM_StartDate/ObjectMap> rr:column "\"start_date\"" ;
+    rr:datatype xsd:date .
+
+<http://example.org/clinical-trials/TriplesMap_Studies/POM_Status> rr:objectMap <http://example.org/clinical-trials/TriplesMap_Studies/POM_Status/ObjectMap> ;
+    rr:predicate ind:studies_status .
+
+<http://example.org/clinical-trials/TriplesMap_Studies/POM_Status/ObjectMap> rr:column "\"status\"" ;
+    rr:datatype xsd:string .
+
+<http://example.org/clinical-trials/TriplesMap_Studies/POM_StudyId> rr:objectMap <http://example.org/clinical-trials/TriplesMap_Studies/POM_StudyId/ObjectMap> ;
+    rr:predicate ind:studies_studyId .
+
+<http://example.org/clinical-trials/TriplesMap_Studies/POM_StudyId/ObjectMap> rr:column "\"study_id\"" ;
+    rr:datatype xsd:string .
+
+<http://example.org/clinical-trials/TriplesMap_Studies/POM_TherapeuticArea> rr:objectMap <http://example.org/clinical-trials/TriplesMap_Studies/POM_TherapeuticArea/ObjectMap> ;
+    rr:predicate ind:studies_therapeuticArea .
+
+<http://example.org/clinical-trials/TriplesMap_Studies/POM_TherapeuticArea/ObjectMap> rr:column "\"therapeutic_area\"" ;
+    rr:datatype xsd:string .
+
+<http://example.org/clinical-trials/TriplesMap_Studies/POM_Title> rr:objectMap <http://example.org/clinical-trials/TriplesMap_Studies/POM_Title/ObjectMap> ;
+    rr:predicate ind:studies_title .
+
+<http://example.org/clinical-trials/TriplesMap_Studies/POM_Title/ObjectMap> rr:column "\"title\"" ;
+    rr:datatype xsd:string .
+
+<http://example.org/clinical-trials/TriplesMap_Studies/SubjectMap> rr:class ind:Studies ;
+    rr:template "http://example.org/clinical-trials/studies/{\"study_id\"}" .
+
+ind:TriplesMap_StudyArms a rr:TriplesMap ;
+    scl:datasourceId "<GLUE_SOURCE_ID>" ;
+    scl:sourceSchema "clinical_trials" ;
+    rr:logicalTable [ rr:tableName "\"study_arms\"" ] ;
+    rr:predicateObjectMap <http://example.org/clinical-trials/TriplesMap_StudyArms/POM_ArmId>,
+        <http://example.org/clinical-trials/TriplesMap_StudyArms/POM_ArmName>,
+        <http://example.org/clinical-trials/TriplesMap_StudyArms/POM_ArmType>,
+        <http://example.org/clinical-trials/TriplesMap_StudyArms/POM_DoseMg>,
+        <http://example.org/clinical-trials/TriplesMap_StudyArms/POM_DrugId>,
+        <http://example.org/clinical-trials/TriplesMap_StudyArms/POM_StudyId> ;
+    rr:subjectMap <http://example.org/clinical-trials/TriplesMap_StudyArms/SubjectMap> .
+
+<http://example.org/clinical-trials/TriplesMap_StudyArms/POM_ArmId> rr:objectMap <http://example.org/clinical-trials/TriplesMap_StudyArms/POM_ArmId/ObjectMap> ;
+    rr:predicate ind:studyArms_armId .
+
+<http://example.org/clinical-trials/TriplesMap_StudyArms/POM_ArmId/ObjectMap> rr:column "\"arm_id\"" ;
+    rr:datatype xsd:string .
+
+<http://example.org/clinical-trials/TriplesMap_StudyArms/POM_ArmName> rr:objectMap <http://example.org/clinical-trials/TriplesMap_StudyArms/POM_ArmName/ObjectMap> ;
+    rr:predicate ind:studyArms_armName .
+
+<http://example.org/clinical-trials/TriplesMap_StudyArms/POM_ArmName/ObjectMap> rr:column "\"arm_name\"" ;
+    rr:datatype xsd:string .
+
+<http://example.org/clinical-trials/TriplesMap_StudyArms/POM_ArmType> rr:objectMap <http://example.org/clinical-trials/TriplesMap_StudyArms/POM_ArmType/ObjectMap> ;
+    rr:predicate ind:studyArms_armType .
+
+<http://example.org/clinical-trials/TriplesMap_StudyArms/POM_ArmType/ObjectMap> rr:column "\"arm_type\"" ;
+    rr:datatype xsd:string .
+
+<http://example.org/clinical-trials/TriplesMap_StudyArms/POM_DoseMg> rr:objectMap <http://example.org/clinical-trials/TriplesMap_StudyArms/POM_DoseMg/ObjectMap> ;
+    rr:predicate ind:studyArms_doseMg .
+
+<http://example.org/clinical-trials/TriplesMap_StudyArms/POM_DoseMg/ObjectMap> rr:column "\"dose_mg\"" ;
+    rr:datatype xsd:double .
+
+<http://example.org/clinical-trials/TriplesMap_StudyArms/POM_DrugId> rr:objectMap <http://example.org/clinical-trials/TriplesMap_StudyArms/POM_DrugId/ObjectMap> ;
+    rr:predicate ind:studyArms_drugId .
+
+<http://example.org/clinical-trials/TriplesMap_StudyArms/POM_DrugId/ObjectMap> rr:joinCondition [ rr:child "\"drug_id\"" ;
+            rr:parent "\"drug_id\"" ] ;
+    rr:parentTriplesMap ind:TriplesMap_Compounds .
+
+<http://example.org/clinical-trials/TriplesMap_StudyArms/POM_StudyId> rr:objectMap <http://example.org/clinical-trials/TriplesMap_StudyArms/POM_StudyId/ObjectMap> ;
+    rr:predicate ind:studyArms_studyId .
+
+<http://example.org/clinical-trials/TriplesMap_StudyArms/POM_StudyId/ObjectMap> rr:joinCondition [ rr:child "\"study_id\"" ;
+            rr:parent "\"study_id\"" ] ;
+    rr:parentTriplesMap ind:TriplesMap_Studies .
+
+<http://example.org/clinical-trials/TriplesMap_StudyArms/SubjectMap> rr:class ind:StudyArms ;
+    rr:template "http://example.org/clinical-trials/study_arms/{\"arm_id\"}" .
+
+<http://example.org/clinical-trials/TriplesMap_Subjects/POM_Age> rr:objectMap <http://example.org/clinical-trials/TriplesMap_Subjects/POM_Age/ObjectMap> ;
+    rr:predicate ind:subjects_age .
+
+<http://example.org/clinical-trials/TriplesMap_Subjects/POM_Age/ObjectMap> rr:column "\"age\"" ;
+    rr:datatype xsd:integer .
+
+<http://example.org/clinical-trials/TriplesMap_Subjects/POM_ArmId> rr:objectMap <http://example.org/clinical-trials/TriplesMap_Subjects/POM_ArmId/ObjectMap> ;
+    rr:predicate ind:subjects_armId .
+
+<http://example.org/clinical-trials/TriplesMap_Subjects/POM_ArmId/ObjectMap> rr:joinCondition [ rr:child "\"arm_id\"" ;
+            rr:parent "\"arm_id\"" ] ;
+    rr:parentTriplesMap ind:TriplesMap_StudyArms .
+
+<http://example.org/clinical-trials/TriplesMap_Subjects/POM_CompletionStatus> rr:objectMap <http://example.org/clinical-trials/TriplesMap_Subjects/POM_CompletionStatus/ObjectMap> ;
+    rr:predicate ind:subjects_completionStatus .
+
+<http://example.org/clinical-trials/TriplesMap_Subjects/POM_CompletionStatus/ObjectMap> rr:column "\"completion_status\"" ;
+    rr:datatype xsd:string .
+
+<http://example.org/clinical-trials/TriplesMap_Subjects/POM_ConsentDate> rr:objectMap <http://example.org/clinical-trials/TriplesMap_Subjects/POM_ConsentDate/ObjectMap> ;
+    rr:predicate ind:subjects_consentDate .
+
+<http://example.org/clinical-trials/TriplesMap_Subjects/POM_ConsentDate/ObjectMap> rr:column "\"consent_date\"" ;
+    rr:datatype xsd:date .
+
+<http://example.org/clinical-trials/TriplesMap_Subjects/POM_Country> rr:objectMap <http://example.org/clinical-trials/TriplesMap_Subjects/POM_Country/ObjectMap> ;
+    rr:predicate ind:subjects_country .
+
+<http://example.org/clinical-trials/TriplesMap_Subjects/POM_Country/ObjectMap> rr:column "\"country\"" ;
+    rr:datatype xsd:string .
+
+<http://example.org/clinical-trials/TriplesMap_Subjects/POM_DiscontinuationReason> rr:objectMap <http://example.org/clinical-trials/TriplesMap_Subjects/POM_DiscontinuationReason/ObjectMap> ;
+    rr:predicate ind:subjects_discontinuationReason .
+
+<http://example.org/clinical-trials/TriplesMap_Subjects/POM_DiscontinuationReason/ObjectMap> rr:column "\"discontinuation_reason\"" ;
+    rr:datatype xsd:string .
+
+<http://example.org/clinical-trials/TriplesMap_Subjects/POM_LastContactDate> rr:objectMap <http://example.org/clinical-trials/TriplesMap_Subjects/POM_LastContactDate/ObjectMap> ;
+    rr:predicate ind:subjects_lastContactDate .
+
+<http://example.org/clinical-trials/TriplesMap_Subjects/POM_LastContactDate/ObjectMap> rr:column "\"last_contact_date\"" ;
+    rr:datatype xsd:date .
+
+<http://example.org/clinical-trials/TriplesMap_Subjects/POM_Race> rr:objectMap <http://example.org/clinical-trials/TriplesMap_Subjects/POM_Race/ObjectMap> ;
+    rr:predicate ind:subjects_race .
+
+<http://example.org/clinical-trials/TriplesMap_Subjects/POM_Race/ObjectMap> rr:column "\"race\"" ;
+    rr:datatype xsd:string .
+
+<http://example.org/clinical-trials/TriplesMap_Subjects/POM_RandomizationDate> rr:objectMap <http://example.org/clinical-trials/TriplesMap_Subjects/POM_RandomizationDate/ObjectMap> ;
+    rr:predicate ind:subjects_randomizationDate .
+
+<http://example.org/clinical-trials/TriplesMap_Subjects/POM_RandomizationDate/ObjectMap> rr:column "\"randomization_date\"" ;
+    rr:datatype xsd:date .
+
+<http://example.org/clinical-trials/TriplesMap_Subjects/POM_Sex> rr:objectMap <http://example.org/clinical-trials/TriplesMap_Subjects/POM_Sex/ObjectMap> ;
+    rr:predicate ind:subjects_sex .
+
+<http://example.org/clinical-trials/TriplesMap_Subjects/POM_Sex/ObjectMap> rr:column "\"sex\"" ;
+    rr:datatype xsd:string .
+
+<http://example.org/clinical-trials/TriplesMap_Subjects/POM_SiteId> rr:objectMap <http://example.org/clinical-trials/TriplesMap_Subjects/POM_SiteId/ObjectMap> ;
+    rr:predicate ind:subjects_siteId .
+
+<http://example.org/clinical-trials/TriplesMap_Subjects/POM_SiteId/ObjectMap> rr:joinCondition [ rr:child "\"site_id\"" ;
+            rr:parent "\"site_id\"" ] ;
+    rr:parentTriplesMap ind:TriplesMap_Sites .
+
+<http://example.org/clinical-trials/TriplesMap_Subjects/POM_StudyId> rr:objectMap <http://example.org/clinical-trials/TriplesMap_Subjects/POM_StudyId/ObjectMap> ;
+    rr:predicate ind:subjects_studyId .
+
+<http://example.org/clinical-trials/TriplesMap_Subjects/POM_StudyId/ObjectMap> rr:joinCondition [ rr:child "\"study_id\"" ;
+            rr:parent "\"study_id\"" ] ;
+    rr:parentTriplesMap ind:TriplesMap_Studies .
+
+<http://example.org/clinical-trials/TriplesMap_Subjects/POM_SubjectId> rr:objectMap <http://example.org/clinical-trials/TriplesMap_Subjects/POM_SubjectId/ObjectMap> ;
+    rr:predicate ind:subjects_subjectId .
+
+<http://example.org/clinical-trials/TriplesMap_Subjects/POM_SubjectId/ObjectMap> rr:column "\"subject_id\"" ;
+    rr:datatype xsd:string .
+
+<http://example.org/clinical-trials/TriplesMap_Subjects/SubjectMap> rr:class ind:Subjects ;
+    rr:template "http://example.org/clinical-trials/subjects/{\"subject_id\"}" .
+
+ind:TriplesMap_Compounds a rr:TriplesMap ;
+    scl:datasourceId "<GLUE_SOURCE_ID>" ;
+    scl:sourceSchema "clinical_trials" ;
+    rr:logicalTable [ rr:tableName "\"compounds\"" ] ;
+    rr:predicateObjectMap <http://example.org/clinical-trials/TriplesMap_Compounds/POM_AtcCode>,
+        <http://example.org/clinical-trials/TriplesMap_Compounds/POM_DrugClass>,
+        <http://example.org/clinical-trials/TriplesMap_Compounds/POM_DrugId>,
+        <http://example.org/clinical-trials/TriplesMap_Compounds/POM_DrugName>,
+        <http://example.org/clinical-trials/TriplesMap_Compounds/POM_Inn>,
+        <http://example.org/clinical-trials/TriplesMap_Compounds/POM_MechanismOfAction>,
+        <http://example.org/clinical-trials/TriplesMap_Compounds/POM_Target> ;
+    rr:subjectMap <http://example.org/clinical-trials/TriplesMap_Compounds/SubjectMap> .
+
+ind:TriplesMap_Sites a rr:TriplesMap ;
+    scl:datasourceId "<GLUE_SOURCE_ID>" ;
+    scl:sourceSchema "clinical_trials" ;
+    rr:logicalTable [ rr:tableName "\"sites\"" ] ;
+    rr:predicateObjectMap <http://example.org/clinical-trials/TriplesMap_Sites/POM_ActivationDate>,
+        <http://example.org/clinical-trials/TriplesMap_Sites/POM_City>,
+        <http://example.org/clinical-trials/TriplesMap_Sites/POM_Country>,
+        <http://example.org/clinical-trials/TriplesMap_Sites/POM_PrincipalInvestigator>,
+        <http://example.org/clinical-trials/TriplesMap_Sites/POM_SiteId>,
+        <http://example.org/clinical-trials/TriplesMap_Sites/POM_SiteName>,
+        <http://example.org/clinical-trials/TriplesMap_Sites/POM_SiteStatus>,
+        <http://example.org/clinical-trials/TriplesMap_Sites/POM_StudyId> ;
+    rr:subjectMap <http://example.org/clinical-trials/TriplesMap_Sites/SubjectMap> .
+
+ind:TriplesMap_Subjects a rr:TriplesMap ;
+    scl:datasourceId "<GLUE_SOURCE_ID>" ;
+    scl:sourceSchema "clinical_trials" ;
+    rr:logicalTable [ rr:tableName "\"subjects\"" ] ;
+    rr:predicateObjectMap <http://example.org/clinical-trials/TriplesMap_Subjects/POM_Age>,
+        <http://example.org/clinical-trials/TriplesMap_Subjects/POM_ArmId>,
+        <http://example.org/clinical-trials/TriplesMap_Subjects/POM_CompletionStatus>,
+        <http://example.org/clinical-trials/TriplesMap_Subjects/POM_ConsentDate>,
+        <http://example.org/clinical-trials/TriplesMap_Subjects/POM_Country>,
+        <http://example.org/clinical-trials/TriplesMap_Subjects/POM_DiscontinuationReason>,
+        <http://example.org/clinical-trials/TriplesMap_Subjects/POM_LastContactDate>,
+        <http://example.org/clinical-trials/TriplesMap_Subjects/POM_Race>,
+        <http://example.org/clinical-trials/TriplesMap_Subjects/POM_RandomizationDate>,
+        <http://example.org/clinical-trials/TriplesMap_Subjects/POM_Sex>,
+        <http://example.org/clinical-trials/TriplesMap_Subjects/POM_SiteId>,
+        <http://example.org/clinical-trials/TriplesMap_Subjects/POM_StudyId>,
+        <http://example.org/clinical-trials/TriplesMap_Subjects/POM_SubjectId> ;
+    rr:subjectMap <http://example.org/clinical-trials/TriplesMap_Subjects/SubjectMap> .
+
+ind:TriplesMap_Studies a rr:TriplesMap ;
+    scl:datasourceId "<GLUE_SOURCE_ID>" ;
+    scl:sourceSchema "clinical_trials" ;
+    rr:logicalTable [ rr:tableName "\"studies\"" ] ;
+    rr:predicateObjectMap <http://example.org/clinical-trials/TriplesMap_Studies/POM_DrugId>,
+        <http://example.org/clinical-trials/TriplesMap_Studies/POM_EndpointUnit>,
+        <http://example.org/clinical-trials/TriplesMap_Studies/POM_Indication>,
+        <http://example.org/clinical-trials/TriplesMap_Studies/POM_NctId>,
+        <http://example.org/clinical-trials/TriplesMap_Studies/POM_Phase>,
+        <http://example.org/clinical-trials/TriplesMap_Studies/POM_PlannedEnrollment>,
+        <http://example.org/clinical-trials/TriplesMap_Studies/POM_PrimaryEndpoint>,
+        <http://example.org/clinical-trials/TriplesMap_Studies/POM_Sponsor>,
+        <http://example.org/clinical-trials/TriplesMap_Studies/POM_StartDate>,
+        <http://example.org/clinical-trials/TriplesMap_Studies/POM_Status>,
+        <http://example.org/clinical-trials/TriplesMap_Studies/POM_StudyId>,
+        <http://example.org/clinical-trials/TriplesMap_Studies/POM_TherapeuticArea>,
+        <http://example.org/clinical-trials/TriplesMap_Studies/POM_Title> ;
+    rr:subjectMap <http://example.org/clinical-trials/TriplesMap_Studies/SubjectMap> .
+

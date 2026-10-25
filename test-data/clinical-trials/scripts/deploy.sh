@@ -15,7 +15,8 @@ REPO="${COA_REPO:-$(cd "$HERE/../../.." && pwd)}"
 
 # assumed-role ARN -> IAM role ARN
 ARN=$(aws sts get-caller-identity --query Arn --output text)
-export SCL_SMUS_ADMIN_ARNS=$(echo "$ARN" | sed -E 's#:sts::#:iam::#; s#:assumed-role/(.*)/[^/]+$#:role/\1#')
+ROLE_NAME=$(echo "$ARN" | sed -E 's#.*:assumed-role/([^/]+)/[^/]+$#\1#')
+export SCL_SMUS_ADMIN_ARNS=$(aws iam get-role --role-name "$ROLE_NAME" --query Role.Arn --output text)
 export SCL_LAMBDA_RESERVED_CONCURRENCY=0
 
 # One model for LLM, induction and chat

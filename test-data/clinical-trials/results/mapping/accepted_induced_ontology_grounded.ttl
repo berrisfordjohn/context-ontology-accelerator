@@ -1,0 +1,1826 @@
+@prefix : <http://example.org/clinical-trials/> .
+@prefix coa: <http://coa.amazon.com/vocab/coa#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix neptune: <http://aws.amazon.com/neptune/vocab/v01/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix wb: <https://ontology-workbench.local/vocab#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# ── Ontology ──────────────────────
+
+<http://example.org/clinical-trials> a owl:Ontology ;
+    rdfs:label "Proposal Ontology" .
+
+: a owl:Ontology ;
+    dct:created "2026-10-25T12:58:58.769123+00:00" ;
+    dct:description "Accepted from proposal 77ccd903-b051-490b-893e-2846a284bd63" ;
+    dct:modified "2026-10-25T12:58:58.769123+00:00" ;
+    dct:title "clinical-trials induction (grounded)" ;
+    wb:axiom_count "1518" ;
+    wb:class_count "10" ;
+    wb:domainTag "induced" ;
+    wb:file_path "./data/ontologies/http___example.org_clinical-trials_.ttl" ;
+    wb:format "turtle" ;
+    wb:ontology_type "induced" ;
+    wb:parse_status "ok" ;
+    wb:property_count "91" .
+
+# ── Classes ──────────────────────
+
+:AdverseEvents a owl:Class ;
+    rdfs:label "adverse_events" ;
+    coa:glossaryTerm "MedDRA",
+        "adverse event",
+        "pharmacovigilance",
+        "serious adverse event",
+        "system organ class" ;
+    coa:isMapped true ;
+    coa:tag "clinical_trials",
+        "pharmacovigilance",
+        "safety",
+        "synthetic_data",
+        "test" ;
+    :matchConfidence "0.97"^^xsd:float ;
+    rdfs:comment "Records of adverse events (AEs) experienced by study subjects during clinical trials, capturing safety data including event classification, severity, relationship to treatment, and outcome. Used for pharmacovigilance and regulatory safety reporting." ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :adverseEvents_aeId ],
+        <https://example.org/ontology/clinical-trials#AdverseEvent> ;
+    owl:hasKey ( :adverseEvents_aeId ) ;
+    skos:altLabel "AE",
+        "adverse event log",
+        "safety events",
+        "side effects log" ;
+    skos:exactMatch <https://example.org/ontology/clinical-trials#AdverseEvent> ;
+    wb:definedBy : .
+
+:Compounds a owl:Class ;
+    rdfs:label "compounds" ;
+    coa:glossaryTerm "ATC code",
+        "INN",
+        "drug class",
+        "mechanism of action",
+        "pharmacology" ;
+    coa:isMapped true ;
+    coa:tag "clinical trials",
+        "drug registry",
+        "pharmacology",
+        "reference data",
+        "test data" ;
+    :matchConfidence "0.97"^^xsd:float ;
+    rdfs:comment "Reference catalog of pharmaceutical compounds and investigational drugs used in clinical trials, capturing key pharmacological properties including drug classification, mechanism of action, molecular target, and standardized coding." ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :compounds_drugId ],
+        <https://example.org/ontology/clinical-trials#Compound> ;
+    owl:hasKey ( :compounds_drugId ) ;
+    skos:altLabel "drug catalog",
+        "drugs",
+        "investigational drugs",
+        "pharmaceutical compounds" ;
+    skos:exactMatch <https://example.org/ontology/clinical-trials#Compound> ;
+    wb:definedBy : .
+
+:EfficacyResults a owl:Class ;
+    rdfs:label "efficacy_results" ;
+    coa:glossaryTerm "baseline measurement",
+        "clinical trial",
+        "efficacy endpoint",
+        "outcome assessment",
+        "study visit" ;
+    coa:isMapped true ;
+    coa:tag "clinical-trials",
+        "efficacy",
+        "outcomes",
+        "synthetic-data",
+        "test" ;
+    :matchConfidence "0.97"^^xsd:float ;
+    rdfs:comment "Stores efficacy measurement results for subjects enrolled in clinical trials, capturing endpoint assessments across study visits. Each record represents a single efficacy measurement for a subject at a specific visit, including baseline and follow-up evaluations used to assess treatment effectiveness." ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :efficacyResults_efficacyId ],
+        <https://example.org/ontology/clinical-trials#EfficacyResult> ;
+    owl:hasKey ( :efficacyResults_efficacyId ) ;
+    skos:altLabel "clinical outcomes data",
+        "efficacy assessments",
+        "endpoint results",
+        "trial outcomes" ;
+    skos:exactMatch <https://example.org/ontology/clinical-trials#EfficacyResult> ;
+    wb:definedBy : .
+
+:LabResults a owl:Class ;
+    rdfs:label "lab_results" ;
+    coa:glossaryTerm "abnormal flag",
+        "biomarker",
+        "clinical trial safety data",
+        "laboratory results",
+        "reference range" ;
+    coa:isMapped true ;
+    coa:tag "clinical_trials",
+        "laboratory",
+        "safety",
+        "subject_data",
+        "synthetic_test" ;
+    :matchConfidence "0.99"^^xsd:float ;
+    rdfs:comment "Laboratory test results collected from clinical trial subjects across study visits. Each record captures a single lab measurement for a participant, including the test performed, the numeric result, reference range boundaries, and an abnormality flag indicating whether the result falls outside normal limits. Used to monitor subject safety and evaluate clinical endpoints during trial conduct." ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :labResults_labId ],
+        <https://example.org/ontology/clinical-trials#LabResult> ;
+    owl:hasKey ( :labResults_labId ) ;
+    skos:altLabel "clinical lab results",
+        "lab data",
+        "lab measurements",
+        "laboratory findings" ;
+    skos:exactMatch <https://example.org/ontology/clinical-trials#LabResult> ;
+    wb:definedBy : .
+
+:MeddraDictionary a owl:Class ;
+    rdfs:label "meddra_dictionary" ;
+    coa:glossaryTerm "Adverse Event Coding",
+        "MedDRA",
+        "Preferred Term",
+        "Regulatory Terminology",
+        "System Organ Class" ;
+    coa:isMapped true ;
+    coa:tag "clinical_trials",
+        "meddra",
+        "medical_coding",
+        "reference_data",
+        "regulatory" ;
+    :matchConfidence "0.98"^^xsd:float ;
+    rdfs:comment "MedDRA (Medical Dictionary for Regulatory Activities) reference dictionary used in clinical trials to standardize the coding of adverse events, diagnoses, and medical conditions. Maps preferred terms and their associated codes to system organ classes for regulatory reporting purposes." ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :meddraDictionary_meddraPtCode ],
+        <https://example.org/ontology/clinical-trials#MedDRATerm> ;
+    owl:hasKey ( :meddraDictionary_meddraPtCode ) ;
+    skos:altLabel "Adverse Event Dictionary",
+        "MedDRA Lookup",
+        "MedDRA Reference",
+        "Medical Dictionary" ;
+    skos:exactMatch <https://example.org/ontology/clinical-trials#MedDRATerm> ;
+    wb:definedBy : .
+
+:ProtocolDeviations a owl:Class ;
+    rdfs:label "protocol_deviations" ;
+    coa:glossaryTerm "GCP compliance",
+        "clinical trial monitoring",
+        "protocol deviation",
+        "regulatory compliance",
+        "subject safety" ;
+    coa:isMapped true ;
+    coa:tag "clinical_trials",
+        "compliance",
+        "quality_assurance",
+        "regulatory",
+        "test_data" ;
+    :matchConfidence "0.98"^^xsd:float ;
+    rdfs:comment "Records protocol deviations identified during clinical trials, capturing instances where study procedures deviated from the approved protocol for a given subject, site, and study. Used for regulatory compliance tracking, quality assurance, and risk management in clinical trial operations." ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :protocolDeviations_deviationId ],
+        <https://example.org/ontology/clinical-trials#ProtocolDeviation> ;
+    owl:hasKey ( :protocolDeviations_deviationId ) ;
+    skos:altLabel "GCP deviations",
+        "protocol violations",
+        "study deviations",
+        "trial deviations" ;
+    skos:exactMatch <https://example.org/ontology/clinical-trials#ProtocolDeviation> ;
+    wb:definedBy : .
+
+:Sites a owl:Class ;
+    rdfs:label "sites" ;
+    coa:glossaryTerm "GCP site",
+        "clinical trial site",
+        "investigational site",
+        "principal investigator",
+        "site activation" ;
+    coa:isMapped true ;
+    coa:tag "clinical-trials",
+        "operations",
+        "sites",
+        "synthetic",
+        "test-data" ;
+    :matchConfidence "0.97"^^xsd:float ;
+    rdfs:comment "Represents individual investigational sites participating in clinical trials, capturing location details, responsible investigator, and operational status for each site-study pairing." ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :sites_siteId ],
+        <https://example.org/ontology/clinical-trials#Site> ;
+    owl:hasKey ( :sites_siteId ) ;
+    skos:altLabel "clinical sites",
+        "investigational sites",
+        "study sites",
+        "trial sites" ;
+    skos:exactMatch <https://example.org/ontology/clinical-trials#Site> ;
+    wb:definedBy : .
+
+:Studies a owl:Class ;
+    rdfs:label "studies" ;
+    coa:glossaryTerm "NCT number",
+        "clinical trial",
+        "investigational drug",
+        "primary endpoint",
+        "study enrollment",
+        "study phase",
+        "therapeutic area" ;
+    coa:isMapped true ;
+    coa:tag "clinical trials",
+        "drug development",
+        "regulatory",
+        "research",
+        "synthetic data" ;
+    :matchConfidence "0.98"^^xsd:float ;
+    rdfs:comment "Stores records for clinical trial studies, capturing key protocol details such as phase, therapeutic area, indication, sponsoring organization, enrollment targets, and primary endpoints. Each study is identified by an internal study ID and linked to a ClinicalTrials.gov NCT identifier. This is synthetic test data." ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :studies_studyId ],
+        <https://example.org/ontology/clinical-trials#Study> ;
+    owl:hasKey ( :studies_studyId ) ;
+    skos:altLabel "CT studies",
+        "clinical studies",
+        "study protocol records",
+        "trials registry" ;
+    skos:exactMatch <https://example.org/ontology/clinical-trials#Study> ;
+    wb:definedBy : .
+
+:StudyArms a owl:Class ;
+    rdfs:label "study_arms" ;
+    coa:glossaryTerm "clinical trial arm",
+        "dose assignment",
+        "intervention group",
+        "randomized controlled trial",
+        "treatment group" ;
+    coa:isMapped true ;
+    coa:tag "clinical_trials",
+        "interventions",
+        "study_design",
+        "synthetic_data",
+        "test" ;
+    :matchConfidence "0.98"^^xsd:float ;
+    rdfs:comment "Represents the individual arms (groups) within a clinical trial study, defining how participants are divided and treated. Each arm specifies the intervention type, associated drug, and dosage used for that group of participants." ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :studyArms_armId ],
+        <https://example.org/ontology/clinical-trials#StudyArm> ;
+    owl:hasKey ( :studyArms_armId ) ;
+    skos:altLabel "cohort arms",
+        "study groups",
+        "treatment arms",
+        "trial arms" ;
+    skos:exactMatch <https://example.org/ontology/clinical-trials#StudyArm> ;
+    wb:definedBy : .
+
+:Subjects a owl:Class ;
+    rdfs:label "subjects" ;
+    coa:glossaryTerm "discontinuation",
+        "enrollment",
+        "informed consent",
+        "randomization",
+        "subject",
+        "treatment arm" ;
+    coa:isMapped true ;
+    coa:tag "clinical trials",
+        "demographics",
+        "enrollment",
+        "participants",
+        "synthetic/test" ;
+    :matchConfidence "0.98"^^xsd:float ;
+    rdfs:comment "Stores demographic and enrollment information for individual participants (subjects) enrolled in clinical trials. Each record represents a single subject assigned to a study site and treatment arm, capturing consent, randomization, and study completion or discontinuation details." ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :subjects_subjectId ],
+        <https://example.org/ontology/clinical-trials#Subject> ;
+    owl:hasKey ( :subjects_subjectId ) ;
+    skos:altLabel "clinical study participants",
+        "enrolled patients",
+        "study subjects",
+        "trial participants" ;
+    skos:exactMatch <https://example.org/ontology/clinical-trials#Subject> ;
+    wb:definedBy : .
+
+# ── Object properties ──────────────────────
+
+:adverseEvents_meddraPtCode a rdf:Property,
+        owl:ObjectProperty ;
+    rdfs:label "meddra_pt_code" ;
+    coa:fkProvenance "AI_INFERRED" ;
+    coa:glossaryTerm "MedDRA",
+        "preferred term code" ;
+    coa:tag "MedDRA",
+        "classification",
+        "code" ;
+    rdfs:comment "The numeric MedDRA code corresponding to the Preferred Term, enabling standardized coding of the adverse event for regulatory submissions. (Foreign key: adverse_events.meddra_pt_code references meddra_dictionary.meddra_pt_code)" ;
+    rdfs:domain :AdverseEvents ;
+    rdfs:range :MeddraDictionary ;
+    skos:altLabel "MedDRA code",
+        "PT code",
+        "event code" ;
+    wb:definedBy : .
+
+:adverseEvents_studyId a rdf:Property,
+        owl:ObjectProperty ;
+    rdfs:label "study_id" ;
+    coa:fkProvenance "AI_INFERRED" ;
+    coa:glossaryTerm "clinical study",
+        "clinical trial protocol" ;
+    coa:tag "identifier",
+        "study" ;
+    rdfs:comment "Identifier for the clinical study or trial in which the adverse event was observed, used to associate the event with a specific protocol. (Foreign key: adverse_events.study_id references studies.study_id)" ;
+    rdfs:domain :AdverseEvents ;
+    rdfs:range :Studies ;
+    skos:altLabel "protocol ID",
+        "study identifier",
+        "trial ID" ;
+    wb:definedBy : .
+
+:adverseEvents_subjectId a rdf:Property,
+        owl:ObjectProperty ;
+    rdfs:label "subject_id" ;
+    coa:fkProvenance "AI_INFERRED" ;
+    coa:glossaryTerm "study participant",
+        "trial subject" ;
+    coa:tag "identifier",
+        "subject" ;
+    rdfs:comment "Identifier for the trial subject (patient) who experienced the adverse event, used to link events to a specific participant. (Foreign key: adverse_events.subject_id references subjects.subject_id)" ;
+    rdfs:domain :AdverseEvents ;
+    rdfs:range :Subjects ;
+    skos:altLabel "participant ID",
+        "patient ID",
+        "subject identifier" ;
+    wb:definedBy : .
+
+:efficacyResults_studyId a rdf:Property,
+        owl:ObjectProperty ;
+    rdfs:label "study_id" ;
+    coa:fkProvenance "AI_INFERRED" ;
+    coa:glossaryTerm "clinical study",
+        "study identifier",
+        "trial protocol" ;
+    coa:tag "foreign-key-candidate",
+        "identifier",
+        "study" ;
+    rdfs:comment "Identifier for the clinical study or trial to which this efficacy result belongs. (Foreign key: efficacy_results.study_id references studies.study_id)" ;
+    rdfs:domain :EfficacyResults ;
+    rdfs:range :Studies ;
+    skos:altLabel "protocol ID",
+        "study number",
+        "trial ID" ;
+    wb:definedBy : .
+
+:efficacyResults_subjectId a rdf:Property,
+        owl:ObjectProperty ;
+    rdfs:label "subject_id" ;
+    coa:fkProvenance "AI_INFERRED" ;
+    coa:glossaryTerm "patient identifier",
+        "study participant",
+        "trial subject" ;
+    coa:tag "foreign-key-candidate",
+        "identifier",
+        "subject" ;
+    rdfs:comment "Identifier for the trial participant or subject whose efficacy data is being recorded. (Foreign key: efficacy_results.subject_id references subjects.subject_id)" ;
+    rdfs:domain :EfficacyResults ;
+    rdfs:range :Subjects ;
+    skos:altLabel "participant ID",
+        "patient ID",
+        "subject number" ;
+    wb:definedBy : .
+
+:labResults_studyId a rdf:Property,
+        owl:ObjectProperty ;
+    rdfs:label "study_id" ;
+    coa:fkProvenance "AI_INFERRED" ;
+    coa:glossaryTerm "clinical study",
+        "study identifier",
+        "trial protocol" ;
+    coa:tag "clinical_trials",
+        "identifier",
+        "study" ;
+    rdfs:comment "Identifier for the clinical study or trial protocol under which the lab sample was collected. (Foreign key: lab_results.study_id references studies.study_id)" ;
+    rdfs:domain :LabResults ;
+    rdfs:range :Studies ;
+    skos:altLabel "protocol ID",
+        "study code",
+        "trial ID" ;
+    wb:definedBy : .
+
+:labResults_subjectId a rdf:Property,
+        owl:ObjectProperty ;
+    rdfs:label "subject_id" ;
+    coa:fkProvenance "AI_INFERRED" ;
+    coa:glossaryTerm "enrolled subject",
+        "participant",
+        "trial subject" ;
+    coa:tag "clinical_trials",
+        "identifier",
+        "subject" ;
+    rdfs:comment "Unique identifier for the clinical trial participant (subject) from whom the lab sample was collected. (Foreign key: lab_results.subject_id references subjects.subject_id)" ;
+    rdfs:domain :LabResults ;
+    rdfs:range :Subjects ;
+    skos:altLabel "participant ID",
+        "patient ID",
+        "subject code" ;
+    wb:definedBy : .
+
+:protocolDeviations_siteId a rdf:Property,
+        owl:ObjectProperty ;
+    rdfs:label "site_id" ;
+    coa:fkProvenance "AI_INFERRED" ;
+    coa:glossaryTerm "clinical site",
+        "investigative site",
+        "trial site" ;
+    coa:tag "foreign_key",
+        "identifier",
+        "site" ;
+    rdfs:comment "Identifier of the clinical trial site where the protocol deviation was observed, enabling site-level deviation tracking and monitoring. (Foreign key: protocol_deviations.site_id references sites.site_id)" ;
+    rdfs:domain :ProtocolDeviations ;
+    rdfs:range :Sites ;
+    skos:altLabel "clinical site number",
+        "investigative site ID",
+        "site code" ;
+    wb:definedBy : .
+
+:protocolDeviations_studyId a rdf:Property,
+        owl:ObjectProperty ;
+    rdfs:label "study_id" ;
+    coa:fkProvenance "AI_INFERRED" ;
+    coa:glossaryTerm "clinical study",
+        "study identifier",
+        "trial protocol" ;
+    coa:tag "foreign_key",
+        "identifier",
+        "study" ;
+    rdfs:comment "Identifier of the clinical study or trial in which the protocol deviation occurred, used to associate the deviation with a specific research protocol. (Foreign key: protocol_deviations.study_id references studies.study_id)" ;
+    rdfs:domain :ProtocolDeviations ;
+    rdfs:range :Studies ;
+    skos:altLabel "protocol ID",
+        "study number",
+        "trial ID" ;
+    wb:definedBy : .
+
+:protocolDeviations_subjectId a rdf:Property,
+        owl:ObjectProperty ;
+    rdfs:label "subject_id" ;
+    coa:fkProvenance "AI_INFERRED" ;
+    coa:glossaryTerm "study participant",
+        "subject enrollment",
+        "trial subject" ;
+    coa:tag "foreign_key",
+        "identifier",
+        "subject" ;
+    rdfs:comment "Identifier of the clinical trial subject (participant) associated with the protocol deviation, linking the deviation to a specific enrolled individual. (Foreign key: protocol_deviations.subject_id references subjects.subject_id)" ;
+    rdfs:domain :ProtocolDeviations ;
+    rdfs:range :Subjects ;
+    skos:altLabel "participant ID",
+        "patient ID",
+        "subject number" ;
+    wb:definedBy : .
+
+:sites_studyId a rdf:Property,
+        owl:ObjectProperty ;
+    rdfs:label "study_id" ;
+    coa:fkProvenance "AI_INFERRED" ;
+    coa:glossaryTerm "clinical study",
+        "protocol number",
+        "study identifier" ;
+    coa:tag "foreign-key",
+        "identifier",
+        "study" ;
+    rdfs:comment "Identifier of the clinical study or trial to which this site is associated, linking the site record to its parent study. (Foreign key: sites.study_id references studies.study_id)" ;
+    rdfs:domain :Sites ;
+    rdfs:range :Studies ;
+    skos:altLabel "protocol ID",
+        "study identifier",
+        "trial ID" ;
+    wb:definedBy : .
+
+:studies_drugId a rdf:Property,
+        owl:ObjectProperty ;
+    rdfs:label "drug_id" ;
+    coa:fkProvenance "AI_INFERRED" ;
+    coa:glossaryTerm "IND",
+        "compound ID",
+        "drug identifier",
+        "investigational drug" ;
+    coa:tag "drug",
+        "foreign key",
+        "identifier" ;
+    rdfs:comment "Identifier referencing the investigational drug or compound being studied in the clinical trial, linking to the drug or compound master record. (Foreign key: studies.drug_id references compounds.drug_id)" ;
+    rdfs:domain :Studies ;
+    rdfs:range :Compounds ;
+    skos:altLabel "compound ID",
+        "compound identifier",
+        "drug identifier",
+        "investigational drug ID" ;
+    wb:definedBy : .
+
+:studyArms_drugId a rdf:Property,
+        owl:ObjectProperty ;
+    rdfs:label "drug_id" ;
+    coa:fkProvenance "AI_INFERRED" ;
+    coa:glossaryTerm "investigational drug",
+        "study drug",
+        "therapeutic agent" ;
+    coa:tag "drug_reference",
+        "foreign_key",
+        "identifier" ;
+    rdfs:comment "Identifier of the drug or investigational product administered to participants in this arm, linking to the drug or compound reference data. (Foreign key: study_arms.drug_id references compounds.drug_id)" ;
+    rdfs:domain :StudyArms ;
+    rdfs:range :Compounds ;
+    skos:altLabel "compound ID",
+        "investigational product ID",
+        "medication ID" ;
+    wb:definedBy : .
+
+:studyArms_studyId a rdf:Property,
+        owl:ObjectProperty ;
+    rdfs:label "study_id" ;
+    coa:fkProvenance "AI_INFERRED" ;
+    coa:glossaryTerm "clinical study",
+        "trial protocol" ;
+    coa:tag "foreign_key",
+        "identifier",
+        "study_reference" ;
+    rdfs:comment "Identifier of the clinical trial study to which this arm belongs, linking the arm back to its parent study record. (Foreign key: study_arms.study_id references studies.study_id)" ;
+    rdfs:domain :StudyArms ;
+    rdfs:range :Studies ;
+    skos:altLabel "protocol ID",
+        "study identifier",
+        "trial ID" ;
+    wb:definedBy : .
+
+:subjects_armId a rdf:Property,
+        owl:ObjectProperty ;
+    rdfs:label "arm_id" ;
+    coa:fkProvenance "AI_INFERRED" ;
+    coa:glossaryTerm "randomization group",
+        "study cohort",
+        "treatment arm" ;
+    coa:tag "foreign key candidate",
+        "identifier",
+        "treatment" ;
+    rdfs:comment "Identifier of the treatment arm or study group to which the subject has been assigned, representing the intervention or control condition the subject receives. (Foreign key: subjects.arm_id references study_arms.arm_id)" ;
+    rdfs:domain :Subjects ;
+    rdfs:range :StudyArms ;
+    skos:altLabel "cohort ID",
+        "study arm",
+        "treatment group ID" ;
+    wb:definedBy : .
+
+:subjects_siteId a rdf:Property,
+        owl:ObjectProperty ;
+    rdfs:label "site_id" ;
+    coa:fkProvenance "AI_INFERRED" ;
+    coa:glossaryTerm "clinical site",
+        "investigative center" ;
+    coa:tag "foreign key candidate",
+        "identifier",
+        "site" ;
+    rdfs:comment "Identifier of the clinical trial site or investigative center where the subject is enrolled and managed. (Foreign key: subjects.site_id references sites.site_id)" ;
+    rdfs:domain :Subjects ;
+    rdfs:range :Sites ;
+    skos:altLabel "center ID",
+        "clinic ID",
+        "investigative site ID" ;
+    wb:definedBy : .
+
+:subjects_studyId a rdf:Property,
+        owl:ObjectProperty ;
+    rdfs:label "study_id" ;
+    coa:fkProvenance "AI_INFERRED" ;
+    coa:glossaryTerm "clinical study",
+        "protocol identifier" ;
+    coa:tag "foreign key candidate",
+        "identifier",
+        "study" ;
+    rdfs:comment "Identifier of the clinical study or trial in which the subject is enrolled, linking the subject to a specific protocol. (Foreign key: subjects.study_id references studies.study_id)" ;
+    rdfs:domain :Subjects ;
+    rdfs:range :Studies ;
+    skos:altLabel "protocol ID",
+        "study number",
+        "trial ID" ;
+    wb:definedBy : .
+
+# ── Datatype properties ──────────────────────
+
+:adverseEvents_aeId a rdf:Property,
+        owl:DatatypeProperty ;
+    rdfs:label "ae_id" ;
+    coa:glossaryTerm "adverse event" ;
+    coa:tag "identifier",
+        "primary_key" ;
+    rdfs:comment "Unique identifier for each adverse event record within the clinical trial safety database." ;
+    rdfs:domain :AdverseEvents ;
+    rdfs:range xsd:string ;
+    skos:altLabel "AE identifier",
+        "adverse event ID" ;
+    wb:definedBy : .
+
+:adverseEvents_endDate a rdf:Property,
+        owl:DatatypeProperty ;
+    rdfs:label "end_date" ;
+    coa:glossaryTerm "adverse event resolution" ;
+    coa:tag "date",
+        "temporal" ;
+    rdfs:comment "The date on which the adverse event resolved or ended; may be null if the event is ongoing or outcome is unknown." ;
+    rdfs:domain :AdverseEvents ;
+    rdfs:range xsd:date ;
+    skos:altLabel "AE resolution date",
+        "event end date",
+        "resolution date" ;
+    wb:definedBy : .
+
+:adverseEvents_isRelatedToTreatment a rdf:Property,
+        owl:DatatypeProperty ;
+    rdfs:label "is_related_to_treatment" ;
+    coa:glossaryTerm "adverse event relatedness",
+        "causality assessment",
+        "treatment relationship" ;
+    coa:tag "causality",
+        "flag",
+        "safety" ;
+    rdfs:comment "Flag indicating the investigator's assessment of whether the adverse event is causally related to the study treatment or intervention." ;
+    rdfs:domain :AdverseEvents ;
+    rdfs:range xsd:string ;
+    skos:altLabel "causality flag",
+        "relatedness flag",
+        "treatment-related indicator" ;
+    wb:definedBy : .
+
+:adverseEvents_isSerious a rdf:Property,
+        owl:DatatypeProperty ;
+    rdfs:label "is_serious" ;
+    coa:glossaryTerm "SAE",
+        "pharmacovigilance",
+        "serious adverse event" ;
+    coa:tag "SAE",
+        "flag",
+        "safety" ;
+    rdfs:comment "Flag indicating whether the adverse event meets regulatory criteria for a Serious Adverse Event (SAE), such as hospitalization, life-threatening condition, or death." ;
+    rdfs:domain :AdverseEvents ;
+    rdfs:range xsd:string ;
+    skos:altLabel "SAE flag",
+        "serious AE indicator",
+        "seriousness flag" ;
+    wb:definedBy : .
+
+:adverseEvents_outcome a rdf:Property,
+        owl:DatatypeProperty ;
+    rdfs:label "outcome" ;
+    coa:glossaryTerm "adverse event outcome",
+        "safety outcome" ;
+    coa:tag "outcome",
+        "safety",
+        "status" ;
+    rdfs:comment "The final outcome or status of the adverse event (e.g., Recovered, Recovering, Not Recovered, Fatal, Unknown), used in safety narratives and regulatory reports." ;
+    rdfs:domain :AdverseEvents ;
+    rdfs:range xsd:string ;
+    skos:altLabel "AE outcome",
+        "event resolution status",
+        "resolution outcome" ;
+    wb:definedBy : .
+
+:adverseEvents_preferredTerm a rdf:Property,
+        owl:DatatypeProperty ;
+    rdfs:label "preferred_term" ;
+    coa:glossaryTerm "MedDRA",
+        "adverse event classification",
+        "preferred term" ;
+    coa:tag "MedDRA",
+        "classification",
+        "terminology" ;
+    rdfs:comment "The standardized MedDRA Preferred Term (PT) used to classify and describe the adverse event in a consistent, regulatory-compliant terminology." ;
+    rdfs:domain :AdverseEvents ;
+    rdfs:range xsd:string ;
+    skos:altLabel "MedDRA preferred term",
+        "PT",
+        "event term" ;
+    wb:definedBy : .
+
+:adverseEvents_severity a rdf:Property,
+        owl:DatatypeProperty ;
+    rdfs:label "severity" ;
+    coa:glossaryTerm "CTCAE grade",
+        "adverse event severity",
+        "severity grading" ;
+    coa:tag "grading",
+        "safety",
+        "severity" ;
+    rdfs:comment "The intensity or grade of the adverse event (e.g., Mild, Moderate, Severe), typically aligned with CTCAE or similar grading scales." ;
+    rdfs:domain :AdverseEvents ;
+    rdfs:range xsd:string ;
+    skos:altLabel "AE grade",
+        "grade",
+        "intensity" ;
+    wb:definedBy : .
+
+:adverseEvents_startDate a rdf:Property,
+        owl:DatatypeProperty ;
+    rdfs:label "start_date" ;
+    coa:glossaryTerm "adverse event onset" ;
+    coa:tag "date",
+        "temporal" ;
+    rdfs:comment "The date on which the adverse event began or was first observed for the subject." ;
+    rdfs:domain :AdverseEvents ;
+    rdfs:range xsd:date ;
+    skos:altLabel "AE onset date",
+        "event start date",
+        "onset date" ;
+    wb:definedBy : .
+
+:adverseEvents_systemOrganClass a rdf:Property,
+        owl:DatatypeProperty ;
+    rdfs:label "system_organ_class" ;
+    coa:glossaryTerm "MedDRA",
+        "SOC",
+        "system organ class" ;
+    coa:tag "MedDRA",
+        "classification",
+        "organ_system" ;
+    rdfs:comment "The MedDRA System Organ Class (SOC) that groups the adverse event by the body system or organ most closely associated with it, used for safety signal detection and reporting." ;
+    rdfs:domain :AdverseEvents ;
+    rdfs:range xsd:string ;
+    skos:altLabel "SOC",
+        "body system",
+        "organ class" ;
+    wb:definedBy : .
+
+:compounds_atcCode a rdf:Property,
+        owl:DatatypeProperty ;
+    rdfs:label "atc_code" ;
+    coa:glossaryTerm "ATC code",
+        "Anatomical Therapeutic Chemical",
+        "WHO drug classification" ;
+    coa:tag "WHO",
+        "classification",
+        "pharmacology",
+        "standardized code" ;
+    rdfs:comment "The Anatomical Therapeutic Chemical (ATC) classification code assigned by the WHO, providing a standardized hierarchical classification of the drug based on the organ system it acts on and its therapeutic, pharmacological, and chemical properties." ;
+    rdfs:domain :Compounds ;
+    rdfs:range xsd:string ;
+    skos:altLabel "ATC classification",
+        "WHO ATC code",
+        "drug classification code" ;
+    wb:definedBy : .
+
+:compounds_drugClass a rdf:Property,
+        owl:DatatypeProperty ;
+    rdfs:label "drug_class" ;
+    coa:glossaryTerm "drug classification",
+        "pharmacological grouping",
+        "therapeutic category" ;
+    coa:tag "classification",
+        "pharmacology" ;
+    rdfs:comment "The pharmacological or therapeutic class to which the drug belongs, grouping compounds with similar chemical structures or therapeutic uses (e.g., NSAID, beta-blocker, monoclonal antibody)." ;
+    rdfs:domain :Compounds ;
+    rdfs:range xsd:string ;
+    skos:altLabel "drug category",
+        "pharmacological class",
+        "therapeutic class" ;
+    wb:definedBy : .
+
+:compounds_drugId a rdf:Property,
+        owl:DatatypeProperty ;
+    rdfs:label "drug_id" ;
+    coa:glossaryTerm "compound reference",
+        "drug identifier" ;
+    coa:tag "identifier",
+        "primary key" ;
+    rdfs:comment "Unique identifier assigned to each pharmaceutical compound or investigational drug in the clinical trials system." ;
+    rdfs:domain :Compounds ;
+    rdfs:range xsd:string ;
+    skos:altLabel "compound ID",
+        "compound key",
+        "drug identifier" ;
+    wb:definedBy : .
+
+:compounds_drugName a rdf:Property,
+        owl:DatatypeProperty ;
+    rdfs:label "drug_name" ;
+    coa:glossaryTerm "brand name",
+        "proprietary name" ;
+    coa:tag "drug name",
+        "label" ;
+    rdfs:comment "The proprietary or working name of the drug or compound as used within clinical trial documentation." ;
+    rdfs:domain :Compounds ;
+    rdfs:range xsd:string ;
+    skos:altLabel "compound name",
+        "drug label",
+        "trade name" ;
+    wb:definedBy : .
+
+:compounds_inn a rdf:Property,
+        owl:DatatypeProperty ;
+    rdfs:label "inn" ;
+    coa:glossaryTerm "INN",
+        "International Nonproprietary Name",
+        "generic drug name" ;
+    coa:tag "WHO",
+        "pharmacology",
+        "standardized name" ;
+    rdfs:comment "International Nonproprietary Name (INN) — the globally recognized generic name assigned to the active pharmaceutical ingredient by the World Health Organization (WHO)." ;
+    rdfs:domain :Compounds ;
+    rdfs:range xsd:string ;
+    skos:altLabel "WHO name",
+        "generic name",
+        "nonproprietary name" ;
+    wb:definedBy : .
+
+:compounds_mechanismOfAction a rdf:Property,
+        owl:DatatypeProperty ;
+    rdfs:label "mechanism_of_action" ;
+    coa:glossaryTerm "MOA",
+        "mechanism of action",
+        "pharmacodynamics" ;
+    coa:tag "pharmacodynamics",
+        "pharmacology" ;
+    rdfs:comment "A description of how the drug exerts its therapeutic effect at a biochemical or physiological level, such as enzyme inhibition, receptor agonism, or ion channel blockade." ;
+    rdfs:domain :Compounds ;
+    rdfs:range xsd:string ;
+    skos:altLabel "MOA",
+        "mode of action",
+        "pharmacodynamic mechanism" ;
+    wb:definedBy : .
+
+:compounds_target a rdf:Property,
+        owl:DatatypeProperty ;
+    rdfs:label "target" ;
+    coa:glossaryTerm "drug target",
+        "pharmacological target",
+        "receptor" ;
+    coa:tag "molecular biology",
+        "pharmacology",
+        "target" ;
+    rdfs:comment "The specific biological molecule, receptor, enzyme, or pathway that the drug interacts with to produce its pharmacological effect (e.g., COX-2, HER2, PD-1)." ;
+    rdfs:domain :Compounds ;
+    rdfs:range xsd:string ;
+    skos:altLabel "biological target",
+        "drug target",
+        "molecular target" ;
+    wb:definedBy : .
+
+:efficacyResults_assessmentDate a rdf:Property,
+        owl:DatatypeProperty ;
+    rdfs:label "assessment_date" ;
+    coa:glossaryTerm "assessment date",
+        "observation date" ;
+    coa:tag "date",
+        "temporal" ;
+    rdfs:comment "The calendar date on which the efficacy measurement or assessment was performed for the subject." ;
+    rdfs:domain :EfficacyResults ;
+    rdfs:range xsd:date ;
+    skos:altLabel "evaluation date",
+        "measurement date",
+        "observation date" ;
+    wb:definedBy : .
+
+:efficacyResults_efficacyId a rdf:Property,
+        owl:DatatypeProperty ;
+    rdfs:label "efficacy_id" ;
+    coa:glossaryTerm "primary key",
+        "record identifier" ;
+    coa:tag "identifier",
+        "primary-key" ;
+    rdfs:comment "Unique identifier for each efficacy measurement record in the clinical trial dataset." ;
+    rdfs:domain :EfficacyResults ;
+    rdfs:range xsd:string ;
+    skos:altLabel "efficacy record ID",
+        "outcome record identifier" ;
+    wb:definedBy : .
+
+:efficacyResults_endpointName a rdf:Property,
+        owl:DatatypeProperty ;
+    rdfs:label "endpoint_name" ;
+    coa:glossaryTerm "clinical endpoint",
+        "outcome measure",
+        "primary endpoint",
+        "secondary endpoint" ;
+    coa:tag "clinical-measure",
+        "endpoint" ;
+    rdfs:comment "Name or label of the clinical efficacy endpoint being measured, such as a biomarker, symptom score, or disease assessment scale." ;
+    rdfs:domain :EfficacyResults ;
+    rdfs:range xsd:string ;
+    skos:altLabel "efficacy measure name",
+        "endpoint label",
+        "outcome measure" ;
+    wb:definedBy : .
+
+:efficacyResults_isBaseline a rdf:Property,
+        owl:DatatypeProperty ;
+    rdfs:label "is_baseline" ;
+    coa:glossaryTerm "baseline",
+        "pre-treatment measurement",
+        "reference value" ;
+    coa:tag "baseline",
+        "flag",
+        "indicator" ;
+    rdfs:comment "Flag indicating whether this efficacy measurement represents the baseline assessment taken prior to treatment initiation, used as a reference for evaluating treatment effect." ;
+    rdfs:domain :EfficacyResults ;
+    rdfs:range xsd:string ;
+    skos:altLabel "baseline flag",
+        "baseline indicator",
+        "pre-treatment indicator" ;
+    wb:definedBy : .
+
+:efficacyResults_unit a rdf:Property,
+        owl:DatatypeProperty ;
+    rdfs:label "unit" ;
+    coa:glossaryTerm "SI unit",
+        "unit of measurement" ;
+    coa:tag "measurement",
+        "unit" ;
+    rdfs:comment "The unit of measure associated with the efficacy endpoint value (e.g., mg/dL, score, mm Hg)." ;
+    rdfs:domain :EfficacyResults ;
+    rdfs:range xsd:string ;
+    skos:altLabel "measurement unit",
+        "result unit",
+        "unit of measure" ;
+    wb:definedBy : .
+
+:efficacyResults_value a rdf:Property,
+        owl:DatatypeProperty ;
+    rdfs:label "value" ;
+    coa:glossaryTerm "efficacy value",
+        "endpoint result",
+        "observed measurement" ;
+    coa:tag "measurement",
+        "numeric",
+        "result" ;
+    rdfs:comment "The numeric result or measured value of the efficacy endpoint for the subject at the given visit." ;
+    rdfs:domain :EfficacyResults ;
+    rdfs:range xsd:double ;
+    skos:altLabel "endpoint value",
+        "measurement value",
+        "observed value",
+        "result" ;
+    wb:definedBy : .
+
+:efficacyResults_visit a rdf:Property,
+        owl:DatatypeProperty ;
+    rdfs:label "visit" ;
+    coa:glossaryTerm "assessment timepoint",
+        "protocol visit",
+        "study visit" ;
+    coa:tag "schedule",
+        "timepoint",
+        "visit" ;
+    rdfs:comment "The scheduled study visit or timepoint at which the efficacy assessment was conducted (e.g., Week 1, Day 28, Follow-up)." ;
+    rdfs:domain :EfficacyResults ;
+    rdfs:range xsd:string ;
+    skos:altLabel "study visit",
+        "timepoint",
+        "visit code",
+        "visit name" ;
+    wb:definedBy : .
+
+:labResults_abnormalFlag a rdf:Property,
+        owl:DatatypeProperty ;
+    rdfs:label "abnormal_flag" ;
+    coa:glossaryTerm "CDISC flag",
+        "abnormal result",
+        "clinical significance flag" ;
+    coa:tag "abnormal",
+        "flag",
+        "laboratory",
+        "safety" ;
+    rdfs:comment "A flag indicating whether the lab result is outside the normal reference range, typically coded as 'H' (high), 'L' (low), 'N' (normal), or 'CS' (critically abnormal)." ;
+    rdfs:domain :LabResults ;
+    rdfs:range xsd:string ;
+    skos:altLabel "abnormality flag",
+        "normal flag",
+        "out-of-range flag",
+        "result flag" ;
+    wb:definedBy : .
+
+:labResults_collectionDate a rdf:Property,
+        owl:DatatypeProperty ;
+    rdfs:label "collection_date" ;
+    coa:glossaryTerm "sample date",
+        "specimen collection" ;
+    coa:tag "collection",
+        "date",
+        "laboratory" ;
+    rdfs:comment "The calendar date on which the biological sample was collected from the subject for laboratory analysis." ;
+    rdfs:domain :LabResults ;
+    rdfs:range xsd:date ;
+    skos:altLabel "draw date",
+        "sample date",
+        "specimen collection date" ;
+    wb:definedBy : .
+
+:labResults_labId a rdf:Property,
+        owl:DatatypeProperty ;
+    rdfs:label "lab_id" ;
+    coa:glossaryTerm "primary key",
+        "record identifier" ;
+    coa:tag "identifier",
+        "primary_key" ;
+    rdfs:comment "Unique identifier for each laboratory result record, serving as the primary key for this table." ;
+    rdfs:domain :LabResults ;
+    rdfs:range xsd:string ;
+    skos:altLabel "lab record ID",
+        "lab result ID",
+        "laboratory ID" ;
+    wb:definedBy : .
+
+:labResults_refRangeHigh a rdf:Property,
+        owl:DatatypeProperty ;
+    rdfs:label "ref_range_high" ;
+    coa:glossaryTerm "ULN",
+        "reference range",
+        "upper limit of normal" ;
+    coa:tag "laboratory",
+        "reference_range",
+        "threshold" ;
+    rdfs:comment "The upper bound of the normal reference range for the laboratory test, above which a result may be flagged as abnormally high." ;
+    rdfs:domain :LabResults ;
+    rdfs:range xsd:double ;
+    skos:altLabel "normal high",
+        "ref high",
+        "upper reference limit" ;
+    wb:definedBy : .
+
+:labResults_refRangeLow a rdf:Property,
+        owl:DatatypeProperty ;
+    rdfs:label "ref_range_low" ;
+    coa:glossaryTerm "LLN",
+        "lower limit of normal",
+        "reference range" ;
+    coa:tag "laboratory",
+        "reference_range",
+        "threshold" ;
+    rdfs:comment "The lower bound of the normal reference range for the laboratory test, below which a result may be flagged as abnormally low." ;
+    rdfs:domain :LabResults ;
+    rdfs:range xsd:double ;
+    skos:altLabel "lower reference limit",
+        "normal low",
+        "ref low" ;
+    wb:definedBy : .
+
+:labResults_resultUnit a rdf:Property,
+        owl:DatatypeProperty ;
+    rdfs:label "result_unit" ;
+    coa:glossaryTerm "SI unit",
+        "clinical unit",
+        "unit of measure" ;
+    coa:tag "laboratory",
+        "measurement",
+        "unit" ;
+    rdfs:comment "The unit of measure associated with the laboratory test result value, such as g/dL, mmol/L, or U/L." ;
+    rdfs:domain :LabResults ;
+    rdfs:range xsd:string ;
+    skos:altLabel "lab unit",
+        "measurement unit",
+        "unit" ;
+    wb:definedBy : .
+
+:labResults_resultValue a rdf:Property,
+        owl:DatatypeProperty ;
+    rdfs:label "result_value" ;
+    coa:glossaryTerm "laboratory result",
+        "measurement",
+        "quantitative result" ;
+    coa:tag "measurement",
+        "numeric",
+        "result" ;
+    rdfs:comment "The numeric measured value of the laboratory test result reported for the subject at the given visit." ;
+    rdfs:domain :LabResults ;
+    rdfs:range xsd:double ;
+    skos:altLabel "lab value",
+        "measured value",
+        "numeric result",
+        "test result" ;
+    wb:definedBy : .
+
+:labResults_testCode a rdf:Property,
+        owl:DatatypeProperty ;
+    rdfs:label "test_code" ;
+    coa:glossaryTerm "LOINC code",
+        "analyte",
+        "laboratory test code" ;
+    coa:tag "code",
+        "laboratory",
+        "test" ;
+    rdfs:comment "Standardized short code identifying the specific laboratory test performed, such as 'HGB' for hemoglobin or 'ALT' for alanine aminotransferase." ;
+    rdfs:domain :LabResults ;
+    rdfs:range xsd:string ;
+    skos:altLabel "analyte code",
+        "lab code",
+        "test identifier" ;
+    wb:definedBy : .
+
+:labResults_testName a rdf:Property,
+        owl:DatatypeProperty ;
+    rdfs:label "test_name" ;
+    coa:glossaryTerm "analyte name",
+        "laboratory test" ;
+    coa:tag "laboratory",
+        "name",
+        "test" ;
+    rdfs:comment "Descriptive name of the laboratory test performed, providing a human-readable label corresponding to the test code." ;
+    rdfs:domain :LabResults ;
+    rdfs:range xsd:string ;
+    skos:altLabel "analyte name",
+        "lab test name",
+        "test description" ;
+    wb:definedBy : .
+
+:labResults_visit a rdf:Property,
+        owl:DatatypeProperty ;
+    rdfs:label "visit" ;
+    coa:glossaryTerm "protocol visit",
+        "study visit",
+        "visit schedule" ;
+    coa:tag "clinical_trials",
+        "timepoint",
+        "visit" ;
+    rdfs:comment "The scheduled or unscheduled study visit at which the lab sample was collected, such as Baseline, Week 4, or End of Study." ;
+    rdfs:domain :LabResults ;
+    rdfs:range xsd:string ;
+    skos:altLabel "study visit",
+        "timepoint",
+        "visit label",
+        "visit name" ;
+    wb:definedBy : .
+
+:meddraDictionary_meddraPtCode a rdf:Property,
+        owl:DatatypeProperty ;
+    rdfs:label "meddra_pt_code" ;
+    coa:glossaryTerm "Adverse Event Code",
+        "MedDRA Preferred Term Code" ;
+    coa:tag "coding",
+        "identifier",
+        "meddra",
+        "regulatory" ;
+    rdfs:comment "The unique numeric or alphanumeric MedDRA code assigned to a specific Preferred Term, used to standardize adverse event and medical condition coding in clinical trial reporting." ;
+    rdfs:domain :MeddraDictionary ;
+    rdfs:range xsd:string ;
+    skos:altLabel "Event Code",
+        "MedDRA Code",
+        "PT Code",
+        "Preferred Term Code" ;
+    wb:definedBy : .
+
+:meddraDictionary_preferredTerm a rdf:Property,
+        owl:DatatypeProperty ;
+    rdfs:label "preferred_term" ;
+    coa:glossaryTerm "MedDRA PT",
+        "Medical Concept",
+        "Preferred Term" ;
+    coa:tag "adverse_event",
+        "coding",
+        "meddra",
+        "terminology" ;
+    rdfs:comment "The standardized MedDRA Preferred Term (PT) — a distinct medical concept used to describe symptoms, signs, diseases, diagnoses, or adverse events in a clinically recognized and internationally standardized manner." ;
+    rdfs:domain :MeddraDictionary ;
+    rdfs:range xsd:string ;
+    skos:altLabel "Adverse Event Term",
+        "Diagnosis Term",
+        "Medical Term",
+        "PT" ;
+    wb:definedBy : .
+
+:meddraDictionary_systemOrganClass a rdf:Property,
+        owl:DatatypeProperty ;
+    rdfs:label "system_organ_class" ;
+    coa:glossaryTerm "Body System Classification",
+        "MedDRA Hierarchy",
+        "SOC",
+        "System Organ Class" ;
+    coa:tag "classification",
+        "hierarchy",
+        "meddra",
+        "regulatory",
+        "safety" ;
+    rdfs:comment "The highest level of the MedDRA hierarchy representing the System Organ Class (SOC), which groups Preferred Terms by etiology, manifestation site, or purpose (e.g., 'Cardiac disorders', 'Gastrointestinal disorders') for regulatory and safety reporting." ;
+    rdfs:domain :MeddraDictionary ;
+    rdfs:range xsd:string ;
+    skos:altLabel "Body System",
+        "MedDRA SOC",
+        "Organ Class",
+        "SOC" ;
+    wb:definedBy : .
+
+:protocolDeviations_category a rdf:Property,
+        owl:DatatypeProperty ;
+    rdfs:label "category" ;
+    coa:glossaryTerm "GCP classification",
+        "deviation category",
+        "protocol violation type" ;
+    coa:tag "classification",
+        "compliance",
+        "regulatory" ;
+    rdfs:comment "Classification of the protocol deviation into a predefined type or category (e.g., informed consent, dosing error, eligibility criteria), used for trending and regulatory reporting." ;
+    rdfs:domain :ProtocolDeviations ;
+    rdfs:range xsd:string ;
+    skos:altLabel "deviation classification",
+        "deviation type",
+        "violation category" ;
+    wb:definedBy : .
+
+:protocolDeviations_description a rdf:Property,
+        owl:DatatypeProperty ;
+    rdfs:label "description" ;
+    coa:glossaryTerm "deviation description",
+        "non-compliance narrative",
+        "protocol violation details" ;
+    coa:tag "compliance",
+        "narrative",
+        "text" ;
+    rdfs:comment "Narrative description of the protocol deviation, detailing the nature of the non-compliance, what occurred, and how it differed from the approved study protocol." ;
+    rdfs:domain :ProtocolDeviations ;
+    rdfs:range xsd:string ;
+    skos:altLabel "deviation details",
+        "deviation narrative",
+        "deviation summary" ;
+    wb:definedBy : .
+
+:protocolDeviations_deviationDate a rdf:Property,
+        owl:DatatypeProperty ;
+    rdfs:label "deviation_date" ;
+    coa:glossaryTerm "deviation date",
+        "event date",
+        "occurrence date" ;
+    coa:tag "compliance",
+        "date",
+        "temporal" ;
+    rdfs:comment "The calendar date on which the protocol deviation occurred or was identified, used for timelines, regulatory submissions, and trend analysis." ;
+    rdfs:domain :ProtocolDeviations ;
+    rdfs:range xsd:date ;
+    skos:altLabel "date of deviation",
+        "occurrence date",
+        "violation date" ;
+    wb:definedBy : .
+
+:protocolDeviations_deviationId a rdf:Property,
+        owl:DatatypeProperty ;
+    rdfs:label "deviation_id" ;
+    coa:glossaryTerm "protocol deviation",
+        "unique identifier" ;
+    coa:tag "identifier",
+        "primary_key" ;
+    rdfs:comment "Unique identifier for each protocol deviation record, used to track and reference individual deviation events throughout the trial lifecycle." ;
+    rdfs:domain :ProtocolDeviations ;
+    rdfs:range xsd:string ;
+    skos:altLabel "deviation record ID",
+        "deviation reference number" ;
+    wb:definedBy : .
+
+:sites_activationDate a rdf:Property,
+        owl:DatatypeProperty ;
+    rdfs:label "activation_date" ;
+    coa:glossaryTerm "enrollment start",
+        "site activation",
+        "site initiation visit" ;
+    coa:tag "date",
+        "milestone",
+        "operations" ;
+    rdfs:comment "Date on which the clinical trial site was officially activated and authorized to begin enrolling participants into the study." ;
+    rdfs:domain :Sites ;
+    rdfs:range xsd:date ;
+    skos:altLabel "initiation date",
+        "site open date",
+        "site start date" ;
+    wb:definedBy : .
+
+:sites_city a rdf:Property,
+        owl:DatatypeProperty ;
+    rdfs:label "city" ;
+    coa:glossaryTerm "geographic detail",
+        "site location" ;
+    coa:tag "geography",
+        "location" ;
+    rdfs:comment "City in which the clinical trial site is physically located, providing more granular geographic information for site management and logistics." ;
+    rdfs:domain :Sites ;
+    rdfs:range xsd:string ;
+    skos:altLabel "municipality",
+        "site city",
+        "town" ;
+    wb:definedBy : .
+
+:sites_country a rdf:Property,
+        owl:DatatypeProperty ;
+    rdfs:label "country" ;
+    coa:glossaryTerm "geographic region",
+        "regulatory jurisdiction" ;
+    coa:tag "geography",
+        "location",
+        "regulatory" ;
+    rdfs:comment "Country where the clinical trial site is located, used for regulatory oversight, regional reporting, and geographic stratification of trial operations." ;
+    rdfs:domain :Sites ;
+    rdfs:range xsd:string ;
+    skos:altLabel "country code",
+        "nation",
+        "site country" ;
+    wb:definedBy : .
+
+:sites_principalInvestigator a rdf:Property,
+        owl:DatatypeProperty ;
+    rdfs:label "principal_investigator" ;
+    coa:glossaryTerm "GCP investigator",
+        "principal investigator",
+        "site lead" ;
+    coa:tag "compliance",
+        "personnel",
+        "regulatory" ;
+    rdfs:comment "Name of the principal investigator (PI) responsible for conducting the clinical trial at this site, accountable for regulatory compliance, patient safety, and data integrity at the site level." ;
+    rdfs:domain :Sites ;
+    rdfs:range xsd:string ;
+    skos:altLabel "PI",
+        "lead investigator",
+        "responsible physician",
+        "site investigator" ;
+    wb:definedBy : .
+
+:sites_siteId a rdf:Property,
+        owl:DatatypeProperty ;
+    rdfs:label "site_id" ;
+    coa:glossaryTerm "investigational site ID",
+        "site identifier" ;
+    coa:tag "identifier",
+        "primary-key" ;
+    rdfs:comment "Unique identifier assigned to each clinical trial site, used to reference and distinguish individual sites across the trial management system." ;
+    rdfs:domain :Sites ;
+    rdfs:range xsd:string ;
+    skos:altLabel "site code",
+        "site identifier",
+        "site number" ;
+    wb:definedBy : .
+
+:sites_siteName a rdf:Property,
+        owl:DatatypeProperty ;
+    rdfs:label "site_name" ;
+    coa:glossaryTerm "investigational site",
+        "research facility" ;
+    coa:tag "descriptive",
+        "location" ;
+    rdfs:comment "Official name of the clinical trial site, typically the name of the hospital, clinic, or research institution conducting the study at this location." ;
+    rdfs:domain :Sites ;
+    rdfs:range xsd:string ;
+    skos:altLabel "facility name",
+        "institution name",
+        "site title" ;
+    wb:definedBy : .
+
+:sites_siteStatus a rdf:Property,
+        owl:DatatypeProperty ;
+    rdfs:label "site_status" ;
+    coa:glossaryTerm "enrollment status",
+        "site activation status",
+        "site lifecycle" ;
+    coa:tag "lifecycle",
+        "operations",
+        "status" ;
+    rdfs:comment "Current operational status of the clinical trial site, indicating whether the site is active, closed, on hold, or in another phase of its lifecycle within the trial." ;
+    rdfs:domain :Sites ;
+    rdfs:range xsd:string ;
+    skos:altLabel "operational status",
+        "site state",
+        "status" ;
+    wb:definedBy : .
+
+:studies_endpointUnit a rdf:Property,
+        owl:DatatypeProperty ;
+    rdfs:label "endpoint_unit" ;
+    coa:glossaryTerm "clinical measurement unit",
+        "endpoint unit",
+        "unit of measure" ;
+    coa:tag "endpoint",
+        "measurement",
+        "units" ;
+    rdfs:comment "The unit of measurement used to quantify or express the primary endpoint result, such as percentage, weeks, mg/dL, or score." ;
+    rdfs:domain :Studies ;
+    rdfs:range xsd:string ;
+    skos:altLabel "endpoint measure unit",
+        "measurement unit",
+        "outcome unit" ;
+    wb:definedBy : .
+
+:studies_indication a rdf:Property,
+        owl:DatatypeProperty ;
+    rdfs:label "indication" ;
+    coa:glossaryTerm "disease indication",
+        "indication",
+        "medical condition" ;
+    coa:tag "classification",
+        "clinical",
+        "disease" ;
+    rdfs:comment "The specific disease, condition, or medical indication being studied and treated in the clinical trial." ;
+    rdfs:domain :Studies ;
+    rdfs:range xsd:string ;
+    skos:altLabel "condition",
+        "diagnosis",
+        "disease indication",
+        "target disease" ;
+    wb:definedBy : .
+
+:studies_nctId a rdf:Property,
+        owl:DatatypeProperty ;
+    rdfs:label "nct_id" ;
+    coa:glossaryTerm "ClinicalTrials.gov",
+        "NCT identifier",
+        "public registry number" ;
+    coa:tag "external reference",
+        "identifier",
+        "regulatory" ;
+    rdfs:comment "ClinicalTrials.gov registry identifier (NCT number) used to publicly track and reference the study on the official U.S. federal clinical trials database." ;
+    rdfs:domain :Studies ;
+    rdfs:range xsd:string ;
+    skos:altLabel "ClinicalTrials.gov ID",
+        "NCT number",
+        "registry ID" ;
+    wb:definedBy : .
+
+:studies_phase a rdf:Property,
+        owl:DatatypeProperty ;
+    rdfs:label "phase" ;
+    coa:glossaryTerm "Phase I",
+        "Phase II",
+        "Phase III",
+        "Phase IV",
+        "clinical development phase" ;
+    coa:tag "classification",
+        "clinical development",
+        "regulatory" ;
+    rdfs:comment "Clinical development phase of the study (e.g., Phase I, II, III, IV), indicating the stage of testing for safety, efficacy, and dosing." ;
+    rdfs:domain :Studies ;
+    rdfs:range xsd:string ;
+    skos:altLabel "clinical phase",
+        "development phase",
+        "trial phase" ;
+    wb:definedBy : .
+
+:studies_plannedEnrollment a rdf:Property,
+        owl:DatatypeProperty ;
+    rdfs:label "planned_enrollment" ;
+    coa:glossaryTerm "enrollment",
+        "planned enrollment",
+        "sample size",
+        "study population" ;
+    coa:tag "enrollment",
+        "planning",
+        "quantitative" ;
+    rdfs:comment "The target number of participants (subjects) intended to be enrolled in the study as specified in the protocol." ;
+    rdfs:domain :Studies ;
+    rdfs:range xsd:integer ;
+    skos:altLabel "enrollment target",
+        "planned sample size",
+        "subject count",
+        "target enrollment" ;
+    wb:definedBy : .
+
+:studies_primaryEndpoint a rdf:Property,
+        owl:DatatypeProperty ;
+    rdfs:label "primary_endpoint" ;
+    coa:glossaryTerm "efficacy endpoint",
+        "endpoint",
+        "outcome measure",
+        "primary endpoint" ;
+    coa:tag "efficacy",
+        "endpoint",
+        "outcomes",
+        "protocol" ;
+    rdfs:comment "The main outcome measure or clinical endpoint defined in the study protocol that is used to assess the primary efficacy or safety objective of the trial." ;
+    rdfs:domain :Studies ;
+    rdfs:range xsd:string ;
+    skos:altLabel "main endpoint",
+        "primary efficacy endpoint",
+        "primary outcome",
+        "primary outcome measure" ;
+    wb:definedBy : .
+
+:studies_sponsor a rdf:Property,
+        owl:DatatypeProperty ;
+    rdfs:label "sponsor" ;
+    coa:glossaryTerm "pharmaceutical sponsor",
+        "sponsor",
+        "study sponsor" ;
+    coa:tag "funding",
+        "organization",
+        "regulatory" ;
+    rdfs:comment "The organization or company responsible for initiating, managing, and funding the clinical study, typically a pharmaceutical or biotech company." ;
+    rdfs:domain :Studies ;
+    rdfs:range xsd:string ;
+    skos:altLabel "sponsoring organization",
+        "study sponsor",
+        "trial sponsor" ;
+    wb:definedBy : .
+
+:studies_startDate a rdf:Property,
+        owl:DatatypeProperty ;
+    rdfs:label "start_date" ;
+    coa:glossaryTerm "initiation date",
+        "study start date" ;
+    coa:tag "date",
+        "protocol",
+        "timeline" ;
+    rdfs:comment "The date on which the clinical study officially began enrolling or treating participants." ;
+    rdfs:domain :Studies ;
+    rdfs:range xsd:date ;
+    skos:altLabel "enrollment start date",
+        "study initiation date",
+        "trial start date" ;
+    wb:definedBy : .
+
+:studies_status a rdf:Property,
+        owl:DatatypeProperty ;
+    rdfs:label "status" ;
+    coa:glossaryTerm "enrollment status",
+        "study status",
+        "trial status" ;
+    coa:tag "operational",
+        "status",
+        "tracking" ;
+    rdfs:comment "Current operational status of the clinical study, such as 'Recruiting', 'Active, not recruiting', 'Completed', or 'Terminated'." ;
+    rdfs:domain :Studies ;
+    rdfs:range xsd:string ;
+    skos:altLabel "recruitment status",
+        "study status",
+        "trial status" ;
+    wb:definedBy : .
+
+:studies_studyId a rdf:Property,
+        owl:DatatypeProperty ;
+    rdfs:label "study_id" ;
+    coa:glossaryTerm "primary key",
+        "study identifier" ;
+    coa:tag "identifier",
+        "primary key" ;
+    rdfs:comment "Internal unique identifier assigned to each clinical study record within the system." ;
+    rdfs:domain :Studies ;
+    rdfs:range xsd:string ;
+    skos:altLabel "internal study key",
+        "study identifier",
+        "trial ID" ;
+    wb:definedBy : .
+
+:studies_therapeuticArea a rdf:Property,
+        owl:DatatypeProperty ;
+    rdfs:label "therapeutic_area" ;
+    coa:glossaryTerm "disease domain",
+        "medical specialty",
+        "therapeutic area" ;
+    coa:tag "classification",
+        "disease area",
+        "medical" ;
+    rdfs:comment "The broad medical or disease domain that the study targets, such as oncology, cardiology, or neurology." ;
+    rdfs:domain :Studies ;
+    rdfs:range xsd:string ;
+    skos:altLabel "TA",
+        "clinical area",
+        "disease area",
+        "medical domain" ;
+    wb:definedBy : .
+
+:studies_title a rdf:Property,
+        owl:DatatypeProperty ;
+    rdfs:label "title" ;
+    coa:glossaryTerm "protocol name",
+        "study title" ;
+    coa:tag "descriptive",
+        "protocol" ;
+    rdfs:comment "Full official title or name of the clinical study as designated in the study protocol." ;
+    rdfs:domain :Studies ;
+    rdfs:range xsd:string ;
+    skos:altLabel "protocol title",
+        "study name",
+        "trial name" ;
+    wb:definedBy : .
+
+:studyArms_armId a rdf:Property,
+        owl:DatatypeProperty ;
+    rdfs:label "arm_id" ;
+    coa:glossaryTerm "study arm",
+        "trial group identifier" ;
+    coa:tag "identifier",
+        "primary_key" ;
+    rdfs:comment "Unique identifier for a study arm, used to distinguish each treatment or control group within a clinical trial." ;
+    rdfs:domain :StudyArms ;
+    rdfs:range xsd:string ;
+    skos:altLabel "arm identifier",
+        "cohort ID",
+        "group ID" ;
+    wb:definedBy : .
+
+:studyArms_armName a rdf:Property,
+        owl:DatatypeProperty ;
+    rdfs:label "arm_name" ;
+    coa:glossaryTerm "arm designation",
+        "intervention label" ;
+    coa:tag "descriptive",
+        "label" ;
+    rdfs:comment "Descriptive label or name assigned to the study arm, typically indicating the treatment regimen or control condition (e.g., 'Placebo', 'Drug A High Dose')." ;
+    rdfs:domain :StudyArms ;
+    rdfs:range xsd:string ;
+    skos:altLabel "arm label",
+        "group name",
+        "treatment label" ;
+    wb:definedBy : .
+
+:studyArms_armType a rdf:Property,
+        owl:DatatypeProperty ;
+    rdfs:label "arm_type" ;
+    coa:glossaryTerm "arm classification",
+        "comparator arm",
+        "control arm",
+        "experimental arm" ;
+    coa:tag "categorical",
+        "classification",
+        "trial_design" ;
+    rdfs:comment "Classification of the arm's role in the study, such as Experimental, Active Comparator, Placebo Comparator, or No Intervention, as defined by clinical trial standards." ;
+    rdfs:domain :StudyArms ;
+    rdfs:range xsd:string ;
+    skos:altLabel "arm category",
+        "group type",
+        "intervention type" ;
+    wb:definedBy : .
+
+:studyArms_doseMg a rdf:Property,
+        owl:DatatypeProperty ;
+    rdfs:label "dose_mg" ;
+    coa:glossaryTerm "dose assignment",
+        "dose regimen",
+        "milligram dose",
+        "therapeutic dose" ;
+    coa:tag "dosage",
+        "numeric",
+        "treatment_parameter" ;
+    rdfs:comment "The administered dose of the drug for this study arm, expressed in milligrams (mg), defining the treatment intensity assigned to participants." ;
+    rdfs:domain :StudyArms ;
+    rdfs:range xsd:double ;
+    skos:altLabel "administered dose",
+        "dosage",
+        "dose level",
+        "drug dose" ;
+    wb:definedBy : .
+
+:subjects_age a rdf:Property,
+        owl:DatatypeProperty ;
+    rdfs:label "age" ;
+    coa:glossaryTerm "age",
+        "demographic" ;
+    coa:tag "demographic",
+        "eligibility" ;
+    rdfs:comment "Age of the subject in years at the time of enrollment or consent, used for demographic analysis and eligibility verification." ;
+    rdfs:domain :Subjects ;
+    rdfs:range xsd:integer ;
+    skos:altLabel "age at enrollment",
+        "participant age",
+        "patient age" ;
+    wb:definedBy : .
+
+:subjects_completionStatus a rdf:Property,
+        owl:DatatypeProperty ;
+    rdfs:label "completion_status" ;
+    coa:glossaryTerm "completion",
+        "discontinuation",
+        "subject disposition" ;
+    coa:tag "disposition",
+        "outcome",
+        "status" ;
+    rdfs:comment "Current or final status of the subject's participation in the study, indicating whether they completed, discontinued, are ongoing, or have another disposition." ;
+    rdfs:domain :Subjects ;
+    rdfs:range xsd:string ;
+    skos:altLabel "disposition",
+        "study status",
+        "subject status" ;
+    wb:definedBy : .
+
+:subjects_consentDate a rdf:Property,
+        owl:DatatypeProperty ;
+    rdfs:label "consent_date" ;
+    coa:glossaryTerm "consent",
+        "enrollment",
+        "informed consent" ;
+    coa:tag "compliance",
+        "date",
+        "enrollment" ;
+    rdfs:comment "Date on which the subject provided informed consent to participate in the clinical trial, marking the formal start of their study participation." ;
+    rdfs:domain :Subjects ;
+    rdfs:range xsd:date ;
+    skos:altLabel "ICF date",
+        "enrollment date",
+        "informed consent date" ;
+    wb:definedBy : .
+
+:subjects_country a rdf:Property,
+        owl:DatatypeProperty ;
+    rdfs:label "country" ;
+    coa:glossaryTerm "country",
+        "geography",
+        "region" ;
+    coa:tag "demographic",
+        "geographic",
+        "regulatory" ;
+    rdfs:comment "Country where the subject is enrolled or resides, used for geographic distribution analysis and regulatory reporting." ;
+    rdfs:domain :Subjects ;
+    rdfs:range xsd:string ;
+    skos:altLabel "country of enrollment",
+        "geographic region",
+        "nation" ;
+    wb:definedBy : .
+
+:subjects_discontinuationReason a rdf:Property,
+        owl:DatatypeProperty ;
+    rdfs:label "discontinuation_reason" ;
+    coa:glossaryTerm "discontinuation",
+        "protocol deviation",
+        "withdrawal" ;
+    coa:tag "compliance",
+        "disposition",
+        "safety" ;
+    rdfs:comment "Reason recorded when a subject withdraws or is discontinued from the study before completing all protocol-required activities (e.g., adverse event, withdrawal of consent, lost to follow-up)." ;
+    rdfs:domain :Subjects ;
+    rdfs:range xsd:string ;
+    skos:altLabel "dropout reason",
+        "termination reason",
+        "withdrawal reason" ;
+    wb:definedBy : .
+
+:subjects_lastContactDate a rdf:Property,
+        owl:DatatypeProperty ;
+    rdfs:label "last_contact_date" ;
+    coa:glossaryTerm "follow-up",
+        "last contact",
+        "survival analysis" ;
+    coa:tag "date",
+        "follow-up",
+        "survival" ;
+    rdfs:comment "Date of the most recent contact or interaction with the subject, used for survival analysis, lost-to-follow-up assessments, and data completeness tracking." ;
+    rdfs:domain :Subjects ;
+    rdfs:range xsd:date ;
+    skos:altLabel "last follow-up date",
+        "last known alive date",
+        "last visit date" ;
+    wb:definedBy : .
+
+:subjects_race a rdf:Property,
+        owl:DatatypeProperty ;
+    rdfs:label "race" ;
+    coa:glossaryTerm "demographic",
+        "diversity",
+        "race" ;
+    coa:tag "demographic",
+        "diversity",
+        "regulatory" ;
+    rdfs:comment "Self-reported or recorded racial category of the subject, used for demographic reporting and regulatory diversity requirements." ;
+    rdfs:domain :Subjects ;
+    rdfs:range xsd:string ;
+    skos:altLabel "ethnicity",
+        "racial group" ;
+    wb:definedBy : .
+
+:subjects_randomizationDate a rdf:Property,
+        owl:DatatypeProperty ;
+    rdfs:label "randomization_date" ;
+    coa:glossaryTerm "randomization",
+        "treatment assignment" ;
+    coa:tag "date",
+        "randomization",
+        "treatment" ;
+    rdfs:comment "Date on which the subject was randomized to a treatment arm, indicating the start of active study treatment or intervention." ;
+    rdfs:domain :Subjects ;
+    rdfs:range xsd:date ;
+    skos:altLabel "assignment date",
+        "rand date",
+        "treatment start date" ;
+    wb:definedBy : .
+
+:subjects_sex a rdf:Property,
+        owl:DatatypeProperty ;
+    rdfs:label "sex" ;
+    coa:glossaryTerm "demographic",
+        "sex" ;
+    coa:tag "demographic",
+        "subgroup analysis" ;
+    rdfs:comment "Biological sex of the subject (e.g., Male, Female), captured for demographic reporting and subgroup analysis." ;
+    rdfs:domain :Subjects ;
+    rdfs:range xsd:string ;
+    skos:altLabel "biological sex",
+        "gender" ;
+    wb:definedBy : .
+
+:subjects_subjectId a rdf:Property,
+        owl:DatatypeProperty ;
+    rdfs:label "subject_id" ;
+    coa:glossaryTerm "subject identifier",
+        "trial participant ID" ;
+    coa:tag "identifier",
+        "primary key" ;
+    rdfs:comment "Unique identifier assigned to each subject enrolled in a clinical trial, used to track the individual across all study-related records." ;
+    rdfs:domain :Subjects ;
+    rdfs:range xsd:string ;
+    skos:altLabel "participant ID",
+        "patient ID",
+        "subject number" ;
+    wb:definedBy : .
+
+# ── Other ──────────────────────
+
+:matchConfidence a rdf:Property,
+        owl:AnnotationProperty ;
+    wb:definedBy : .
