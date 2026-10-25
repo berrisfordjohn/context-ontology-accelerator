@@ -8,7 +8,8 @@ export SCL_PREFIX="${SCL_PREFIX:-coa}"
 : "${COA_ADMIN_EMAIL:?set COA_ADMIN_EMAIL}"
 MODEL="${COA_MODEL:-eu.anthropic.claude-sonnet-4-6}"
 HERE="$(cd "$(dirname "$0")" && pwd)"
-REPO="$(cd "$HERE/../../.." && pwd)"
+# COA_REPO: a Linux-native clone (a Windows checkout has CRLF scripts that fail under WSL)
+REPO="${COA_REPO:-$(cd "$HERE/../../.." && pwd)}"
 
 "$HERE/preflight.sh"
 
@@ -33,7 +34,8 @@ grep -q cloudfront_web_acl_id scripts/deploy.sh || \
 grep -q COA_SKIP_EDGE_WAF infra/bin/app.ts || \
   sed -i 's|if (!cloudfrontWebAclId \&\& deployAccount) {|if (!cloudfrontWebAclId \&\& deployAccount \&\& !process.env.COA_SKIP_EDGE_WAF) {|' infra/bin/app.ts
 sed -i 's|\[ "\$REGION" != "us-east-1" \] && _bootstrap_regions="\$REGION us-east-1"|:|' scripts/preflight-deploy.sh
-CF_ACL=$(aws wafv2 create-web-acl --name "$SCL_PREFIX-cf-acl" --scope CLOUDFRONT --region us-east-1 --default-action '{"Allow":{}}' \
+CF_ACL=$(aws wafv2 list-web-acls --scope CLOUDFRONT --region us-east-1 --query "WebACLs[?Name=='$SCL_PREFIX-cf-acl'].ARN" --output text 2>/dev/null)
+[ -n "$CF_ACL" ] || CF_ACL=$(aws wafv2 create-web-acl --name "$SCL_PREFIX-cf-acl" --scope CLOUDFRONT --region us-east-1 --default-action '{"Allow":{}}' \
   --visibility-config SampledRequestsEnabled=true,CloudWatchMetricsEnabled=true,MetricName=coaCf --query Summary.ARN --output text 2>/dev/null) || CF_ACL=""
 if [ -n "$CF_ACL" ]; then export CF_ACL; else export COA_SKIP_EDGE_WAF=1; fi
 

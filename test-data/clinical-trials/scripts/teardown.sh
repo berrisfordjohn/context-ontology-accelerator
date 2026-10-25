@@ -6,7 +6,7 @@ export AWS_PAGER= AWS_REGION="${AWS_REGION:-eu-north-1}"
 export AWS_DEFAULT_REGION=$AWS_REGION CDK_DEFAULT_REGION=$AWS_REGION
 export SCL_PREFIX="${SCL_PREFIX:-coa}"
 HERE="$(cd "$(dirname "$0")" && pwd)"
-REPO="$(cd "$HERE/../../.." && pwd)"
+REPO="${COA_REPO:-$(cd "$HERE/../../.." && pwd)}"
 ACCT=$(aws sts get-caller-identity --query Account --output text)
 
 # 1. Test data
