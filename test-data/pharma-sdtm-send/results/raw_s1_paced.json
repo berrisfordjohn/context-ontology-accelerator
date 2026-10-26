@@ -1,0 +1,1491 @@
+[
+ {
+  "n": 1,
+  "q": "How many patients are enrolled across all clinical studies (excluding screen failures)?",
+  "expected": "544",
+  "code": 200,
+  "resp": {
+   "result": {
+    "tier": 2.0,
+    "confidence": {
+     "score": 0.45,
+     "rationale": "LLM-generated SQL from ontology retrieval"
+    },
+    "resultRows": [
+     {
+      "enrolled_patients": "60"
+     }
+    ],
+    "trace": [
+     {
+      "step": "routing.select",
+      "status": "success",
+      "durationMs": 0,
+      "detail": {
+       "gating": "source_composition",
+       "hasStructuredSource": true,
+       "hasUnstructuredSource": false,
+       "skipped": [
+        "tier3_vector_search"
+       ]
+      }
+     },
+     {
+      "step": "t1.metric_match",
+      "status": "miss",
+      "durationMs": 16,
+      "detail": {
+       "query_length": 87
+      }
+     },
+     {
+      "step": "query.embed",
+      "status": "success",
+      "durationMs": 239,
+      "detail": {
+       "dimensions": 1024
+      },
+      "toolUsed": "bedrock"
+     },
+     {
+      "step": "t2.sql.generate",
+      "status": "success",
+      "durationMs": 8966,
+      "detail": {
+       "confidence": 0.45,
+       "tables": [
+        "ds"
+       ]
+      },
+      "toolUsed": "bedrock"
+     },
+     {
+      "step": "t2.sql.authorize",
+      "status": "allow",
+      "durationMs": 1,
+      "detail": {
+       "principal": "<email>",
+       "decision": "allow"
+      },
+      "toolUsed": "cedar"
+     },
+     {
+      "step": "t2.sql.firewall",
+      "status": "success",
+      "durationMs": 1,
+      "detail": {
+       "decision": "authorized"
+      },
+      "toolUsed": "sql-firewall"
+     },
+     {
+      "step": "t2.sql.execute",
+      "status": "success",
+      "durationMs": 1830,
+      "detail": {
+       "rowCount": 1,
+       "tables": [
+        "ds"
+       ],
+       "truncated": false,
+       "shot": 1,
+       "engine": "athena",
+       "deterministicEmpty": false,
+       "userValueFilter": false
+      }
+     }
+    ],
+    "guardrailBlocked": false,
+    "partial": false,
+    "metadata": {
+     "namespace": "<id>",
+     "modelId": "eu.anthropic.claude-sonnet-4-6",
+     "principal": "<email>",
+     "columns": [
+      "enrolled_patients"
+     ],
+     "retrieved_tables": [
+      "usdm_study",
+      "usdm_study_milestone",
+      "dm",
+      "ds"
+     ],
+     "expanded_tables": [
+      "usdm_study",
+      "usdm_study_milestone",
+      "dm",
+      "ds",
+      "ae",
+      "ex",
+      "lb",
+      "vs"
+     ],
+     "strategy": "nl_to_sql",
+     "totalMs": 11075
+    }
+   },
+   "requestId": "<id>",
+   "sessionId": null
+  }
+ },
+ {
+  "n": 2,
+  "q": "How many animals are on in vivo studies?",
+  "expected": "186",
+  "code": 400,
+  "resp": {
+   "message": "table reference 'dm' is ambiguous: it could be any of dm"
+  }
+ },
+ {
+  "n": 3,
+  "q": "Find the number of patients with a BMI over 30. Return the study id, study acronym, number of patients, drug name, drug id, status of the study and the year of first subject in. Heights and weights may be imperial (US) or metric.",
+  "expected": "CS-101 ZOR-SAD: 10 pts, Zorvantil, CD-48213, Completed, FSI 2019; CS-102 ZOR-RA2: 12 pts, Zorvantil, CD-48213, Completed, FSI 2020; CS-103 ZOR-RA3: 65 pts, Zorvantil, zorvantinib, Ongoing, FSI 2022; CS-201 ONC-XT2: 15 pts, Oncotra, CD-51877, Completed, FSI 2021; CS-202 ONC-XT3: 35 pts, Oncotra, oncotrabine, Ongoing, FSI 2023; CS-301 CARD-HF3: 84 pts, Cardiprex, cardiprexol, Completed, FSI 2021; CS-401 NEURO-AD1: 5 pts, Neurolynt, CD-70419, Terminated, FSI 2024",
+  "code": 400,
+  "resp": {
+   "message": "table reference 'dm' is ambiguous: it could be any of dm"
+  }
+ },
+ {
+  "n": 4,
+  "q": "In total, how many patients have a baseline BMI over 30?",
+  "expected": "226",
+  "code": 504,
+  "resp": {
+   "message": "Endpoint request timed out"
+  }
+ },
+ {
+  "n": 5,
+  "q": "How many patients with a baseline BMI over 30 are there per country?",
+  "expected": "DE=41; ES=14; FR=25; GB=31; PL=14; US=101",
+  "code": 400,
+  "resp": {
+   "message": "table reference 'dm' is ambiguous: it could be any of dm"
+  }
+ },
+ {
+  "n": 6,
+  "q": "How many enrolled patients are there per clinical study?",
+  "expected": "CS-101=24; CS-102=60; CS-103=150; CS-201=50; CS-202=100; CS-301=140; CS-401=20",
+  "code": 200,
+  "resp": {
+   "result": {
+    "tier": 2.0,
+    "confidence": {
+     "score": 0.55,
+     "rationale": "LLM-generated SQL from ontology retrieval"
+    },
+    "resultRows": [
+     {
+      "studyid": "CS-101",
+      "enrolled_patients": "26"
+     }
+    ],
+    "trace": [
+     {
+      "step": "routing.select",
+      "status": "success",
+      "durationMs": 0,
+      "detail": {
+       "gating": "source_composition",
+       "hasStructuredSource": true,
+       "hasUnstructuredSource": false,
+       "skipped": [
+        "tier3_vector_search"
+       ]
+      }
+     },
+     {
+      "step": "t1.metric_match",
+      "status": "miss",
+      "durationMs": 18,
+      "detail": {
+       "query_length": 56
+      }
+     },
+     {
+      "step": "query.embed",
+      "status": "success",
+      "durationMs": 250,
+      "detail": {
+       "dimensions": 1024
+      },
+      "toolUsed": "bedrock"
+     },
+     {
+      "step": "t2.sql.generate",
+      "status": "success",
+      "durationMs": 5896,
+      "detail": {
+       "confidence": 0.55,
+       "tables": [
+        "dm"
+       ]
+      },
+      "toolUsed": "bedrock"
+     },
+     {
+      "step": "t2.sql.authorize",
+      "status": "allow",
+      "durationMs": 1,
+      "detail": {
+       "principal": "<email>",
+       "decision": "allow"
+      },
+      "toolUsed": "cedar"
+     },
+     {
+      "step": "t2.sql.firewall",
+      "status": "success",
+      "durationMs": 1,
+      "detail": {
+       "decision": "authorized"
+      },
+      "toolUsed": "sql-firewall"
+     },
+     {
+      "step": "t2.sql.execute",
+      "status": "success",
+      "durationMs": 1821,
+      "detail": {
+       "rowCount": 1,
+       "tables": [
+        "dm"
+       ],
+       "truncated": false,
+       "shot": 1,
+       "engine": "athena",
+       "deterministicEmpty": false,
+       "userValueFilter": false
+      }
+     }
+    ],
+    "guardrailBlocked": false,
+    "partial": false,
+    "metadata": {
+     "namespace": "<id>",
+     "modelId": "eu.anthropic.claude-sonnet-4-6",
+     "principal": "<email>",
+     "columns": [
+      "studyid",
+      "enrolled_patients"
+     ],
+     "retrieved_tables": [
+      "usdm_study",
+      "usdm_study_milestone",
+      "ex",
+      "ds",
+      "dm",
+      "cl"
+     ],
+     "expanded_tables": [
+      "usdm_study",
+      "usdm_study_milestone",
+      "ex",
+      "ds",
+      "dm",
+      "cl",
+      "ae",
+      "lb",
+      "vs"
+     ],
+     "strategy": "nl_to_sql",
+     "totalMs": 8008
+    }
+   },
+   "requestId": "<id>",
+   "sessionId": null
+  }
+ },
+ {
+  "n": 7,
+  "q": "How many screen failures were there across clinical studies?",
+  "expected": "44",
+  "code": 200,
+  "resp": {
+   "result": {
+    "tier": 2.0,
+    "confidence": {
+     "score": 0.65,
+     "rationale": "LLM-generated SQL from ontology retrieval"
+    },
+    "resultRows": [
+     {
+      "screen_failure_count": "0"
+     }
+    ],
+    "trace": [
+     {
+      "step": "routing.select",
+      "status": "success",
+      "durationMs": 0,
+      "detail": {
+       "gating": "source_composition",
+       "hasStructuredSource": true,
+       "hasUnstructuredSource": false,
+       "skipped": [
+        "tier3_vector_search"
+       ]
+      }
+     },
+     {
+      "step": "t1.metric_match",
+      "status": "miss",
+      "durationMs": 14,
+      "detail": {
+       "query_length": 60
+      }
+     },
+     {
+      "step": "query.embed",
+      "status": "success",
+      "durationMs": 241,
+      "detail": {
+       "dimensions": 1024
+      },
+      "toolUsed": "bedrock"
+     },
+     {
+      "step": "t2.sql.generate",
+      "status": "success",
+      "durationMs": 5998,
+      "detail": {
+       "confidence": 0.65,
+       "tables": [
+        "ds"
+       ]
+      },
+      "toolUsed": "bedrock"
+     },
+     {
+      "step": "t2.sql.authorize",
+      "status": "allow",
+      "durationMs": 1,
+      "detail": {
+       "principal": "<email>",
+       "decision": "allow"
+      },
+      "toolUsed": "cedar"
+     },
+     {
+      "step": "t2.sql.firewall",
+      "status": "success",
+      "durationMs": 1,
+      "detail": {
+       "decision": "authorized"
+      },
+      "toolUsed": "sql-firewall"
+     },
+     {
+      "step": "t2.sql.execute",
+      "status": "success",
+      "durationMs": 782,
+      "detail": {
+       "rowCount": 1,
+       "tables": [
+        "ds"
+       ],
+       "truncated": false,
+       "shot": 1,
+       "engine": "athena",
+       "deterministicEmpty": false,
+       "userValueFilter": false
+      }
+     }
+    ],
+    "guardrailBlocked": false,
+    "partial": false,
+    "metadata": {
+     "namespace": "<id>",
+     "modelId": "eu.anthropic.claude-sonnet-4-6",
+     "principal": "<email>",
+     "columns": [
+      "screen_failure_count"
+     ],
+     "retrieved_tables": [
+      "usdm_study",
+      "usdm_study_milestone",
+      "cl",
+      "ds",
+      "ae",
+      "lb"
+     ],
+     "expanded_tables": [
+      "usdm_study",
+      "usdm_study_milestone",
+      "cl",
+      "ds",
+      "ae",
+      "lb",
+      "dm",
+      "ex",
+      "vs"
+     ],
+     "strategy": "nl_to_sql",
+     "totalMs": 7059
+    }
+   },
+   "requestId": "<id>",
+   "sessionId": null
+  }
+ },
+ {
+  "n": 8,
+  "q": "What is the mean baseline BMI per clinical study?",
+  "expected": "CS-101=29.56; CS-102=26.5; CS-103=29.11; CS-201=28.13; CS-202=27.88; CS-301=31.72; CS-401=26.08",
+  "code": 504,
+  "resp": {
+   "message": "Endpoint request timed out"
+  }
+ },
+ {
+  "n": 9,
+  "q": "What is the mean baseline weight in kg per clinical study?",
+  "expected": "CS-101=84.7; CS-102=74.7; CS-103=83.2; CS-201=79.4; CS-202=80.4; CS-301=91.5; CS-401=73.6",
+  "code": 400,
+  "resp": {
+   "message": "table reference 'bw' is ambiguous: it could be any of bw"
+  }
+ },
+ {
+  "n": 10,
+  "q": "What is the mean day 1 body weight in grams per in vivo study?",
+  "expected": "IV-001=240.0; IV-002=24.9; IV-003=242.4; IV-004=10381.9; IV-005=23.7; IV-006=242.0",
+  "code": 400,
+  "resp": {
+   "message": "table reference 'bw' is ambiguous: it could be any of bw"
+  }
+ },
+ {
+  "n": 11,
+  "q": "How many patients were treated with each drug (by drug name, excluding placebo)?",
+  "expected": "Zorvantil=158; Oncotra=97; Cardiprex=95; Neurolynt=10",
+  "code": 400,
+  "resp": {
+   "message": "table reference 'ex' is ambiguous: it could be any of ex"
+  }
+ },
+ {
+  "n": 12,
+  "q": "How many animals were treated with each drug (by drug name, excluding vehicle)?",
+  "expected": "Zorvantil=46; Oncotra=20; Cardiprex=26; Neurolynt=10; Vexalin=20",
+  "code": 400,
+  "resp": {
+   "message": "table reference 'ex' is ambiguous: it could be any of ex"
+  }
+ },
+ {
+  "n": 13,
+  "q": "How many patients and how many animals were exposed to Zorvantil?",
+  "expected": "patients=158; animals=46",
+  "code": 400,
+  "resp": {
+   "message": "table reference 'dm' is ambiguous: it could be any of dm"
+  }
+ },
+ {
+  "n": 14,
+  "q": "How many serious adverse events were there per clinical study acronym?",
+  "expected": "ZOR-SAD=5; ZOR-RA2=4; ZOR-RA3=20; ONC-XT2=4; ONC-XT3=7; CARD-HF3=13; NEURO-AD1=2",
+  "code": 200,
+  "resp": {
+   "result": {
+    "tier": 2.0,
+    "confidence": {
+     "score": 0.65,
+     "rationale": "LLM-generated SQL from ontology retrieval"
+    },
+    "resultRows": [
+     {
+      "study_acronym": "ZOR-RA2",
+      "serious_adverse_event_count": "4"
+     }
+    ],
+    "trace": [
+     {
+      "step": "routing.select",
+      "status": "success",
+      "durationMs": 0,
+      "detail": {
+       "gating": "source_composition",
+       "hasStructuredSource": true,
+       "hasUnstructuredSource": false,
+       "skipped": [
+        "tier3_vector_search"
+       ]
+      }
+     },
+     {
+      "step": "t1.metric_match",
+      "status": "miss",
+      "durationMs": 11,
+      "detail": {
+       "query_length": 70
+      }
+     },
+     {
+      "step": "query.embed",
+      "status": "success",
+      "durationMs": 195,
+      "detail": {
+       "dimensions": 1024
+      },
+      "toolUsed": "bedrock"
+     },
+     {
+      "step": "t2.sql.generate",
+      "status": "success",
+      "durationMs": 6418,
+      "detail": {
+       "confidence": 0.65,
+       "tables": [
+        "ae",
+        "usdm_study"
+       ]
+      },
+      "toolUsed": "bedrock"
+     },
+     {
+      "step": "t2.sql.authorize",
+      "status": "allow",
+      "durationMs": 3,
+      "detail": {
+       "principal": "<email>",
+       "decision": "allow"
+      },
+      "toolUsed": "cedar"
+     },
+     {
+      "step": "t2.sql.firewall",
+      "status": "success",
+      "durationMs": 3,
+      "detail": {
+       "decision": "authorized"
+      },
+      "toolUsed": "sql-firewall"
+     },
+     {
+      "step": "t2.sql.execute",
+      "status": "success",
+      "durationMs": 1817,
+      "detail": {
+       "rowCount": 1,
+       "tables": [
+        "ae",
+        "usdm_study"
+       ],
+       "truncated": false,
+       "shot": 1,
+       "engine": "athena",
+       "deterministicEmpty": false,
+       "userValueFilter": false
+      }
+     }
+    ],
+    "guardrailBlocked": false,
+    "partial": false,
+    "metadata": {
+     "namespace": "<id>",
+     "modelId": "eu.anthropic.claude-sonnet-4-6",
+     "principal": "<email>",
+     "columns": [
+      "study_acronym",
+      "serious_adverse_event_count"
+     ],
+     "retrieved_tables": [
+      "ae",
+      "usdm_study",
+      "usdm_study_milestone",
+      "ds",
+      "cl",
+      "ex"
+     ],
+     "expanded_tables": [
+      "ae",
+      "usdm_study",
+      "usdm_study_milestone",
+      "ds",
+      "cl",
+      "ex",
+      "dm",
+      "lb",
+      "vs"
+     ],
+     "strategy": "nl_to_sql",
+     "totalMs": 8530
+    }
+   },
+   "requestId": "<id>",
+   "sessionId": null
+  }
+ },
+ {
+  "n": 15,
+  "q": "How many patients discontinued each clinical study (by acronym)?",
+  "expected": "ZOR-SAD=7; ZOR-RA2=15; ZOR-RA3=11; ONC-XT2=10; ONC-XT3=8; CARD-HF3=31; NEURO-AD1=16",
+  "code": 200,
+  "resp": {
+   "result": {
+    "tier": 2.0,
+    "confidence": {
+     "score": 0.45,
+     "rationale": "LLM-generated SQL from ontology retrieval"
+    },
+    "resultRows": [],
+    "trace": [
+     {
+      "step": "routing.select",
+      "status": "success",
+      "durationMs": 0,
+      "detail": {
+       "gating": "source_composition",
+       "hasStructuredSource": true,
+       "hasUnstructuredSource": false,
+       "skipped": [
+        "tier3_vector_search"
+       ]
+      }
+     },
+     {
+      "step": "t1.metric_match",
+      "status": "miss",
+      "durationMs": 14,
+      "detail": {
+       "query_length": 64
+      }
+     },
+     {
+      "step": "query.embed",
+      "status": "success",
+      "durationMs": 171,
+      "detail": {
+       "dimensions": 1024
+      },
+      "toolUsed": "bedrock"
+     },
+     {
+      "step": "t2.sql.generate",
+      "status": "success",
+      "durationMs": 8130,
+      "detail": {
+       "confidence": 0.45,
+       "tables": [
+        "ds",
+        "usdm_study"
+       ]
+      },
+      "toolUsed": "bedrock"
+     },
+     {
+      "step": "t2.sql.authorize",
+      "status": "allow",
+      "durationMs": 1,
+      "detail": {
+       "principal": "<email>",
+       "decision": "allow"
+      },
+      "toolUsed": "cedar"
+     },
+     {
+      "step": "t2.sql.firewall",
+      "status": "success",
+      "durationMs": 1,
+      "detail": {
+       "decision": "authorized"
+      },
+      "toolUsed": "sql-firewall"
+     },
+     {
+      "step": "t2.sql.execute",
+      "status": "success",
+      "durationMs": 1808,
+      "detail": {
+       "rowCount": 0,
+       "tables": [
+        "ds",
+        "usdm_study"
+       ],
+       "truncated": false,
+       "shot": 1,
+       "engine": "athena",
+       "deterministicEmpty": true,
+       "userValueFilter": true
+      }
+     }
+    ],
+    "guardrailBlocked": false,
+    "partial": false,
+    "metadata": {
+     "namespace": "<id>",
+     "modelId": "eu.anthropic.claude-sonnet-4-6",
+     "principal": "<email>",
+     "columns": [
+      "study_acronym",
+      "discontinued_patients"
+     ],
+     "retrieved_tables": [
+      "usdm_study",
+      "ds",
+      "usdm_study_milestone",
+      "cl",
+      "dm"
+     ],
+     "expanded_tables": [
+      "usdm_study",
+      "ds",
+      "usdm_study_milestone",
+      "cl",
+      "dm",
+      "ae",
+      "ex",
+      "lb",
+      "vs"
+     ],
+     "strategy": "nl_to_sql",
+     "totalMs": 10205
+    }
+   },
+   "requestId": "<id>",
+   "sessionId": null
+  }
+ },
+ {
+  "n": 16,
+  "q": "Which clinical studies are ongoing and in what year was first subject in?",
+  "expected": "ZOR-RA3=2022; ONC-XT3=2023",
+  "code": 200,
+  "resp": {
+   "result": {
+    "tier": 2.0,
+    "confidence": {
+     "score": 0.55,
+     "rationale": "LLM-generated SQL from ontology retrieval"
+    },
+    "resultRows": [
+     {
+      "study_id": "CS-103",
+      "study_title": "Phase 3 efficacy and safety study of Zorvantil in rheumatoid arthritis",
+      "study_acronym": "ZOR-RA3",
+      "first_subject_in_year": "2022"
+     },
+     {
+      "study_id": "CS-202",
+      "study_title": "Phase 3 study of Oncotra versus standard of care in NSCLC",
+      "study_acronym": "ONC-XT3",
+      "first_subject_in_year": "2023"
+     }
+    ],
+    "trace": [
+     {
+      "step": "routing.select",
+      "status": "success",
+      "durationMs": 0,
+      "detail": {
+       "gating": "source_composition",
+       "hasStructuredSource": true,
+       "hasUnstructuredSource": false,
+       "skipped": [
+        "tier3_vector_search"
+       ]
+      }
+     },
+     {
+      "step": "t1.metric_match",
+      "status": "miss",
+      "durationMs": 12,
+      "detail": {
+       "query_length": 73
+      }
+     },
+     {
+      "step": "query.embed",
+      "status": "success",
+      "durationMs": 244,
+      "detail": {
+       "dimensions": 1024
+      },
+      "toolUsed": "bedrock"
+     },
+     {
+      "step": "t2.sql.generate",
+      "status": "success",
+      "durationMs": 6566,
+      "detail": {
+       "confidence": 0.55,
+       "tables": [
+        "usdm_study",
+        "usdm_study_milestone"
+       ]
+      },
+      "toolUsed": "bedrock"
+     },
+     {
+      "step": "t2.sql.authorize",
+      "status": "allow",
+      "durationMs": 2,
+      "detail": {
+       "principal": "<email>",
+       "decision": "allow"
+      },
+      "toolUsed": "cedar"
+     },
+     {
+      "step": "t2.sql.firewall",
+      "status": "success",
+      "durationMs": 2,
+      "detail": {
+       "decision": "authorized"
+      },
+      "toolUsed": "sql-firewall"
+     },
+     {
+      "step": "t2.sql.execute",
+      "status": "success",
+      "durationMs": 1811,
+      "detail": {
+       "rowCount": 2,
+       "tables": [
+        "usdm_study",
+        "usdm_study_milestone"
+       ],
+       "truncated": false,
+       "shot": 1,
+       "engine": "athena",
+       "deterministicEmpty": false,
+       "userValueFilter": false
+      }
+     }
+    ],
+    "guardrailBlocked": false,
+    "partial": false,
+    "metadata": {
+     "namespace": "<id>",
+     "modelId": "eu.anthropic.claude-sonnet-4-6",
+     "principal": "<email>",
+     "columns": [
+      "study_id",
+      "study_title",
+      "study_acronym",
+      "first_subject_in_year"
+     ],
+     "retrieved_tables": [
+      "usdm_study",
+      "dm",
+      "ds",
+      "ex",
+      "usdm_study_milestone",
+      "cl"
+     ],
+     "expanded_tables": [
+      "usdm_study",
+      "dm",
+      "ds",
+      "ex",
+      "usdm_study_milestone",
+      "cl",
+      "ae",
+      "bw"
+     ],
+     "strategy": "nl_to_sql",
+     "totalMs": 8662
+    }
+   },
+   "requestId": "<id>",
+   "sessionId": null
+  }
+ },
+ {
+  "n": 17,
+  "q": "Which clinical studies had last subject in later than planned?",
+  "expected": "CS-102, CS-103, CS-201, CS-301",
+  "code": 200,
+  "resp": {
+   "result": {
+    "tier": 2.0,
+    "confidence": {
+     "score": 0.45,
+     "rationale": "LLM-generated SQL from ontology retrieval"
+    },
+    "resultRows": [
+     {
+      "study_id": "CS-102"
+     },
+     {
+      "study_id": "CS-103"
+     },
+     {
+      "study_id": "CS-201"
+     },
+     {
+      "study_id": "CS-301"
+     }
+    ],
+    "trace": [
+     {
+      "step": "routing.select",
+      "status": "success",
+      "durationMs": 0,
+      "detail": {
+       "gating": "source_composition",
+       "hasStructuredSource": true,
+       "hasUnstructuredSource": false,
+       "skipped": [
+        "tier3_vector_search"
+       ]
+      }
+     },
+     {
+      "step": "t1.metric_match",
+      "status": "miss",
+      "durationMs": 10,
+      "detail": {
+       "query_length": 62
+      }
+     },
+     {
+      "step": "query.embed",
+      "status": "success",
+      "durationMs": 237,
+      "detail": {
+       "dimensions": 1024
+      },
+      "toolUsed": "bedrock"
+     },
+     {
+      "step": "t2.sql.generate",
+      "status": "success",
+      "durationMs": 6301,
+      "detail": {
+       "confidence": 0.45,
+       "tables": [
+        "usdm_study_milestone"
+       ]
+      },
+      "toolUsed": "bedrock"
+     },
+     {
+      "step": "t2.sql.authorize",
+      "status": "allow",
+      "durationMs": 2,
+      "detail": {
+       "principal": "<email>",
+       "decision": "allow"
+      },
+      "toolUsed": "cedar"
+     },
+     {
+      "step": "t2.sql.firewall",
+      "status": "success",
+      "durationMs": 2,
+      "detail": {
+       "decision": "authorized"
+      },
+      "toolUsed": "sql-firewall"
+     },
+     {
+      "step": "t2.sql.execute",
+      "status": "success",
+      "durationMs": 1808,
+      "detail": {
+       "rowCount": 4,
+       "tables": [
+        "usdm_study_milestone"
+       ],
+       "truncated": false,
+       "shot": 1,
+       "engine": "athena",
+       "deterministicEmpty": false,
+       "userValueFilter": false
+      }
+     }
+    ],
+    "guardrailBlocked": false,
+    "partial": false,
+    "metadata": {
+     "namespace": "<id>",
+     "modelId": "eu.anthropic.claude-sonnet-4-6",
+     "principal": "<email>",
+     "columns": [
+      "study_id"
+     ],
+     "retrieved_tables": [
+      "usdm_study_milestone",
+      "ds",
+      "usdm_study",
+      "cl",
+      "dm"
+     ],
+     "expanded_tables": [
+      "usdm_study_milestone",
+      "ds",
+      "usdm_study",
+      "cl",
+      "dm",
+      "ae",
+      "ex",
+      "lb",
+      "vs"
+     ],
+     "strategy": "nl_to_sql",
+     "totalMs": 8385
+    }
+   },
+   "requestId": "<id>",
+   "sessionId": null
+  }
+ },
+ {
+  "n": 18,
+  "q": "How many patients had ALT above 3 times the upper limit of normal, per drug, on active arms?",
+  "expected": "Zorvantil=34; Oncotra=0; Cardiprex=0; Neurolynt=0",
+  "code": 400,
+  "resp": {
+   "message": "table reference 'lb' is ambiguous: it could be any of lb"
+  }
+ },
+ {
+  "n": 19,
+  "q": "Which drugs have been used in both in vivo and clinical studies?",
+  "expected": "Cardiprex, Neurolynt, Oncotra, Zorvantil",
+  "code": 200,
+  "resp": {
+   "result": {
+    "tier": 2.0,
+    "confidence": {
+     "score": 0.3,
+     "rationale": "LLM-generated SQL from ontology retrieval"
+    },
+    "resultRows": [],
+    "trace": [
+     {
+      "step": "routing.select",
+      "status": "success",
+      "durationMs": 0,
+      "detail": {
+       "gating": "source_composition",
+       "hasStructuredSource": true,
+       "hasUnstructuredSource": false,
+       "skipped": [
+        "tier3_vector_search"
+       ]
+      }
+     },
+     {
+      "step": "t1.metric_match",
+      "status": "miss",
+      "durationMs": 12,
+      "detail": {
+       "query_length": 64
+      }
+     },
+     {
+      "step": "query.embed",
+      "status": "success",
+      "durationMs": 174,
+      "detail": {
+       "dimensions": 1024
+      },
+      "toolUsed": "bedrock"
+     },
+     {
+      "step": "t2.sql.generate",
+      "status": "success",
+      "durationMs": 7414,
+      "detail": {
+       "confidence": 0.3,
+       "tables": [
+        "master_drug"
+       ]
+      },
+      "toolUsed": "bedrock"
+     },
+     {
+      "step": "t2.sql.authorize",
+      "status": "allow",
+      "durationMs": 1,
+      "detail": {
+       "principal": "<email>",
+       "decision": "allow"
+      },
+      "toolUsed": "cedar"
+     },
+     {
+      "step": "t2.sql.firewall",
+      "status": "success",
+      "durationMs": 1,
+      "detail": {
+       "decision": "authorized"
+      },
+      "toolUsed": "sql-firewall"
+     },
+     {
+      "step": "t2.sql.execute",
+      "status": "success",
+      "durationMs": 1849,
+      "detail": {
+       "rowCount": 0,
+       "tables": [
+        "master_drug"
+       ],
+       "truncated": false,
+       "shot": 1,
+       "engine": "athena",
+       "deterministicEmpty": false,
+       "userValueFilter": false
+      }
+     },
+     {
+      "step": "t2.sql.generate",
+      "status": "success",
+      "durationMs": 5754,
+      "detail": {
+       "confidence": 0.3,
+       "correction_shot": 2
+      },
+      "toolUsed": "bedrock"
+     },
+     {
+      "step": "t2.sql.authorize",
+      "status": "allow",
+      "durationMs": 3,
+      "detail": {
+       "principal": "<email>",
+       "decision": "allow"
+      },
+      "toolUsed": "cedar"
+     },
+     {
+      "step": "t2.sql.firewall",
+      "status": "success",
+      "durationMs": 3,
+      "detail": {
+       "decision": "authorized"
+      },
+      "toolUsed": "sql-firewall"
+     },
+     {
+      "step": "t2.sql.execute",
+      "status": "success",
+      "durationMs": 1755,
+      "detail": {
+       "rowCount": 0,
+       "tables": [
+        "ex",
+        "master_drug",
+        "usdm_study"
+       ],
+       "truncated": false,
+       "shot": 2,
+       "engine": "athena",
+       "deterministicEmpty": true,
+       "userValueFilter": false
+      }
+     }
+    ],
+    "guardrailBlocked": false,
+    "partial": false,
+    "metadata": {
+     "namespace": "<id>",
+     "modelId": "eu.anthropic.claude-sonnet-4-6",
+     "principal": "<email>",
+     "columns": [
+      "drug_name"
+     ],
+     "retrieved_tables": [
+      "master_drug",
+      "dm",
+      "usdm_study",
+      "ex"
+     ],
+     "expanded_tables": [
+      "master_drug",
+      "dm",
+      "usdm_study",
+      "ex",
+      "ae",
+      "bw",
+      "cl",
+      "ds"
+     ],
+     "strategy": "nl_to_sql",
+     "totalMs": 17066
+    }
+   },
+   "requestId": "<id>",
+   "sessionId": null
+  }
+ },
+ {
+  "n": 20,
+  "q": "Which drugs have only been used in in vivo studies?",
+  "expected": "Vexalin",
+  "code": 200,
+  "resp": {
+   "result": {
+    "tier": 2.0,
+    "confidence": {
+     "score": 0.3,
+     "rationale": "LLM-generated SQL from ontology retrieval"
+    },
+    "resultRows": [],
+    "trace": [
+     {
+      "step": "routing.select",
+      "status": "success",
+      "durationMs": 0,
+      "detail": {
+       "gating": "source_composition",
+       "hasStructuredSource": true,
+       "hasUnstructuredSource": false,
+       "skipped": [
+        "tier3_vector_search"
+       ]
+      }
+     },
+     {
+      "step": "t1.metric_match",
+      "status": "miss",
+      "durationMs": 11,
+      "detail": {
+       "query_length": 51
+      }
+     },
+     {
+      "step": "query.embed",
+      "status": "success",
+      "durationMs": 246,
+      "detail": {
+       "dimensions": 1024
+      },
+      "toolUsed": "bedrock"
+     },
+     {
+      "step": "t2.sql.generate",
+      "status": "success",
+      "durationMs": 8664,
+      "detail": {
+       "confidence": 0.3,
+       "tables": [
+        "master_drug"
+       ]
+      },
+      "toolUsed": "bedrock"
+     },
+     {
+      "step": "t2.sql.authorize",
+      "status": "allow",
+      "durationMs": 1,
+      "detail": {
+       "principal": "<email>",
+       "decision": "allow"
+      },
+      "toolUsed": "cedar"
+     },
+     {
+      "step": "t2.sql.firewall",
+      "status": "success",
+      "durationMs": 1,
+      "detail": {
+       "decision": "authorized"
+      },
+      "toolUsed": "sql-firewall"
+     },
+     {
+      "step": "t2.sql.execute",
+      "status": "success",
+      "durationMs": 1842,
+      "detail": {
+       "rowCount": 0,
+       "tables": [
+        "master_drug"
+       ],
+       "truncated": false,
+       "shot": 1,
+       "engine": "athena",
+       "deterministicEmpty": true,
+       "userValueFilter": true
+      }
+     }
+    ],
+    "guardrailBlocked": false,
+    "partial": false,
+    "metadata": {
+     "namespace": "<id>",
+     "modelId": "eu.anthropic.claude-sonnet-4-6",
+     "principal": "<email>",
+     "columns": [
+      "drug_name"
+     ],
+     "retrieved_tables": [
+      "master_drug",
+      "dm",
+      "ex",
+      "usdm_study"
+     ],
+     "expanded_tables": [
+      "master_drug",
+      "dm",
+      "ex",
+      "usdm_study",
+      "ae",
+      "bw",
+      "cl",
+      "ds"
+     ],
+     "strategy": "nl_to_sql",
+     "totalMs": 10789
+    }
+   },
+   "requestId": "<id>",
+   "sessionId": null
+  }
+ },
+ {
+  "n": 21,
+  "q": "How many male animals are there per species?",
+  "expected": "RAT=55; MOUSE=30; DOG=8",
+  "code": 400,
+  "resp": {
+   "message": "table reference 'dm' is ambiguous: it could be any of dm"
+  }
+ },
+ {
+  "n": 22,
+  "q": "Which completed phase 3 clinical studies had first subject in before 2022? Give study id, acronym and number of patients.",
+  "expected": "CS-301 CARD-HF3 140",
+  "code": 200,
+  "resp": {
+   "result": {
+    "tier": 2.0,
+    "confidence": {
+     "score": 0.55,
+     "rationale": "LLM-generated SQL from ontology retrieval"
+    },
+    "resultRows": [
+     {
+      "study_id": "CS-301",
+      "study_acronym": "CARD-HF3",
+      "planned_enrollment": "140"
+     }
+    ],
+    "trace": [
+     {
+      "step": "routing.select",
+      "status": "success",
+      "durationMs": 0,
+      "detail": {
+       "gating": "source_composition",
+       "hasStructuredSource": true,
+       "hasUnstructuredSource": false,
+       "skipped": [
+        "tier3_vector_search"
+       ]
+      }
+     },
+     {
+      "step": "t1.metric_match",
+      "status": "miss",
+      "durationMs": 11,
+      "detail": {
+       "query_length": 121
+      }
+     },
+     {
+      "step": "query.embed",
+      "status": "success",
+      "durationMs": 215,
+      "detail": {
+       "dimensions": 1024
+      },
+      "toolUsed": "bedrock"
+     },
+     {
+      "step": "t2.sql.generate",
+      "status": "success",
+      "durationMs": 6484,
+      "detail": {
+       "confidence": 0.55,
+       "tables": [
+        "usdm_study",
+        "usdm_study_milestone"
+       ]
+      },
+      "toolUsed": "bedrock"
+     },
+     {
+      "step": "t2.sql.authorize",
+      "status": "allow",
+      "durationMs": 2,
+      "detail": {
+       "principal": "<email>",
+       "decision": "allow"
+      },
+      "toolUsed": "cedar"
+     },
+     {
+      "step": "t2.sql.firewall",
+      "status": "success",
+      "durationMs": 2,
+      "detail": {
+       "decision": "authorized"
+      },
+      "toolUsed": "sql-firewall"
+     },
+     {
+      "step": "t2.sql.execute",
+      "status": "success",
+      "durationMs": 1852,
+      "detail": {
+       "rowCount": 1,
+       "tables": [
+        "usdm_study",
+        "usdm_study_milestone"
+       ],
+       "truncated": false,
+       "shot": 1,
+       "engine": "athena",
+       "deterministicEmpty": false,
+       "userValueFilter": false
+      }
+     }
+    ],
+    "guardrailBlocked": false,
+    "partial": false,
+    "metadata": {
+     "namespace": "<id>",
+     "modelId": "eu.anthropic.claude-sonnet-4-6",
+     "principal": "<email>",
+     "columns": [
+      "study_id",
+      "study_acronym",
+      "planned_enrollment"
+     ],
+     "retrieved_tables": [
+      "usdm_study",
+      "ds",
+      "usdm_study_milestone",
+      "master_drug",
+      "dm",
+      "ex"
+     ],
+     "expanded_tables": [
+      "usdm_study",
+      "ds",
+      "usdm_study_milestone",
+      "master_drug",
+      "dm",
+      "ex",
+      "ae",
+      "lb",
+      "vs"
+     ],
+     "strategy": "nl_to_sql",
+     "totalMs": 8593
+    }
+   },
+   "requestId": "<id>",
+   "sessionId": null
+  }
+ }
+]
